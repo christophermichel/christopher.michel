@@ -3,11 +3,13 @@ public class Saint {
     private Armadura armadura;
     private boolean armaduraVestida;
     private Genero genero = Genero.NAOINFORMADO;
+    private StatusDeVida statusDeVida = StatusDeVida.VIVO;
     
-    public Saint(String nome, Armadura armadura, Genero genero) {
+    public Saint(String nome, Armadura armadura, Genero genero, StatusDeVida statusDeVida) {
         this.nome = nome;
         this.armadura = armadura;
         this.genero = genero;
+        this.statusDeVida = statusDeVida;
     }
 
     public void vestirArmadura() {
@@ -25,5 +27,13 @@ public class Saint {
     
     public void setGenero(Genero genero) {
         this.genero = genero;
+    }
+    
+    public StatusDeVida getStatusDeVida() {
+        return this.statusDeVida;
+    }
+    
+    public void setStatusDeVida(StatusDeVida statusDeVida) {
+        this.statusDeVida = statusDeVida;
     }
 }
