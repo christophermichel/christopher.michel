@@ -28,23 +28,36 @@ public class SaintTest {
     }
     
     @Test
-    public void naoVestirArmaduraDeixaArmaduraNaoVestida() {
-        Saint saori = new Saint("Saori", new Armadura("Cisne", Categoria.OURO), Genero.NAOINFORMADO, StatusDeVida.VIVO);
-        assertEquals(false, saori.getArmaduraVestida());
+    public void aoCriarSaintVidaIniciaEm100(){
+        //1
+        Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        //3
+        assertEquals(jabu.getVida(),100.0, 0);
     }
 
     @Test
+    public void naoVestirArmaduraDeixaArmaduraNaoVestida() {
+        //1
+        Saint saori = new Saint("Saori", new Armadura("Cisne", Categoria.OURO), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        //3
+        assertEquals(false, saori.getArmaduraVestida());
+    }
+    
+    @Test
     public void aoCriarSaintGeneroENaoInformado() {
+        //1
         Saint shaka = new Saint("Shaka", new Armadura("Virgem", Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        //3
         assertEquals(Genero.NAOINFORMADO, shaka.getGenero());
     }
     
     @Test
     public void aoCriarSaintStatusDeVidaEVivo() {
+        //1
         Saint ikki = new Saint("Ikki", new Armadura("Fênix", Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        //3
         assertEquals(StatusDeVida.VIVO, ikki.getStatusDeVida());
     }
     
- 
 }
 
