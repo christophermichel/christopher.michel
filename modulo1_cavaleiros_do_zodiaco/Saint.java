@@ -4,6 +4,7 @@ public class Saint {
     private boolean armaduraVestida;
     private Genero genero = Genero.NAOINFORMADO;
     private StatusDeVida statusDeVida = StatusDeVida.VIVO;
+    private double vida = 100.0;
     
     public Saint(String nome, Armadura armadura, Genero genero, StatusDeVida statusDeVida) {
         this.nome = nome;
@@ -16,6 +17,9 @@ public class Saint {
         this.armaduraVestida = true;
     }
     
+    public void perderVida (double vidaPerdida) {
+        this.vida = this.vida - vidaPerdida;
+    }
     // camelCase
     public boolean getArmaduraVestida() {
         return this.armaduraVestida;
