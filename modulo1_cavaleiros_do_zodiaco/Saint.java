@@ -40,4 +40,9 @@ public class Saint {
     public void setStatusDeVida(StatusDeVida statusDeVida) {
         this.statusDeVida = statusDeVida;
     }
+    
+    public double getVida(){
+        return this.vida;
+    }
+ 
 }

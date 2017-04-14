@@ -18,6 +18,16 @@ public class SaintTest {
     }
     
     @Test
+    public void perderVidaEstaFuncionando(){
+        //1
+        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.OURO), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        //2
+        mu.perderVida(30.0);
+        //3
+        assertEquals(mu.getVida(),70.0, 30.0);
+    }
+    
+    @Test
     public void naoVestirArmaduraDeixaArmaduraNaoVestida() {
         Saint saori = new Saint("Saori", new Armadura("Cisne", Categoria.OURO), Genero.NAOINFORMADO, StatusDeVida.VIVO);
         assertEquals(false, saori.getArmaduraVestida());
@@ -34,5 +44,7 @@ public class SaintTest {
         Saint ikki = new Saint("Ikki", new Armadura("Fênix", Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
         assertEquals(StatusDeVida.VIVO, ikki.getStatusDeVida());
     }
+    
+ 
 }
 
