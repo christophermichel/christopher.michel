@@ -59,5 +59,12 @@ public class SaintTest {
         assertEquals(StatusDeVida.VIVO, ikki.getStatusDeVida());
     }
     
+    @Test
+    public void confirmarPesoDaArmadura() {
+        //1
+        Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        //3
+        assertEquals(jabu.getCategoriaArmadura(), 1);
+    }
 }
 
