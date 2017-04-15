@@ -6,7 +6,7 @@ public class Saint {
     private StatusDeVida statusDeVida = StatusDeVida.VIVO;
     private double vida = 100.0;
     
-    public Saint(String nome, Armadura armadura, Genero genero, StatusDeVida statusDeVida) {
+    public Saint(String nome, Armadura armadura) {
         this.nome = nome;
         this.armadura = armadura;
         this.genero = genero;

@@ -6,8 +6,8 @@ import org.junit.Test;
 public class BatalhaTest {
     @Test
     public void simularBatalhaETestarSeAMelhorArmaduraIniciaBatalha() {
-        Saint hyoga = new Saint("Hyoga", new Armadura("Gêmeos",Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
-        Saint mu = new Saint("Mu", new Armadura("Touro", Categoria.OURO), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        Saint hyoga = new Saint("Hyoga", new Armadura("Gêmeos",Categoria.BRONZE));
+        Saint mu = new Saint("Mu", new Armadura("Touro", Categoria.OURO));
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
         assertEquals(hyoga.getVida(),90.0, 0.01);
@@ -16,8 +16,8 @@ public class BatalhaTest {
  
     @Test
     public void categoriasIguaisGanhaOPrimeiroASerChamadoParaBatalhaComecaAtacando() {
-        Saint hyoga = new Saint("Hyoga", new Armadura("Gêmeos",Categoria.PRATA), Genero.NAOINFORMADO, StatusDeVida.VIVO);
-        Saint mu = new Saint("Mu", new Armadura("Touro", Categoria.PRATA), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        Saint hyoga = new Saint("Hyoga", new Armadura("Gêmeos",Categoria.PRATA));
+        Saint mu = new Saint("Mu", new Armadura("Touro", Categoria.PRATA));
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
         assertEquals(mu.getVida(),90.0, 0.01);

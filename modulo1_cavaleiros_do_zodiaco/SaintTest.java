@@ -9,7 +9,7 @@ public class SaintTest {
         // AAA
         // 1. Arrange - Montagem dos dados de teste
         Armadura capricornio = new Armadura("Capricórnio",Categoria.OURO);
-        Saint hyoga = new Saint("Hyoga", capricornio, Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        Saint hyoga = new Saint("Hyoga", capricornio);
         // 2. Act - Invocar a ação a ser testada
         hyoga.vestirArmadura();
         // 3. Assert - Verificação dos resultados do teste
@@ -20,7 +20,7 @@ public class SaintTest {
     @Test
     public void perderVidaEstaFuncionando(){
         //1
-        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.OURO), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.OURO));
         //2
         mu.perderVida(30.0);
         //3
@@ -30,7 +30,7 @@ public class SaintTest {
     @Test
     public void aoCriarSaintVidaIniciaEm100(){
         //1
-        Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
         //3
         assertEquals(jabu.getVida(),100.0, 0);
     }
@@ -38,7 +38,7 @@ public class SaintTest {
     @Test
     public void naoVestirArmaduraDeixaArmaduraNaoVestida() {
         //1
-        Saint saori = new Saint("Saori", new Armadura("Cisne", Categoria.OURO), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        Saint saori = new Saint("Saori", new Armadura("Cisne", Categoria.OURO));
         //3
         assertEquals(false, saori.getArmaduraVestida());
     }
@@ -46,7 +46,7 @@ public class SaintTest {
     @Test
     public void aoCriarSaintGeneroENaoInformado() {
         //1
-        Saint shaka = new Saint("Shaka", new Armadura("Virgem", Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        Saint shaka = new Saint("Shaka", new Armadura("Virgem", Categoria.BRONZE));
         //3
         assertEquals(Genero.NAOINFORMADO, shaka.getGenero());
     }
@@ -54,7 +54,7 @@ public class SaintTest {
     @Test
     public void aoCriarSaintStatusDeVidaEVivo() {
         //1
-        Saint ikki = new Saint("Ikki", new Armadura("Fênix", Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        Saint ikki = new Saint("Ikki", new Armadura("Fênix", Categoria.BRONZE));
         //3
         assertEquals(StatusDeVida.VIVO, ikki.getStatusDeVida());
     }
@@ -62,7 +62,7 @@ public class SaintTest {
     @Test
     public void confirmarPesoDaArmadura() {
         //1
-        Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE), Genero.NAOINFORMADO, StatusDeVida.VIVO);
+        Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
         //3
         assertEquals(jabu.getCategoriaArmadura(), 1);
     }
