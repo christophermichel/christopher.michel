@@ -52,6 +52,14 @@ public class SaintTest {
     }
     
     @Test
+    public void consigoTrocarDeGenero() {
+        //1
+        Saint mu = new Saint("Mu", new Armadura("Áries", Categoria.BRONZE));
+        mu.setGenero(Genero.MASCULINO);
+        assertEquals(Genero.MASCULINO, mu.getGenero());
+    }
+    
+    @Test
     public void aoCriarSaintStatusDeVidaEVivo() {
         //1
         Saint ikki = new Saint("Ikki", new Armadura("Fênix", Categoria.BRONZE));
