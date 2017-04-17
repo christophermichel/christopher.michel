@@ -9,11 +9,14 @@ public class Batalha {
     }
     
     public void iniciar() {
-        if(this.player1.getCategoriaArmadura() >= this.player2.getCategoriaArmadura()){ 
-            this.player2.perderVida(10.0); 
+        int valor1 = this.player1.getCategoriaArmadura();
+        int valor2 = this.player2.getCategoriaArmadura();
+        double dano = 10.;
+        if(valor1 >= valor2) { 
+            this.player2.perderVida(dano); 
         }
         else {
-            this.player1.perderVida(10.0);
+            this.player1.perderVida(dano);
         }
     }
 }
