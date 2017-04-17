@@ -5,7 +5,7 @@ import org.junit.Test;
  
 public class BatalhaTest {
     @Test
-    public void testaSeTemAMesmaArmadura() {
+    public void testaSeTemAMesmaArmadura() throws Exception {
         Saint hyoga = new Saint("Hyoga", new Armadura("Gêmeos",Categoria.OURO));
         Saint mu = new Saint("Mu", new Armadura("Touro", Categoria.OURO));
         Batalha batalha1 = new Batalha(hyoga, mu);
@@ -15,7 +15,7 @@ public class BatalhaTest {
     }
     
     @Test
-    public void armadura1MelhorQueArmadura2() {
+    public void armadura1MelhorQueArmadura2() throws Exception {
         Saint hyoga = new Saint("Hyoga", new Armadura("Gêmeos",Categoria.OURO));
         Saint mu = new Saint("Mu", new Armadura("Touro", Categoria.BRONZE));
         Batalha batalha1 = new Batalha(hyoga, mu);
@@ -25,7 +25,7 @@ public class BatalhaTest {
     }
     
     @Test
-    public void armadura2MelhorQueArmadura1() {
+    public void armadura2MelhorQueArmadura1() throws Exception {
         Saint hyoga = new Saint("Hyoga", new Armadura("Gêmeos",Categoria.OURO));
         Saint mu = new Saint("Mu", new Armadura("Touro", Categoria.BRONZE));
         Batalha batalha1 = new Batalha(hyoga, mu);
@@ -36,7 +36,7 @@ public class BatalhaTest {
     }
  
     @Test
-    public void categoriasIguaisGanhaOPrimeiroASerChamadoParaBatalhaComecaAtacando() {
+    public void categoriasIguaisGanhaOPrimeiroASerChamadoParaBatalhaComecaAtacando() throws Exception {
         Saint hyoga = new Saint("Hyoga", new Armadura("Gêmeos",Categoria.PRATA));
         Saint mu = new Saint("Mu", new Armadura("Touro", Categoria.PRATA));
         Batalha batalha1 = new Batalha(hyoga, mu);

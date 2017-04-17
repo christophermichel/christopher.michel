@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class SaintTest {
     @Test
-    public void vestirArmaduraDeixaArmaduraVestida() {
+    public void vestirArmaduraDeixaArmaduraVestida() throws Exception {
         // AAA
         // 1. Arrange - Montagem dos dados de teste
         Armadura capricornio = new Armadura("Capricórnio",Categoria.OURO);
@@ -18,9 +18,9 @@ public class SaintTest {
     }
     
     @Test
-    public void danoEstaFuncionando10(){
+    public void danoEstaFuncionando10() throws Exception {
         //1
-        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.OURO));
+        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.PRATA));
         //2
         mu.perderVida(10.0);
         //3
@@ -28,9 +28,9 @@ public class SaintTest {
     }
     
     @Test
-    public void danoEstaFuncionando100(){
+    public void danoEstaFuncionando100() throws Exception {
         //1
-        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.OURO));
+        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.PRATA));
         //2
         mu.perderVida(100.0);
         //3
@@ -38,9 +38,9 @@ public class SaintTest {
     }
     
     @Test
-    public void danoEstaFuncionando1000(){
+    public void danoEstaFuncionando1000() throws Exception {
         //1
-        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.OURO));
+        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.PRATA));
         //2
         mu.perderVida(-1000.0);
         //3
@@ -48,7 +48,7 @@ public class SaintTest {
     }
     
     @Test
-    public void aoCriarSaintVidaIniciaEm100(){
+    public void aoCriarSaintVidaIniciaEm100() throws Exception {
         //1
         Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
         //3
@@ -56,15 +56,15 @@ public class SaintTest {
     }
 
     @Test
-    public void naoVestirArmaduraDeixaArmaduraNaoVestida() {
+    public void naoVestirArmaduraDeixaArmaduraNaoVestida() throws Exception {
         //1
-        Saint saori = new Saint("Saori", new Armadura("Cisne", Categoria.OURO));
+        Saint saori = new Saint("Saori", new Armadura("Cisne", Categoria.PRATA));
         //3
         assertEquals(false, saori.getArmaduraVestida());
     }
     
     @Test
-    public void aoCriarSaintGeneroENaoInformado() {
+    public void aoCriarSaintGeneroENaoInformado() throws Exception {
         //1
         Saint shaka = new Saint("Shaka", new Armadura("Virgem", Categoria.BRONZE));
         //3
@@ -72,7 +72,7 @@ public class SaintTest {
     }
     
     @Test
-    public void consigoTrocarDeGenero() {
+    public void consigoTrocarDeGenero() throws Exception {
         //1
         Saint mu = new Saint("Mu", new Armadura("Áries", Categoria.BRONZE));
         mu.setGenero(Genero.MASCULINO);
@@ -80,7 +80,7 @@ public class SaintTest {
     }
     
     @Test
-    public void aoCriarSaintStatusDeVidaEVivo() {
+    public void aoCriarSaintStatusDeVidaEVivo() throws Exception {
         //1
         Saint ikki = new Saint("Ikki", new Armadura("Fênix", Categoria.BRONZE));
         //3
@@ -88,16 +88,34 @@ public class SaintTest {
     }
     
     @Test
-    public void confirmarPesoDaArmadura() {
+    public void confirmarPesoDaArmadura() throws Exception {
         //1
         Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
         //3
         assertEquals(jabu.getCategoriaArmadura(), 1);
     }
     
-    @Test
+    /*@Test
     public void criarSaintNasceCom5SentidosDespertados() {
         Saint seiya = new Saint("Seiya", new Armadura("Peixes", Categoria.OURO));
+        assertEquals(5, seiya.getQtdSentidosDespertados());
+    }*/
+    
+    @Test
+    public void saintOuroTem7Sentidos() throws Exception {
+        Saint seiya = new Saint("Seiya", new Armadura("Peixes", Categoria.OURO));
+        assertEquals(7, seiya.getQtdSentidosDespertados());
+    }
+    
+    @Test
+    public void saintPrataTem6Sentidos() throws Exception {
+        Saint seiya = new Saint("Seiya", new Armadura("Peixes", Categoria.PRATA));
+        assertEquals(6, seiya.getQtdSentidosDespertados());
+    }
+    
+    @Test
+    public void saintBronzeTem5Sentidos() throws Exception {
+        Saint seiya = new Saint("Seiya", new Armadura("Peixes", Categoria.BRONZE));
         assertEquals(5, seiya.getQtdSentidosDespertados());
     }
 }
