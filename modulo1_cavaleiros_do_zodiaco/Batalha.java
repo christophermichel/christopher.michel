@@ -1,7 +1,7 @@
 public class Batalha {
    
-    public Saint player1;
-    public Saint player2;
+    private Saint player1;
+    private Saint player2;
     
     public Batalha(Saint player1, Saint player2) {
         this.player1 = player1;
