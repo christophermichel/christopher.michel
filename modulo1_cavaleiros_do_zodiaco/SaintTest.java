@@ -18,13 +18,33 @@ public class SaintTest {
     }
     
     @Test
-    public void perderVidaEstaFuncionando(){
+    public void danoEstaFuncionando10(){
         //1
         Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.OURO));
         //2
-        mu.perderVida(30.0);
+        mu.perderVida(10.0);
         //3
-        assertEquals(mu.getVida(),70.0, 30.0);
+        assertEquals(90.0, mu.getVida(), 0.01);
+    }
+    
+    @Test
+    public void danoEstaFuncionando100(){
+        //1
+        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.OURO));
+        //2
+        mu.perderVida(100.0);
+        //3
+        assertEquals(0, mu.getVida(), 0.01);
+    }
+    
+    @Test
+    public void danoEstaFuncionando1000(){
+        //1
+        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.OURO));
+        //2
+        mu.perderVida(-1000.0);
+        //3
+        assertEquals(1100, mu.getVida(), 0.01);
     }
     
     @Test
@@ -32,7 +52,7 @@ public class SaintTest {
         //1
         Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
         //3
-        assertEquals(jabu.getVida(),100.0, 0);
+        assertEquals(100.0, jabu.getVida(), 0.01);
     }
 
     @Test

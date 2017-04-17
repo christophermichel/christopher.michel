@@ -17,8 +17,8 @@ public class Saint {
         this.armaduraVestida = true;
     }
     
-    public void perderVida (double vidaPerdida) {
-        this.vida = this.vida - vidaPerdida;
+    public void perderVida (double dano) {
+        this.vida = this.vida - dano;
     }
     // camelCase
     public boolean getArmaduraVestida() {
