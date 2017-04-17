@@ -64,7 +64,7 @@ public class SaintTest {
         //1
         Saint ikki = new Saint("Ikki", new Armadura("Fênix", Categoria.BRONZE));
         //3
-        assertEquals(StatusDeVida.VIVO, ikki.getStatusDeVida());
+        assertEquals(Status.VIVO, ikki.getStatus());
     }
     
     @Test

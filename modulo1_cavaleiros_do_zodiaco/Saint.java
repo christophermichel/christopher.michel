@@ -3,14 +3,14 @@ public class Saint {
     public Armadura armadura;
     private boolean armaduraVestida;
     private Genero genero = Genero.NAOINFORMADO;
-    private StatusDeVida statusDeVida = StatusDeVida.VIVO;
+    private Status status = Status.VIVO;
     private double vida = 100.0;
     
     public Saint(String nome, Armadura armadura) {
         this.nome = nome;
         this.armadura = armadura;
         this.genero = genero;
-        this.statusDeVida = statusDeVida;
+        this.status = status;
     }
 
     public void vestirArmadura() {
@@ -33,12 +33,8 @@ public class Saint {
         this.genero = genero;
     }
     
-    public StatusDeVida getStatusDeVida() {
-        return this.statusDeVida;
-    }
-    
-    public void setStatusDeVida(StatusDeVida statusDeVida) {
-        this.statusDeVida = statusDeVida;
+    public Status getStatus() {
+        return this.status;
     }
     
     public double getVida(){
