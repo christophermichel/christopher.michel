@@ -94,5 +94,11 @@ public class SaintTest {
         //3
         assertEquals(jabu.getCategoriaArmadura(), 1);
     }
+    
+    @Test
+    public void criarSaintNasceCom5SentidosDespertados() {
+        Saint seiya = new Saint("Seiya", new Armadura("Peixes", Categoria.OURO));
+        assertEquals(5, seiya.getQtdSentidosDespertados());
+    }
 }
 
