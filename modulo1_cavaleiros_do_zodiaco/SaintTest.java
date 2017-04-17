@@ -103,19 +103,19 @@ public class SaintTest {
     
     @Test
     public void saintOuroTem7Sentidos() throws Exception {
-        Saint seiya = new Saint("Seiya", new Armadura("Peixes", Categoria.OURO));
+        GoldSaint seiya = new GoldSaint("Seiya", new Armadura("Peixes", Categoria.OURO));
         assertEquals(7, seiya.getQtdSentidosDespertados());
     }
     
     @Test
     public void saintPrataTem6Sentidos() throws Exception {
-        Saint seiya = new Saint("Seiya", new Armadura("Peixes", Categoria.PRATA));
+        SilverSaint seiya = new SilverSaint("Seiya", new Armadura("Peixes", Categoria.PRATA));
         assertEquals(6, seiya.getQtdSentidosDespertados());
     }
     
     @Test
     public void saintBronzeTem5Sentidos() throws Exception {
-        Saint seiya = new Saint("Seiya", new Armadura("Peixes", Categoria.BRONZE));
+        BronzeSaint seiya = new BronzeSaint("Seiya", new Armadura("Peixes", Categoria.BRONZE));
         assertEquals(5, seiya.getQtdSentidosDespertados());
     }
 }
