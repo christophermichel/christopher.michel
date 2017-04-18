@@ -12,7 +12,6 @@ public class Saint {
         this.armadura = armadura;
         this.genero = genero;
         this.status = status;
-        
     }
 
     public void vestirArmadura() {
@@ -20,7 +19,13 @@ public class Saint {
     }
     
     public void perderVida (double dano) {
-        this.vida = this.vida - dano;
+        if (vida - dano < 1.0) {
+            vida = 0;
+            setStatus(Status.MORTO);
+    }
+        else {
+            this.vida = this.vida - dano;
+    }
     }
     // camelCase
     public boolean getArmaduraVestida() {
@@ -41,6 +46,12 @@ public class Saint {
     
     public Status getStatus() {
         return this.status;
+    }
+    
+    public void setStatus(Status status) {
+        if (this.status != Status.MORTO) {
+            this.status = status;
+    }
     }
     
     public double getVida(){

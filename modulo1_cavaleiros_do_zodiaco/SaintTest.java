@@ -38,6 +38,16 @@ public class SaintTest {
     }
     
     @Test
+    public void statusMortoCom0DeVida() throws Exception {
+        //1
+        Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.PRATA));
+        //2
+        mu.perderVida(100.0);
+        //3
+        assertEquals(Status.MORTO, mu.getStatus());
+    }
+    
+    @Test
     public void danoEstaFuncionando1000() throws Exception {
         //1
         Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.PRATA));
@@ -77,6 +87,15 @@ public class SaintTest {
         Saint mu = new Saint("Mu", new Armadura("Áries", Categoria.BRONZE));
         mu.setGenero(Genero.MASCULINO);
         assertEquals(Genero.MASCULINO, mu.getGenero());
+    }
+    
+    @Test
+    public void naoAlteraStatusQuandoMorre() throws Exception {
+        //1
+        Saint mu = new Saint("Mu", new Armadura("Áries", Categoria.BRONZE));
+        mu.setStatus(Status.MORTO);
+        mu.setStatus(Status.VIVO);
+        assertEquals(Status.MORTO, mu.getStatus());
     }
     
     @Test
