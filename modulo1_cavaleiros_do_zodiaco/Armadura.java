@@ -5,12 +5,14 @@ public class Armadura {
     public Armadura(Constelacao constelacao, Categoria categoria) {
         this.constelacao = constelacao;
         this.categoria = categoria;
-   }
+    }
 
    
-   public Constelacao getNomeDaConstelacao() {
+    public Constelacao getNomeDaConstelacao() {
        return this.getNomeDaConstelacao();
-   }
+    }
 
-
+    public Golpe[] getGolpes(){
+        return constelacao.getGolpes();
+    }
 }

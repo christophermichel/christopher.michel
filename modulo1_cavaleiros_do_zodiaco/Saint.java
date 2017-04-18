@@ -69,4 +69,12 @@ public class Saint {
     public int getQtdSentidosDespertados() {
         return this.qtsSentidosDespertados;
     }
+    
+    public Golpe[] getGolpes(){
+        return this.armadura.getGolpes();
+    }
+    
+    public void aprenderGolpe(Golpe golpe){
+        this.armadura.getNomeDaConstelacao().adicionarGolpe(golpe);
+    }
 }
