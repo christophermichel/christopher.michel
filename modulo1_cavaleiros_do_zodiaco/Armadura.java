@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Armadura {
     private Constelacao constelacao;
     public Categoria categoria;
@@ -15,7 +17,7 @@ public class Armadura {
        return this.constelacao.getNomeDaConstelacao();
     }
 
-    public Golpe[] getGolpes(){
+    public ArrayList<Golpe> getGolpes(){
         return constelacao.getGolpes();
     }
 }

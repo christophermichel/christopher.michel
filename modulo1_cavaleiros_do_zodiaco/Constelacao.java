@@ -1,14 +1,15 @@
+import java.util.ArrayList;
+
 public class Constelacao {
     private String nome;
-    private Golpe[] listaDeGolpes = new Golpe[3];
-    private int limite = 0;
+    private ArrayList<Golpe> listaDeGolpes = new ArrayList<>();
     
     public Constelacao (String nome) {
         this.nome = nome;
     }   
     
-    public void adicionarGolpe(Golpe golpe) {
-        listaDeGolpes[limite++] = golpe;        
+    public void adicionarGolpe(Golpe golpe) { 
+        listaDeGolpes.add(golpe);
     }
     //SOLUÇÃO BERNARDO COM FOR
     // public void adicionarGolpe(Golpe golpe) {
@@ -32,7 +33,7 @@ public class Constelacao {
         return this.nome;
     }
     
-    public Golpe[] getGolpes(){
+    public ArrayList<Golpe> getGolpes(){
         return this.listaDeGolpes;
     }
     

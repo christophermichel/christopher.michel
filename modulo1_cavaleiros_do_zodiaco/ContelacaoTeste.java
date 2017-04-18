@@ -1,5 +1,5 @@
 
-
+import java.util.ArrayList;
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -17,10 +17,10 @@ public class ContelacaoTeste {
         Constelacao gemeos = new Constelacao("Gêmeos");
         Golpe outraDimensao = new Golpe("Outra dimensão", 10);
         gemeos.adicionarGolpe(new Golpe("Outra dimensão", 10));
-        Golpe[] golpes = gemeos.getGolpes();
-        assertEquals(outraDimensao, golpes[0]);
-        assertNull(golpes[1]);
-        assertNull(golpes[2]);
+        ArrayList<Golpe> listaDeGolpes = gemeos.getGolpes();
+        assertEquals(outraDimensao, listaDeGolpes.get(0));
+        assertNull (listaDeGolpes.get(1));
+        assertNull(listaDeGolpes.get(2));
         // TODO: assert null
     }
 
@@ -31,7 +31,7 @@ public class ContelacaoTeste {
         Golpe explosaoGalatica = new Golpe("Explosão Galáctica", 11);
         gemeos.adicionarGolpe(outraDimensao);
         gemeos.adicionarGolpe(explosaoGalatica);
-        Golpe[] golpes = gemeos.getGolpes();
+        Golpe listaDeGolpes = gemeos.getGolpes();
         assertEquals(outraDimensao, golpes[0]);
         assertEquals(explosaoGalatica, golpes[1]);
         assertNull(golpes[2]);
