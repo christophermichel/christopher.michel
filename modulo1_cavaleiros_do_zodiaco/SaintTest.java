@@ -52,9 +52,9 @@ public class SaintTest {
         //1
         Saint mu = new Saint("Mu", new Armadura("Aries", Categoria.PRATA));
         //2
-        mu.perderVida(-1000.0);
+        mu.perderVida(1000.0);
         //3
-        assertEquals(1100, mu.getVida(), 0.01);
+        assertEquals(0, mu.getVida(), 0.01);
     }
     
     @Test
@@ -114,12 +114,6 @@ public class SaintTest {
         assertEquals(jabu.getCategoriaArmadura(), 1);
     }
     
-    /*@Test
-    public void criarSaintNasceCom5SentidosDespertados() {
-        Saint seiya = new Saint("Seiya", new Armadura("Peixes", Categoria.OURO));
-        assertEquals(5, seiya.getQtdSentidosDespertados());
-    }*/
-    
     @Test
     public void saintOuroTem7Sentidos() throws Exception {
         GoldSaint seiya = new GoldSaint("Seiya", new Armadura("Peixes", Categoria.OURO));
@@ -136,6 +130,13 @@ public class SaintTest {
     public void saintBronzeTem5Sentidos() throws Exception {
         BronzeSaint seiya = new BronzeSaint("Seiya", new Armadura("Peixes", Categoria.BRONZE));
         assertEquals(5, seiya.getQtdSentidosDespertados());
+    }
+    
+    @Test(expected = Exception.class)
+    public void danoNaoPodeSerNegativo()throws Exception{
+        BronzeSaint seiya = new BronzeSaint("Seiya", new Armadura(("Peixes"),Categoria.BRONZE));
+        seiya.perderVida(-10);
+        
     }
 }
 

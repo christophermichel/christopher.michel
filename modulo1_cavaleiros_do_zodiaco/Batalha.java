@@ -8,7 +8,7 @@ public class Batalha {
         this.player2 = player2;
     }
     
-    public void iniciar() {
+    public void iniciar() throws Exception{
         int valor1 = this.player1.getCategoriaArmadura();
         int valor2 = this.player2.getCategoriaArmadura();
         double dano = 10.;

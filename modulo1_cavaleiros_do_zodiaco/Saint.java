@@ -18,14 +18,18 @@ public class Saint {
         this.armaduraVestida = true;
     }
     
-    public void perderVida (double dano) {
+    public void perderVida (double dano) throws Exception {
+        if (dano < 0) {
+            throw new Exception ("Invalid Parameter Exception");
+        }
+        
         if (vida - dano < 1.0) {
             vida = 0;
             setStatus(Status.MORTO);
-    }
+        }
         else {
             this.vida = this.vida - dano;
-    }
+        }
     }
     // camelCase
     public boolean getArmaduraVestida() {
