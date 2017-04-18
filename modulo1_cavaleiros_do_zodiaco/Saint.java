@@ -1,3 +1,5 @@
+import java.security.InvalidParameterException;
+
 public class Saint {
     private String nome;
     private Armadura armadura;
@@ -21,7 +23,7 @@ public class Saint {
     
     public void perderVida (double dano) throws Exception {
         if (dano < 0) {
-            throw new Exception ("Invalid Parameter Exception");
+            throw new InvalidParameterException ("Erro no dano");
         }
         
         if (vida - dano < 1.0) {
