@@ -24,4 +24,5 @@ public class Constelacao {
     public Golpe[] getGolpes(){
         return this.listaDeGolpes;
     }
+    
 }
