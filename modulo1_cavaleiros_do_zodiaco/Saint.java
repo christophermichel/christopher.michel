@@ -78,20 +78,24 @@ public class Saint {
     }
     
     public void aprenderGolpe(Golpe golpe){
-        this.armadura.getNomeDaConstelacao().adicionarGolpe(golpe);
+        this.armadura.getConstelacao().adicionarGolpe(golpe);
     }
-     
-    public Golpe getProximoGolpe(){
-        Golpe[] a = getGolpes();
-        if (proximoGolpe < 3) {
-            this.proximoGolpe++;
-            return a[proximoGolpe - 1];
-        }
+    
+    private String getConstelacao() {
+       return this.armadura.getNomeConstelacao();
+    }
+    // MÉTODO PROXIMOGOLPE QUE CRIEI
+    // public Golpe getProximoGolpe(){
+        // Golpe[] a = getGolpes();
+        // if (proximoGolpe < 3) {
+            // this.proximoGolpe++;
+            // return a[proximoGolpe - 1];
+        // }
         
-        else {
-            this.proximoGolpe = 0;
-            return a[proximoGolpe];
-        }
-    }
+        // else {
+            // this.proximoGolpe = 0;
+            // return a[proximoGolpe];
+        // }
+    // }
     
 }

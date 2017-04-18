@@ -3,6 +3,10 @@ public class Constelacao {
     private Golpe[] listaDeGolpes = new Golpe[3];
     private int limite = 0;
     
+    public Constelacao (String nome) {
+        this.nome = nome;
+    }   
+    
     public void adicionarGolpe(Golpe golpe) {
         listaDeGolpes[limite++] = golpe;        
     }
@@ -23,9 +27,6 @@ public class Constelacao {
         // }else System.out.println("Não foi possível cadastrar o golpe");
     // } 
     
-    public Constelacao (String nome) {
-        this.nome = nome;
-    }
     
     public String getNomeDaConstelacao(){
         return this.nome;
