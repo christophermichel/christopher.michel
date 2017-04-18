@@ -80,13 +80,15 @@ public class Saint {
     }
      
     public Golpe getProximoGolpe(){
+        Golpe[] a = getGolpes();
         if (proximoGolpe < 3) {
-            return getGolpes([proximoGolpe]);
             this.proximoGolpe++;
+            return a[proximoGolpe - 1];
         }
+        
         else {
             this.proximoGolpe = 0;
-            return getGolpes([proximoGolpe]);
+            return a[proximoGolpe];
         }
     }
     
