@@ -1,6 +1,6 @@
 public class Saint {
-    public String nome;
-    public Armadura armadura;
+    private String nome;
+    private Armadura armadura;
     private boolean armaduraVestida;
     private Genero genero = Genero.NAOINFORMADO;
     private Status status = Status.VIVO;
