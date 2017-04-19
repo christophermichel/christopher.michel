@@ -13,12 +13,13 @@ public class ListaSaintTest {
     ListaSaint atenaList = new ListaSaint();
     atenaList.adicionaSaint(mu);
     assertEquals(mu, atenaList.getTodos().get(0));
+    assertEquals(1, atenaList.getTodos().size());
     }
 
     @Test
     public void chamarListaCompleta () throws Exception {
     ListaSaint atenaList = new ListaSaint();
-    assertEquals(null, atenaList.getTodos().get(0));
+    assertEquals(0, atenaList.getTodos().size());
     }
     
     @Test
@@ -27,9 +28,16 @@ public class ListaSaintTest {
     ListaSaint atenaList = new ListaSaint();
     atenaList.adicionaSaint(mu);
     atenaList.removeSaint(mu);
-    assertEquals(null, atenaList.getTodos().get(0));
+    assertEquals(0, atenaList.getTodos().size());
     }
 
+    // @Test
+    // public void adicionarSaintEmLista () throws Exception {
+    // Saint mu = new Saint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+    // ListaSaint atenaList = new ListaSaint();
+    // atenaList.adicionaSaint(mu);
+    // assertEquals(mu, atenaList.getTodos().get(0));
+    // }
 
 
 }
