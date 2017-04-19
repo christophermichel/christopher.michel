@@ -109,15 +109,56 @@ public class ListaSaint {
     }
 
     public void ordenar(){
-        Saint saint = null;
-        for(int i = 0; i < this.saints.size(); i++){
-            for(int j = 1; j < this.saints.size(); j++){
-                if ( saints.get(i).getVida() > saints.get(j).getVida()){
-                    saint = saints.get(i);
-                    saints.add(i, saints.get(j));
-                    saints.add(j, saint);
+        boolean posicoesSendoTrocadas;
+        do {
+            posicoesSendoTrocadas = false;
+            for (int i = 0; i < this.saints.size() - 1; i++) {
+                Saint atual = this.saints.get(i);
+                Saint proximo = this.saints.get(i + 1);
+                boolean precisaTrocar = atual.getVida() > proximo.getVida();
+                if (precisaTrocar) {
+                    this.saints.set(i, proximo);
+                    this.saints.set(i + 1, atual);
+                    posicoesSendoTrocadas = true;
                 }
-            }        
-        }        
+            }
+        } while (posicoesSendoTrocadas);   
+        // Saint saint = null;
+        // for(int i = 0; i < this.saints.size(); i++){
+        // for(int j = 1; j < this.saints.size(); j++){
+        // if ( saints.get(i).getVida() > saints.get(j).getVida()){
+        // saint = saints.get(i);
+        // saints.add(i, saints.get(j));
+        // saints.add(j, saint);
+        // }
+        // }        
+        // }
+    }   
+
+    public void ordenar(TipoOrdenacao tipoOrdenacao) {
+
+        if (tipoOrdenacao.equals(TipoOrdenacao.DESCENDENTE)) {
+            boolean posicoesSendoTrocadas;
+            do {
+                posicoesSendoTrocadas = false;
+                for (int i = 0; i < this.saints.size() - 1; i++) {
+                    Saint atual = this.saints.get(i);
+                    Saint proximo = this.saints.get(i + 1);
+                    boolean precisaTrocar = atual.getVida() > proximo.getVida();
+                    if (precisaTrocar) {
+                        this.saints.set(i, proximo);
+                        this.saints.set(i + 1, atual);
+                        posicoesSendoTrocadas = true;
+                    }
+                }
+            } while (posicoesSendoTrocadas);  
+        } else {
+            ordenar();
+        }
     }
+
+    
+    
+    
+    
 }
