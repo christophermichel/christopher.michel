@@ -8,7 +8,7 @@ public class ListaSaint {
     }
    
     public Saint getIndice(int i) {
-        return saints.get(i);
+        return this.saints.get(i);
     }
     
     public ArrayList<Saint> getTodos(){
@@ -19,16 +19,27 @@ public class ListaSaint {
         this.saints.remove(saint);
     }
     
-    public Saint buscarPorString (String saint) {
-    int i;
-    for(i=0; i < saints.size(); i++) {
-    Saint saintComMesmoNome = saints.get(i);
-        if (saintComMesmoNome.getNome() == saint) {
-        return saintComMesmoNome;
+    //MÉTODO UTILIZANDO EQUALS
+    public Saint buscarPorNome(String nome) {
+        for (Saint saint : this.saints) {
+            if (saint.getNome().equals(nome)) {
+                return saint;
+            }
         }
-    }
     return null;
     }
+    
+    // MÉTODO USANDO IGUAL.
+    // public Saint buscarPorString (String saint) {
+    // int i;
+    // for(i=0; i < saints.size(); i++) {
+    // Saint saintComMesmoNome = saints.get(i);
+        // if (saintComMesmoNome.getNome() == saint) {
+        // return saintComMesmoNome;
+        // }
+    // }
+    // return null;
+    // }
     
     public ArrayList<Saint> buscarPorCategoria(Categoria categoria) {
     ArrayList<Saint> saintsPorCategoria = new ArrayList<>();
