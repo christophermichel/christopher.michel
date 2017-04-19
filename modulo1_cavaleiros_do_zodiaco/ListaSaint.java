@@ -29,4 +29,16 @@ public class ListaSaint {
     }
     return null;
     }
+    
+    public ArrayList<Saint> buscarPorCategoria(Categoria categoria) {
+    ArrayList<Saint> saintsPorCategoria = new ArrayList<>();
+    int i;
+    for(i=0; i < saints.size(); i++) {
+        Saint exemploSaint = saints.get(i);
+            if (categoria == exemploSaint.getCategoria()) {
+                saintsPorCategoria.add(exemploSaint);
+            }
+    }
+    return saintsPorCategoria;
+    }
 }
