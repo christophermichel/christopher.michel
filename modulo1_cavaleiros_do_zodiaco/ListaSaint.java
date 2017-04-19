@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class ListaSaint {
     private ArrayList<Saint> saints = new ArrayList<>();
     
-    public void recebeSaint (Saint saint) {
+    public void adicionaSaint (Saint saint) {
         this.saints.add(saint);
     }
    
