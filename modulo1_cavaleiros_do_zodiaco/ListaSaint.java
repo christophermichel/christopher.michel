@@ -41,4 +41,17 @@ public class ListaSaint {
     }
     return saintsPorCategoria;
     }
+    
+    public ArrayList<Saint> buscarPorStatus(Status status) {
+    ArrayList<Saint> saintsPorStatus = new ArrayList<>();
+    int i;
+    for(i=0; i < saints.size(); i++) {
+        Saint exemploSaint = saints.get(i);
+            if (status == exemploSaint.getStatus()) {
+                saintsPorStatus.add(exemploSaint);
+            }
+    }
+    return saintsPorStatus;
+    }
+    
 }
