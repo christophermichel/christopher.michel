@@ -87,8 +87,10 @@ public class Saint {
     }
 
     public Golpe getProximoGolpe(){
-        ArrayList<Golpe> a = getGolpes();
-        
+        ArrayList<Golpe> listaDeGolpes = getGolpes();
+        int posicao = this.proximoGolpe % listaDeGolpes.size();
+        this.proximoGolpe++;
+        return listaDeGolpes.get(posicao);
     }
     
 }
