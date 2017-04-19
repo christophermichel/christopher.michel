@@ -15,4 +15,7 @@ public class ListaSaint {
         return saints;
     }
     
+    public void removeSaint (Saint saint) {
+        this.saints.remove(saint);
+    }
 }
