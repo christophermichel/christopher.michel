@@ -54,4 +54,21 @@ public class ListaSaint {
     return saintsPorStatus;
     }
     
+    public Saint getSaintComMaiorVida() {
+    int i;
+    Saint exemploSaint = null;
+    for(i=0; i < saints.size(); i++) {
+    Saint atual = saints.get(i);
+        if (i == 0) {
+        exemploSaint = atual;
+        }
+        else if (exemploSaint.getVida() >= atual.getVida()) {
+            exemploSaint = exemploSaint;
+        }
+        else {
+            exemploSaint = atual;
+        }        
+    }
+    return exemploSaint;
+    }
 }
