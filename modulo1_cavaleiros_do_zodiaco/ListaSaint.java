@@ -71,4 +71,22 @@ public class ListaSaint {
     }
     return exemploSaint;
     }
+    
+    public Saint getSaintComMenorVida() {
+    int i;
+    Saint exemploSaint = null;
+    for(i=0; i < saints.size(); i++) {
+    Saint atual = saints.get(i);
+        if (i == 0) {
+        exemploSaint = atual;
+        }
+        else if (exemploSaint.getVida() <= atual.getVida()) {
+            exemploSaint = exemploSaint;
+        }
+        else {
+            exemploSaint = atual;
+        }        
+    }
+    return exemploSaint;
+    }
 }
