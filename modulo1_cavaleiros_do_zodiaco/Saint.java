@@ -40,6 +40,10 @@ public class Saint {
         return this.armaduraVestida;
     }
     
+    public String getNome() {
+        return this.nome;
+    }
+    
     public Genero getGenero() {
         return this.genero;
     }
