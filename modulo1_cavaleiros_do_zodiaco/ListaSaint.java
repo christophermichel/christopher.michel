@@ -89,4 +89,17 @@ public class ListaSaint {
     }
     return exemploSaint;
     }
+    
+    public void ordenar(){
+        Saint saint = null;
+        for(int i = 0; i < this.saints.size(); i++){
+            for(int j = 1; j < this.saints.size(); j++){
+                if ( saints.get(i).getVida() > saints.get(j).getVida()){
+                    saint = saints.get(i);
+                    saints.add(i, saints.get(j));
+                    saints.add(j, saint);
+                }
+            }        
+        }        
+    }
 }
