@@ -10,5 +10,9 @@ public class ListaSaint {
     public Saint getIndice(int i) {
         return saints.get(i);
     }
-
+    
+    public ArrayList<Saint> todos(){
+        return saints;
+    }
+    
 }
