@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
- 
+
 public class BatalhaTest {
     @Test
     public void testaSeTemAMesmaArmadura() throws Exception {
@@ -13,7 +13,7 @@ public class BatalhaTest {
         assertEquals(100.0, hyoga.getVida(), 0.01);
         assertEquals(90.0, mu.getVida(), 0.01);
     }
-    
+
     @Test
     public void armadura1MelhorQueArmadura2() throws Exception {
         Saint hyoga = new Saint("Hyoga", new Armadura (new Constelacao("Gêmeos"),Categoria.OURO));
@@ -23,7 +23,7 @@ public class BatalhaTest {
         assertEquals(100.0, hyoga.getVida(), 0.01);
         assertEquals(90.0, mu.getVida(), 0.01);
     }
-    
+
     @Test
     public void armadura2MelhorQueArmadura1() throws Exception {
         Saint hyoga = new Saint("Hyoga", new Armadura (new Constelacao("Andrômeda"),Categoria.OURO));
@@ -32,9 +32,9 @@ public class BatalhaTest {
         batalha1.iniciar();
         assertEquals(90.0, mu.getVida(), 0.01);
         assertEquals(100.0, hyoga.getVida(), 0.01);
- 
+
     }
- 
+
     @Test
     public void categoriasIguaisGanhaOPrimeiroASerChamadoParaBatalhaComecaAtacando() throws Exception {
         Saint hyoga = new Saint("Hyoga", new Armadura (new Constelacao("Áries"),Categoria.PRATA));
@@ -43,6 +43,5 @@ public class BatalhaTest {
         batalha1.iniciar();
         assertEquals(mu.getVida(),90.0, 0.01);
     }
- 
+
 }
- 

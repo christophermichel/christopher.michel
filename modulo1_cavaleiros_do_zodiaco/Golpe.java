@@ -6,20 +6,20 @@ public class Golpe {
         this.nome = nome;
         this.fatorDano = fatorDano;
     }
-    
+
     public String getNomeDoGolpe() {
         return this.nome;
     }
-    
+
     public int getFatorDano() {
         return this.fatorDano;
     }
-    
+
     public boolean equals(Object object) {
         Golpe outroGolpe = (Golpe)object;
-        
+
         return 
-            this.nome.equals(outroGolpe.nome)
-            && this.fatorDano == outroGolpe.fatorDano;
+        this.nome.equals(outroGolpe.nome)
+        && this.fatorDano == outroGolpe.fatorDano;
     }
 }
