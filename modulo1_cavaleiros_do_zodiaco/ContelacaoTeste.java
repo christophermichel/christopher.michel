@@ -6,11 +6,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ContelacaoTeste {
-    @Test
-    public void criarUmaContelcao(){
-        Constelacao gemeos = new Constelacao("Gêmeos");
-        assertEquals("Gêmeos", gemeos.getNomeDaConstelacao());
-        }
+   @Test
+   public void criarUmaContelcao(){
+       Constelacao gemeos = new Constelacao("Gêmeos");
+       assertEquals("Gêmeos", gemeos.getNomeDaConstelacao());
+   }
        
         @Test
    public void adicionarUmGolpe() throws Exception{
