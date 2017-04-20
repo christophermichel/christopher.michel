@@ -157,6 +157,23 @@ public class ListaSaint {
         }
     }
 
+    public ArrayList<Saint> intersec (ArrayList listaNova) {
+        int i, j;
+        ArrayList<Saint> listaIguais = new ArrayList<>();
+        for (i=0; i<saints.size(); i++) {
+            boolean encontrado = false;
+            for (j=0; j<listaNova.size(); j++) {
+                if (saints.get(i).equals(listaNova.get(j))) {
+                    encontrado = true;
+                }
+            }
+            if (!encontrado) {
+                listaIguais.add(saints.get(i));
+            }
+        }
+        return listaIguais;
+    }
+    
     public ArrayList<Saint> diff (ArrayList listaNova) {
         int i, j;
         ArrayList<Saint> listaDiferentes = new ArrayList<>();
@@ -173,6 +190,5 @@ public class ListaSaint {
         }
         return listaDiferentes;
     }
-
     
 }
