@@ -101,7 +101,7 @@ public class ListaSaintTest {
         assertEquals(june, resultadoBusca.get(1));
         assertEquals(2, resultadoBusca.size());
     }
-    
+
     @Test
     public void buscarPorStatusListaVazia() {
         ListaSaint listaSaints = new ListaSaint();
@@ -155,7 +155,7 @@ public class ListaSaintTest {
         listaSaints.adicionaSaint(june);
         assertEquals(june, listaSaints.getSaintMaiorVida());
     }
-    
+
     @Test
     public void getSaintMaiorVidaComApenasTres() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
@@ -169,14 +169,14 @@ public class ListaSaintTest {
         june.perderVida(20);
         assertEquals(misty, listaSaints.getSaintMaiorVida());
     }
-    
+
     @Test
     public void getSaintMaiorVidaComListaVazia() {
         ListaSaint listaSaints = new ListaSaint();
         Saint maiorVida = listaSaints.getSaintMaiorVida();
         assertNull(maiorVida);
     }
-    
+
     @Test
     public void ordenarComListaTotalmenteDesordenada() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
@@ -195,7 +195,7 @@ public class ListaSaintTest {
         assertEquals(misty, resultado.get(1));
         assertEquals(shun, resultado.get(2));
     }
-    
+
     @Test
     public void ordenarComListaTotalmenteOrdenada() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
@@ -214,7 +214,7 @@ public class ListaSaintTest {
         assertEquals(misty, resultado.get(1));
         assertEquals(june, resultado.get(2));
     }
-    
+
     @Test
     public void ordenarComListaVazia() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
@@ -222,7 +222,7 @@ public class ListaSaintTest {
         ArrayList<Saint> resultado = listaSaints.getTodos();
         assertEquals(new ArrayList<Saint>(), resultado);
     }
-    
+
     @Test
     public void ordenarComListaApenasUm() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
@@ -236,7 +236,7 @@ public class ListaSaintTest {
         assertEquals(shun, resultado.get(0));
         assertEquals(1, resultado.size());
     }
-    
+
     @Test
     public void ordenarComListaDeValoresIguais() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
@@ -251,5 +251,65 @@ public class ListaSaintTest {
         assertEquals(shun, resultado.get(0));
         assertEquals(misty, resultado.get(1));
         assertEquals(june, resultado.get(2));
+    }
+    
+    @Test
+    public void ordenarListaEmModoDescendente() throws Exception {
+        ListaSaint listaSaints = new ListaSaint();
+        Saint mu = new BronzeSaint("Mu", new Armadura(new Constelacao("Dragão"), Categoria.BRONZE));
+        Saint seiya = new BronzeSaint("Seiya", new Armadura(new Constelacao("Pégaso"), Categoria.BRONZE));
+        Saint hyoga = new BronzeSaint("Hyoga", new Armadura(new Constelacao("Cisne"), Categoria.BRONZE));
+        listaSaints.adicionaSaint(mu);
+        listaSaints.adicionaSaint(seiya);
+        listaSaints.adicionaSaint(hyoga);
+        mu.perderVida(10);
+        seiya.perderVida(60);
+        hyoga.perderVida(80);
+        listaSaints.ordenar(TipoOrdenacao.ASCENDENTE);
+        ArrayList<Saint> resultadoOrdenacao = listaSaints.getTodos();
+
+        assertEquals(hyoga, resultadoOrdenacao.get(0));
+        assertEquals(seiya, resultadoOrdenacao.get(1));
+        assertEquals(mu, resultadoOrdenacao.get(2));
+    }
+    
+    @Test
+    public void ordenarListaEmModoAscendente() throws Exception {
+        ListaSaint listaSaints = new ListaSaint();
+        Saint shiryu = new BronzeSaint("Shiryu", new Armadura(new Constelacao("Dragão"), Categoria.BRONZE));
+        Saint seiya = new BronzeSaint("Seiya", new Armadura(new Constelacao("Pégaso"), Categoria.BRONZE));
+        Saint hyoga = new BronzeSaint("Hyoga", new Armadura(new Constelacao("Cisne"), Categoria.BRONZE));
+        listaSaints.adicionaSaint(shiryu);
+        listaSaints.adicionaSaint(seiya);
+        listaSaints.adicionaSaint(hyoga);
+        shiryu.perderVida(10);
+        seiya.perderVida(20);
+        hyoga.perderVida(30);
+        listaSaints.ordenar(TipoOrdenacao.ASCENDENTE);
+        ArrayList<Saint> resultadoOrdenacao = listaSaints.getTodos();
+
+        assertEquals(hyoga, resultadoOrdenacao.get(0));
+        assertEquals(seiya, resultadoOrdenacao.get(1));
+        assertEquals(shiryu, resultadoOrdenacao.get(2));
+    }
+    
+    @Test
+    public void getCSVComUmSaint() throws Exception {
+        ListaSaint listaSaints = new ListaSaint();
+        Saint mu = new SilverSaint("Mu", new Armadura(new Constelacao("Dragão"), Categoria.BRONZE));
+        listaSaints.adicionaSaint(mu);
+        listaSaints.getCSV();
+        //assertEquals("Mu,100.0,Dragão,BRONZE,VIVO,NAOINFORMADO,false", listaSaints.getCSV());
+    }
+    
+    @Test
+    public void getCSVComDoisSaint() throws Exception {
+        ListaSaint listaSaints = new ListaSaint();
+        Saint mu = new BronzeSaint("Mu", new Armadura(new Constelacao("Dragão"), Categoria.BRONZE));
+        Saint mu2 = new BronzeSaint("Mu2", new Armadura(new Constelacao("Áries"), Categoria.BRONZE));
+        listaSaints.adicionaSaint(mu);
+        listaSaints.getCSV();
+        //assertEquals("Mu,100.0,Dragão,Armadura@1e09bf8,VIVO,NAOINFORMADO,false", listaSaints.getCSV());
+        //assertEquals("Mu2,100.0,Áries,Armadura@1e09bf8,VIVO,NAOINFORMADO,false", listaSaints.getCSV());
     }
 }
