@@ -157,6 +157,27 @@ public class ListaSaint {
         }
     }
 
+    public ArrayList<Saint> unir (ArrayList listaNova) {
+        int i, j, k;
+        ArrayList<Saint> listaUnida = new ArrayList<>();
+        for (i=0; i<listaNova.size(); i++) {
+            boolean encontrado = false;
+            for (j=0; j<saints.size(); j++) {
+                if (listaNova.get(i).equals(saints.get(j))) {
+                    encontrado = true;
+                }
+            }
+            if (!encontrado) {
+                listaUnida.add(saints.get(i));
+            }
+        }
+        for (k=0; k<listaNova.size(); k++) {
+            adicionaSaint(saints.get(k));
+        
+        }
+        return listaUnida;
+    }
+
     public ArrayList<Saint> intersec (ArrayList listaNova) {
         int i, j;
         ArrayList<Saint> listaIguais = new ArrayList<>();
@@ -167,13 +188,13 @@ public class ListaSaint {
                     encontrado = true;
                 }
             }
-            if (!encontrado) {
+            if (encontrado) {
                 listaIguais.add(saints.get(i));
             }
         }
         return listaIguais;
     }
-    
+
     public ArrayList<Saint> diff (ArrayList listaNova) {
         int i, j;
         ArrayList<Saint> listaDiferentes = new ArrayList<>();
@@ -190,5 +211,5 @@ public class ListaSaint {
         }
         return listaDiferentes;
     }
-    
+
 }
