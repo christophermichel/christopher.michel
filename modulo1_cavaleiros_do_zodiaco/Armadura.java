@@ -20,4 +20,5 @@ public class Armadura {
     public ArrayList<Golpe> getGolpes(){
         return constelacao.getGolpes();
     }
+    
 }

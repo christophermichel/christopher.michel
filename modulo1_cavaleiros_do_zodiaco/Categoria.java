@@ -11,4 +11,5 @@ public enum Categoria
     public int getValor() {
         return this.valor;
     }
+    
 }
