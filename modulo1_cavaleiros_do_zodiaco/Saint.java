@@ -43,7 +43,10 @@ public class Saint {
     public boolean getArmaduraVestida() {
         return this.armaduraVestida;
     }
-
+    public String getNomeConstelacao() {
+        return this.armadura.getNomeConstelacao();
+    }
+    
     public String getNome() {
         return this.nome;
     }
@@ -59,15 +62,13 @@ public class Saint {
     public void setGenero(Genero genero) {
         this.genero = genero;
     }
-
+    
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+    
     public Status getStatus() {
         return this.status;
-    }
-
-    public void setStatus(Status status) {
-        if (this.status != Status.MORTO) {
-            this.status = status;
-        }
     }
 
     public double getVida(){

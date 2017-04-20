@@ -173,7 +173,7 @@ public class ListaSaint {
         }
         for (k=0; k<listaNova.size(); k++) {
             adicionaSaint(saints.get(k));
-        
+
         }
         return listaUnida;
     }
@@ -212,4 +212,13 @@ public class ListaSaint {
         return listaDiferentes;
     }
 
+    public String getCSV(){
+        StringBuilder stringCSV = new StringBuilder();
+        int i;
+        for(i=0; i<this.saints.size();i++){
+            Saint saint = this.saints.get(i);
+            stringCSV.append(saint.getNome()).append(",").append(saint.getVida()).append(",").append(saint.getNomeConstelacao()).append(",").append(saint.getArmadura()).append(",").append(saint.getStatus()).append(",").append(saint.getGenero()).append(",").append(saint.getArmaduraVestida());
+        }
+        return stringCSV.toString();
+    }
 }
