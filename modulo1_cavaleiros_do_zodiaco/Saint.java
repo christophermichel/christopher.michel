@@ -26,7 +26,7 @@ public abstract class Saint {
         this.armaduraVestida = true;
     }
 
-    public void perderVida (double dano) throws Exception {
+    public void perderVida (double dano) {
         if (dano < 0) {
             throw new InvalidParameterException ("Erro no dano");
         }
