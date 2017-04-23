@@ -11,6 +11,8 @@ public abstract class Saint {
     protected Categoria categoria=Categoria.BRONZE;
     protected int qtsSentidosDespertados;
     private int proximoGolpe = 0;
+    private int proximoMovimento = 0;
+    private ArrayList<Movimento> listaDeMovimentos = new ArrayList<>();
 
     public Saint(String nome, Armadura armadura) {
         this.nome = nome;
@@ -105,4 +107,13 @@ public abstract class Saint {
         return listaDeGolpes.get(posicao);
     }
 
+    public void adicionarMovimento(Movimento movimento) { 
+        listaDeMovimentos.add(movimento);
+    }
+    
+     public Movimento getProximoMovimento(){
+        int posicao = this.proximoMovimento % listaDeMovimentos.size();
+        this.proximoMovimento++;
+        return listaDeMovimentos.get(posicao);
+    }
 }
