@@ -3,19 +3,18 @@ import java.util.ArrayList;
 
 public abstract class Saint {
     private String nome;
-    private Armadura armadura;
+    protected Armadura armadura;
     private boolean armaduraVestida;
     private Genero genero = Genero.NAOINFORMADO;
     private Status status = Status.VIVO;
     private double vida = 100.0;
+    protected Categoria categoria=Categoria.BRONZE;
     protected int qtsSentidosDespertados;
     private int proximoGolpe = 0;
 
-    public Saint(String nome, Armadura armadura) throws Exception {
+    public Saint(String nome, Armadura armadura) {
         this.nome = nome;
         this.armadura = armadura;
-        this.genero = genero;
-        this.status = status;
     }
 
     public Armadura getArmadura() {

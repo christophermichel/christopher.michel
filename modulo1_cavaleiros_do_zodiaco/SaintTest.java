@@ -8,7 +8,7 @@ public class SaintTest {
     public void vestirArmaduraDeixaArmaduraVestida() throws Exception {
         // AAA
         // 1. Arrange - Montagem dos dados de teste
-        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", "Gêmeos");
         // 2. Act - Invocar a ação a ser testada
         mu.vestirArmadura();
         // 3. Assert - Verificação dos resultados do teste
@@ -19,7 +19,7 @@ public class SaintTest {
     @Test
     public void danoEstaFuncionando10() throws Exception {
         //1
-        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", "Gêmeos");
         //2
         mu.perderVida(10.0);
         //3
@@ -29,7 +29,7 @@ public class SaintTest {
     @Test
     public void danoEstaFuncionando100() throws Exception {
         //1
-        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", "Gêmeos");
         //2
         mu.perderVida(100.0);
         //3
@@ -39,7 +39,7 @@ public class SaintTest {
     @Test
     public void statusMortoCom0DeVida() throws Exception {
         //1
-        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", "Gêmeos");
         //2
         mu.perderVida(100.0);
         //3
@@ -49,7 +49,7 @@ public class SaintTest {
     @Test
     public void danoEstaFuncionando1000() throws Exception {
         //1
-        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", "Gêmeos");
         //2
         mu.perderVida(1000.0);
         //3
@@ -59,7 +59,7 @@ public class SaintTest {
     @Test
     public void aoCriarSaintVidaIniciaEm100() throws Exception {
         //1
-        Saint jabu = new BronzeSaint("Jabu", new Armadura (new Constelacao("Gêmeos"), Categoria.BRONZE));
+        Saint jabu = new BronzeSaint("Jabu", "Gêmeos");
         //3
         assertEquals(100.0, jabu.getVida(), 0.01);
     }
@@ -67,7 +67,7 @@ public class SaintTest {
     @Test
     public void naoVestirArmaduraDeixaArmaduraNaoVestida() throws Exception {
         //1
-        Saint saori = new SilverSaint("Saori", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint saori = new SilverSaint("Saori", "Gêmeos");
         //3
         assertEquals(false, saori.getArmaduraVestida());
     }
@@ -75,7 +75,7 @@ public class SaintTest {
     @Test
     public void aoCriarSaintGeneroENaoInformado() throws Exception {
         //1
-        Saint shaka = new BronzeSaint("Shaka", new Armadura (new Constelacao("Gêmeos"), Categoria.BRONZE));
+        Saint shaka = new BronzeSaint("Shaka", "Gêmeos");
         //3
         assertEquals(Genero.NAOINFORMADO, shaka.getGenero());
     }
@@ -83,7 +83,7 @@ public class SaintTest {
     @Test
     public void consigoTrocarDeGenero() throws Exception {
         //1
-        Saint mu = new BronzeSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.BRONZE));
+        Saint mu = new BronzeSaint("Mu", "Gêmeos");
         mu.setGenero(Genero.MASCULINO);
         assertEquals(Genero.MASCULINO, mu.getGenero());
     }
@@ -91,7 +91,7 @@ public class SaintTest {
     @Test
     public void naoAlteraStatusQuandoMorre() throws Exception {
         //1
-        Saint mu = new BronzeSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.BRONZE));
+        Saint mu = new BronzeSaint("Mu", "Gêmeos");
         mu.setStatus(Status.MORTO);
         mu.setStatus(Status.VIVO);
         assertEquals(Status.MORTO, mu.getStatus());
@@ -100,7 +100,7 @@ public class SaintTest {
     @Test
     public void aoCriarSaintStatusDeVidaEVivo() throws Exception {
         //1
-        Saint ikki = new BronzeSaint("Ikki", new Armadura (new Constelacao("Gêmeos"), Categoria.BRONZE));
+        Saint ikki = new BronzeSaint("Ikki", "Gêmeos");
         //3
         assertEquals(Status.VIVO, ikki.getStatus());
     }
@@ -108,7 +108,7 @@ public class SaintTest {
     @Test
     public void confirmarPesoDaArmadura() throws Exception {
         //1
-        Saint jabu = new BronzeSaint("Jabu", new Armadura (new Constelacao("Gêmeos"), Categoria.BRONZE));
+        Saint jabu = new BronzeSaint("Jabu", "Gêmeos");
         //3
         assertEquals(jabu.getCategoriaArmadura(), 1);
     }
@@ -121,19 +121,19 @@ public class SaintTest {
 
     @Test
     public void saintPrataTem6Sentidos() throws Exception {
-        SilverSaint seiya = new SilverSaint("Seiya", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        SilverSaint seiya = new SilverSaint("Seiya", "Gêmeos");
         assertEquals(6, seiya.getQtdSentidosDespertados());
     }
 
     @Test
     public void saintBronzeTem5Sentidos() throws Exception {
-        BronzeSaint seiya = new BronzeSaint("Seiya", new Armadura (new Constelacao("Gêmeos"), Categoria.BRONZE));
+        BronzeSaint seiya = new BronzeSaint("Seiya", "Gêmeos");
         assertEquals(5, seiya.getQtdSentidosDespertados());
     }
 
     @Test(expected = Exception.class)
     public void danoNaoPodeSerNegativo()throws Exception{
-        BronzeSaint seiya = new BronzeSaint("Seiya", new Armadura (new Constelacao("Gêmeos"),Categoria.BRONZE));
+        BronzeSaint seiya = new BronzeSaint("Seiya", "Gêmeos");
         seiya.perderVida(-10);
 
     }
