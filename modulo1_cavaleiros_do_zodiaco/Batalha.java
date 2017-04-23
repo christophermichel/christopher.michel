@@ -9,14 +9,22 @@ public class Batalha {
     }
 
     public void iniciar() throws Exception{
-        int valor1 = this.player1.getCategoriaArmadura();
-        int valor2 = this.player2.getCategoriaArmadura();
-        double dano = 10.;
-        if(valor1 >= valor2) { 
-            this.player2.perderVida(dano); 
+        boolean player1Ataca = player1.getCategoriaArmadura() >= player2.getCategoriaArmadura();
+        boolean ninguemMorreuAinda = true;
+        while (ninguemMorreuAinda) {
+            if (player1Ataca) {
+                this.player1.getProximoMovimento().executar();
+                if (player2.getStatus() == Status.MORTO) {
+                    ninguemMorreuAinda = false;
+                }
+            }
+            else {
+                this.player2.getProximoMovimento().executar();
+                if (player1.getStatus() == Status.MORTO) { 
+                    ninguemMorreuAinda = false;
+                }
+            }
+            player1Ataca = !player1Ataca;
         }
-        else {
-            this.player1.perderVida(dano);
-        }
-    }
+       }
 }
