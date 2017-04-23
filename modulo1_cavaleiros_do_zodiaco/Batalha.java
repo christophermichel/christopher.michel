@@ -10,21 +10,20 @@ public class Batalha {
 
     public void iniciar() throws Exception{
         boolean player1Ataca = player1.getCategoriaArmadura() >= player2.getCategoriaArmadura();
-        boolean ninguemMorreuAinda = true;
-        while (ninguemMorreuAinda) {
+        boolean ninguemMorreuAinda = player1.getStatus() == Status.MORTO || player2.getStatus() == Status.MORTO;
+        if (player1.getTemGolpes() || player2.getTemGolpes()) {
+            System.out.println("Algum jogador não possui golpes");
+        } else {
+        while (!ninguemMorreuAinda) {
             if (player1Ataca) {
                 this.player1.getProximoMovimento().executar();
-                if (player2.getStatus() == Status.MORTO) {
-                    ninguemMorreuAinda = false;
-                }
+                player1Ataca = false;
             }
             else {
-                this.player2.getProximoMovimento().executar();
-                if (player1.getStatus() == Status.MORTO) { 
-                    ninguemMorreuAinda = false;
-                }
+                this.player2.getProximoMovimento().executar(); 
+                player1Ataca = true;
             }
-            player1Ataca = !player1Ataca;
         }
-       }
+    }
+}
 }

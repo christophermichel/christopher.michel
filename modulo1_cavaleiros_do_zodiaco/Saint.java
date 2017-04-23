@@ -115,4 +115,8 @@ public abstract class Saint {
         this.proximoMovimento++;
         return listaDeMovimentos.get(posicao);
     }
+    
+    public boolean getTemGolpes() {
+        return armadura.getConstelacao().getGolpes().isEmpty();
+    }
 }
