@@ -8,7 +8,6 @@ public abstract class Saint {
     private Genero genero = Genero.NAOINFORMADO;
     private Status status = Status.VIVO;
     private double vida = 100.0;
-    protected Categoria categoria=Categoria.BRONZE;
     protected int qtsSentidosDespertados;
     private int proximoGolpe = 0;
     private int proximoMovimento = 0;
