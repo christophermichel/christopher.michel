@@ -9,7 +9,7 @@ public class ListaSaintTest {
 
     @Test
     public void adicionarSaintEmLista () throws Exception {
-        Saint mu = new Saint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint mu = new BronzeSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
         ListaSaint atenaList = new ListaSaint();
         atenaList.adicionaSaint(mu);
         assertEquals(mu, atenaList.getTodos().get(0));
@@ -24,7 +24,7 @@ public class ListaSaintTest {
 
     @Test
     public void removeSaintEmLista () throws Exception {
-        Saint mu = new Saint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
         ListaSaint atenaList = new ListaSaint();
         atenaList.adicionaSaint(mu);
         atenaList.removeSaint(mu);
@@ -33,9 +33,9 @@ public class ListaSaintTest {
 
     @Test
     public void buscarSaintPorNomeEmListaCom1Saint () throws Exception {
-        Saint mu = new Saint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
-        Saint seiya = new Saint("Seiya", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
-        Saint hyoga = new Saint("Hyoga", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint seiya = new SilverSaint("Seiya", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint hyoga = new SilverSaint("Hyoga", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
         ListaSaint atenaList = new ListaSaint();
         atenaList.adicionaSaint(hyoga);
         assertEquals(hyoga, atenaList.buscarPorNome("Hyoga"));
@@ -43,9 +43,9 @@ public class ListaSaintTest {
 
     @Test
     public void buscarSaintPorNomeComVariosSaintNaLista () throws Exception {
-        Saint hyoga = new Saint("Hyoga", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
-        Saint mu = new Saint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
-        Saint seiya = new Saint("Seiya", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint hyoga = new SilverSaint("Hyoga", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint seiya = new SilverSaint("Seiya", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
         ListaSaint atenaList = new ListaSaint();
         atenaList.adicionaSaint(seiya);
         atenaList.adicionaSaint(mu);
@@ -69,7 +69,7 @@ public class ListaSaintTest {
     @Test
     public void buscarPorCategoriaInexistente() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         listaSaints.adicionaSaint(june);
         ArrayList<Saint> resultadoBusca = listaSaints.buscarPorCategoria(Categoria.PRATA);
         assertEquals(new ArrayList<Saint>(), resultadoBusca);
@@ -78,7 +78,7 @@ public class ListaSaintTest {
     @Test
     public void buscarPorCategoriaExistente() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA));
         listaSaints.adicionaSaint(misty);
         listaSaints.adicionaSaint(june);
@@ -90,9 +90,9 @@ public class ListaSaintTest {
     @Test
     public void buscarPorCategoriaComMaisDeUmExistenteNaCategoria() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA));
-        Saint shun = new Saint("June", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
+        Saint shun = new BronzeSaint("June", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
         listaSaints.adicionaSaint(shun);
         listaSaints.adicionaSaint(misty);
         listaSaints.adicionaSaint(june);
@@ -112,7 +112,7 @@ public class ListaSaintTest {
     @Test
     public void buscarPorStatusInexistente() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         listaSaints.adicionaSaint(june);
         ArrayList<Saint> resultadoBusca = listaSaints.buscarPorStatus(Status.MORTO);
         assertEquals(new ArrayList<Saint>(), resultadoBusca);
@@ -121,7 +121,7 @@ public class ListaSaintTest {
     @Test
     public void buscarPorStatusExistente() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new SilverSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA));
         listaSaints.adicionaSaint(misty);
         listaSaints.adicionaSaint(june);
@@ -134,9 +134,9 @@ public class ListaSaintTest {
     @Test
     public void buscarPorStatusComMaisDeUmExistenteNaCategoria() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA));
-        Saint shun = new Saint("June", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
+        Saint shun = new BronzeSaint("June", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
         listaSaints.adicionaSaint(shun);
         listaSaints.adicionaSaint(misty);
         listaSaints.adicionaSaint(june);
@@ -151,7 +151,7 @@ public class ListaSaintTest {
     @Test
     public void getSaintMaiorVidaComApenasUm() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         listaSaints.adicionaSaint(june);
         assertEquals(june, listaSaints.getSaintMaiorVida());
     }
@@ -159,9 +159,9 @@ public class ListaSaintTest {
     @Test
     public void getSaintMaiorVidaComApenasTres() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA));
-        Saint shun = new Saint("June", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
+        Saint shun = new BronzeSaint("June", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
         listaSaints.adicionaSaint(shun);
         listaSaints.adicionaSaint(misty);
         listaSaints.adicionaSaint(june);
@@ -180,9 +180,9 @@ public class ListaSaintTest {
     @Test
     public void ordenarComListaTotalmenteDesordenada() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA));
-        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
+        Saint shun = new BronzeSaint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
         listaSaints.adicionaSaint(shun);
         listaSaints.adicionaSaint(misty);
         listaSaints.adicionaSaint(june);
@@ -199,9 +199,9 @@ public class ListaSaintTest {
     @Test
     public void ordenarComListaTotalmenteOrdenada() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA));
-        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
+        Saint shun = new BronzeSaint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
         listaSaints.adicionaSaint(shun);
         listaSaints.adicionaSaint(misty);
         listaSaints.adicionaSaint(june);
@@ -226,9 +226,9 @@ public class ListaSaintTest {
     @Test
     public void ordenarComListaApenasUm() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA));
-        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
+        Saint shun = new BronzeSaint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
         listaSaints.adicionaSaint(shun);
         shun.perderVida(30);
         listaSaints.ordenar();
@@ -240,9 +240,9 @@ public class ListaSaintTest {
     @Test
     public void ordenarComListaDeValoresIguais() throws Exception {
         ListaSaint listaSaints = new ListaSaint();
-        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        Saint june = new BronzeSaint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
         Saint misty = new SilverSaint("Misty", new Armadura(new Constelacao("Lagarto"), Categoria.PRATA));
-        Saint shun = new Saint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
+        Saint shun = new BronzeSaint("Shun", new Armadura(new Constelacao("Andrômeda"), Categoria.BRONZE));
         listaSaints.adicionaSaint(shun);
         listaSaints.adicionaSaint(misty);
         listaSaints.adicionaSaint(june);

@@ -6,8 +6,8 @@ import org.junit.Test;
 public class BatalhaTest {
     @Test
     public void testaSeTemAMesmaArmadura() throws Exception {
-        Saint hyoga = new Saint("Hyoga", new Armadura (new Constelacao("Gêmeos"),Categoria.OURO));
-        Saint mu = new Saint("Mu", new Armadura (new Constelacao("Touro"), Categoria.OURO));
+        Saint hyoga = new SilverSaint("Hyoga", new Armadura (new Constelacao("Libra"),Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Libra"), Categoria.PRATA));
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
         assertEquals(100.0, hyoga.getVida(), 0.01);
@@ -16,8 +16,8 @@ public class BatalhaTest {
 
     @Test
     public void armadura1MelhorQueArmadura2() throws Exception {
-        Saint hyoga = new Saint("Hyoga", new Armadura (new Constelacao("Gêmeos"),Categoria.OURO));
-        Saint mu = new Saint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.BRONZE));
+        Saint hyoga = new SilverSaint("Hyoga", new Armadura (new Constelacao("Gêmeos"),Categoria.PRATA));
+        Saint mu = new BronzeSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.BRONZE));
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
         assertEquals(100.0, hyoga.getVida(), 0.01);
@@ -26,19 +26,19 @@ public class BatalhaTest {
 
     @Test
     public void armadura2MelhorQueArmadura1() throws Exception {
-        Saint hyoga = new Saint("Hyoga", new Armadura (new Constelacao("Andrômeda"),Categoria.OURO));
-        Saint mu = new Saint("Mu", new Armadura (new Constelacao("Capricórnio"), Categoria.BRONZE));
+        Saint hyoga = new BronzeSaint("Hyoga", new Armadura (new Constelacao("Andrômeda"),Categoria.BRONZE));
+        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Capricórnio"), Categoria.PRATA));
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
-        assertEquals(90.0, mu.getVida(), 0.01);
-        assertEquals(100.0, hyoga.getVida(), 0.01);
+        assertEquals(100.0, mu.getVida(), 0.01);
+        assertEquals(90.0, hyoga.getVida(), 0.01);
 
     }
 
     @Test
     public void categoriasIguaisGanhaOPrimeiroASerChamadoParaBatalhaComecaAtacando() throws Exception {
-        Saint hyoga = new Saint("Hyoga", new Armadura (new Constelacao("Áries"),Categoria.PRATA));
-        Saint mu = new Saint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
+        Saint hyoga = new SilverSaint("Hyoga", new Armadura (new Constelacao("Áries"),Categoria.PRATA));
+        Saint mu = new SilverSaint("Mu", new Armadura (new Constelacao("Gêmeos"), Categoria.PRATA));
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
         assertEquals(mu.getVida(),90.0, 0.01);
