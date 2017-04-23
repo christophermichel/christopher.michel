@@ -14,6 +14,9 @@ public class Golpear implements Movimento{
             dano = dano * (1 + golpeador.getCategoria().getValor());
         } 
         golpeado.perderVida(dano); 
+        if (dano == 0) {
+            System.out.println("Dano do golpe é nulo");
+        }
     } 
 
 }

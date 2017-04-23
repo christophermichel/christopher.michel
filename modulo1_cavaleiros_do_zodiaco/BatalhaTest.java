@@ -11,7 +11,7 @@ public class BatalhaTest {
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
         assertEquals(100.0, hyoga.getVida(), 0.01);
-        assertEquals(90.0, mu.getVida(), 0.01);
+        assertEquals(100.0, mu.getVida(), 0.01);
     }
 
     @Test
@@ -21,7 +21,7 @@ public class BatalhaTest {
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
         assertEquals(100.0, hyoga.getVida(), 0.01);
-        assertEquals(90.0, mu.getVida(), 0.01);
+        assertEquals(100.0, mu.getVida(), 0.01);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class BatalhaTest {
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
         assertEquals(100.0, mu.getVida(), 0.01);
-        assertEquals(90.0, hyoga.getVida(), 0.01);
+        assertEquals(100.0, hyoga.getVida(), 0.01);
 
     }
 
@@ -41,7 +41,7 @@ public class BatalhaTest {
         Saint mu = new SilverSaint("Mu", "Gêmeos");
         Batalha batalha1 = new Batalha(hyoga, mu);
         batalha1.iniciar();
-        assertEquals(mu.getVida(),90.0, 0.01);
+        assertEquals(mu.getVida(),100.0, 0.01);
     }
 
 }
