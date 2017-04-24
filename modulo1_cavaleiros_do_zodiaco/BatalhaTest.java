@@ -5,80 +5,55 @@ import org.junit.Test;
 
 public class BatalhaTest {
     @Test
-    public void testaSeTemAMesmaArmadura() throws Exception {
-        Saint hyoga = new SilverSaint("Hyoga", "Libra");
-        Saint mu = new SilverSaint("Mu", "Libra");
-        Batalha batalha1 = new Batalha(hyoga, mu);
-        batalha1.iniciar();
-        assertEquals(100.0, hyoga.getVida(), 0.01);
-        assertEquals(100.0, mu.getVida(), 0.01);
+    public void categoriaSaint1MaiorQueSaint2() throws Exception {
+        // Arrange
+        Saint shaina = new SilverSaint("Shaina", "Serpente");
+        Saint hyoga = new BronzeSaint("Hyoga", "Cisne");
+        Batalha batalha = new Batalha(shaina, hyoga);
+        shaina.aprenderGolpe(new Golpe("Venha Cobra", 5));
+        shaina.golpear(hyoga);
+        hyoga.aprenderGolpe(new Golpe("Pó de diamante", 4));
+        hyoga.golpear(shaina);
+        // Act
+        batalha.iniciar();
+        // Assert
+        assertEquals(28, shaina.getVida(), 0.01);
+        assertEquals(0, hyoga.getVida(), 0.01);
     }
 
     @Test
-    public void armadura1MelhorQueArmadura2() throws Exception {
-        Saint hyoga = new SilverSaint("Hyoga", "Gêmeos");
-        Saint mu = new BronzeSaint("Mu", "Gêmeos");
-        Batalha batalha1 = new Batalha(hyoga, mu);
-        batalha1.iniciar();
-        assertEquals(100.0, hyoga.getVida(), 0.01);
-        assertEquals(100.0, mu.getVida(), 0.01);
+    public void categoriasIguaisSaint2PerdeVida() throws Exception {
+        // Arrange
+        Saint aldebaran = new GoldSaint("Aldebaran", "Touro");
+        Saint mascaraMorte = new GoldSaint("Máscara da Morte", "Câncer");
+        aldebaran.aprenderGolpe(new Golpe("Grande Chifre", 10));
+        aldebaran.adicionarMovimento(new VestirArmadura(aldebaran));
+        aldebaran.golpear(mascaraMorte);
+        mascaraMorte.aprenderGolpe(new Golpe("Ondas do Inferno", 10));
+        mascaraMorte.golpear(aldebaran);
+        Batalha batalha = new Batalha(mascaraMorte, aldebaran);
+        // Act
+        batalha.iniciar();
+        // Assert
+        assertEquals(40, aldebaran.getVida(), 0.01);
+        assertEquals(0, mascaraMorte.getVida(), 0.01);
     }
 
     @Test
-    public void armadura2MelhorQueArmadura1() throws Exception {
-        Saint hyoga = new BronzeSaint("Hyoga", "Andrômeda");
-        Saint mu = new SilverSaint("Mu", "Capricórnio");
-        Batalha batalha1 = new Batalha(hyoga, mu);
-        batalha1.iniciar();
-        assertEquals(100.0, mu.getVida(), 0.01);
-        assertEquals(100.0, hyoga.getVida(), 0.01);
-
+    public void categoriaSaint2MaiorSaint1PerdeVida() throws Exception {
+        // Arrange
+        Saint ikki = new BronzeSaint("Ikki", "Fênix");
+        Saint mascaraMorte = new GoldSaint("Máscara da Morte", "Câncer");
+        ikki.aprenderGolpe(new Golpe("Ave Fênix", 15));
+        ikki.adicionarMovimento(new VestirArmadura(ikki));
+        ikki.golpear(mascaraMorte);
+        mascaraMorte.aprenderGolpe(new Golpe("Ondas do Inferno", 10));
+        mascaraMorte.golpear(ikki);
+        Batalha batalha = new Batalha(ikki, mascaraMorte);
+        // Act
+        batalha.iniciar();
+        // Assert
+        assertEquals(20, ikki.getVida(), 0.01);
+        assertEquals(0, mascaraMorte.getVida(), 0.01);
     }
-
-    @Test
-    public void categoriasIguaisGanhaOPrimeiroASerChamadoParaBatalhaComecaAtacando() throws Exception {
-        Saint hyoga = new SilverSaint("Hyoga", "Áries");
-        Saint mu = new SilverSaint("Mu", "Gêmeos");
-        Batalha batalha1 = new Batalha(hyoga, mu);
-        batalha1.iniciar();
-        assertEquals(mu.getVida(),100.0, 0.01);
-    }
-
-    @Test
-    public void batalhaSemGolpes() throws Exception {
-        GoldSaint seiya = new GoldSaint("Seiya", "Escorpião");
-        BronzeSaint mu = new BronzeSaint("Mu", "Touro");
-        mu.adicionarMovimento(new Golpear(mu, seiya));
-        Batalha exemploBatalha = new Batalha(seiya, mu);
-        exemploBatalha.iniciar();
-        assertEquals(100, seiya.getVida(), 0.01);
-        assertEquals(100, mu.getVida(), 0.01);
-    }
-
-    @Test
-    public void batalhaSemDano() throws Exception {
-        GoldSaint seiya = new GoldSaint("Seiya", "Escorpião");
-        BronzeSaint mu = new BronzeSaint("Mu", "Touro");
-        Batalha exemploBatalha = new Batalha(seiya, mu);
-        exemploBatalha.iniciar();
-        assertEquals(100, seiya.getVida(), 0.01);
-        assertEquals(100, mu.getVida(), 0.01);
-    }
-
-    // @Test
-    // public void iniciarBatalhaComMovimentosDeDano() throws Exception {
-        // GoldSaint milo = new GoldSaint("Milo", "Escorpião");
-        // BronzeSaint ares = new BronzeSaint("Ares", "Touro");
-        // Golpe basico = new Golpe("Ataque básico", 10);
-        // milo.aprenderGolpe(basico);
-        // milo.adicionarMovimento(new VestirArmadura(milo));
-        // milo.adicionarMovimento(new Golpear(milo, ares));
-        // Golpe forte = new Golpe("Ataque básico", 50);
-        // ares.aprenderGolpe(forte);
-        // ares.adicionarMovimento(new Golpear(ares, milo));
-        // Batalha epicBattle = new Batalha(milo, ares);
-        // epicBattle.iniciar();
-        // assertEquals(0, milo.getVida(), 0.01);
-        // assertEquals(60, ares.getVida(), 0.01);
-    // }
 }

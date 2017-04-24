@@ -10,10 +10,10 @@ public class GolpearTest
         GoldSaint mu = new GoldSaint("Mu", "Escorpião");
         BronzeSaint june = new BronzeSaint("June", "Camaleão");
         Golpe tempestadeNebulosa = new Golpe("Tempestade Nebulosa", 10);
-        Golpear golpear = new Golpear(mu, june);
+        Movimento golpear = new Golpear(mu, june);
         
         mu.aprenderGolpe(tempestadeNebulosa);
-        mu.vestirArmadura();
+        new VestirArmadura(mu).executar();
         golpear.executar();
         
         assertEquals(60, june.getVida(), 0.01);
@@ -24,7 +24,7 @@ public class GolpearTest
         GoldSaint mu = new GoldSaint("Mu", "Escorpião");
         BronzeSaint june = new BronzeSaint("June", "Camaleão");
         Golpe tempestadeNebulosa = new Golpe("Tempestade Nebulosa", 10);
-        Golpear golpear = new Golpear(mu, june);
+        Movimento golpear = new Golpear(mu, june);
         
         mu.aprenderGolpe(tempestadeNebulosa);
         golpear.executar();
@@ -37,10 +37,10 @@ public class GolpearTest
         SilverSaint mu = new SilverSaint("Mu", "Escorpião");
         BronzeSaint june = new BronzeSaint("June", "Camaleão");
         Golpe tempestadeNebulosa = new Golpe("Tempestade Nebulosa", 10);
-        Golpear golpear = new Golpear(mu, june);
+        Movimento golpear = new Golpear(mu, june);
         
         mu.aprenderGolpe(tempestadeNebulosa);
-        mu.vestirArmadura();
+        new VestirArmadura(mu).executar();
         golpear.executar();
         
         assertEquals(70, june.getVida(), 0.01);
@@ -51,7 +51,7 @@ public class GolpearTest
         SilverSaint mu = new SilverSaint("Mu", "Escorpião");
         BronzeSaint june = new BronzeSaint("June", "Camaleão");
         Golpe tempestadeNebulosa = new Golpe("Tempestade Nebulosa", 10);
-        Golpear golpear = new Golpear(mu, june);
+        Movimento golpear = new Golpear(mu, june);
         
         mu.aprenderGolpe(tempestadeNebulosa);
         golpear.executar();
@@ -64,10 +64,10 @@ public class GolpearTest
         BronzeSaint mu = new BronzeSaint("Mu", "Escorpião");
         BronzeSaint june = new BronzeSaint("June", "Camaleão");
         Golpe tempestadeNebulosa = new Golpe("Tempestade Nebulosa", 10);
-        Golpear golpear = new Golpear(mu, june);
+        Movimento golpear = new Golpear(mu, june);
         
         mu.aprenderGolpe(tempestadeNebulosa);
-        mu.vestirArmadura();
+        new VestirArmadura(mu).executar();
         golpear.executar();
         
         assertEquals(80, june.getVida(), 0.01);
@@ -78,7 +78,7 @@ public class GolpearTest
         BronzeSaint mu = new BronzeSaint("Mu", "Escorpião");
         BronzeSaint june = new BronzeSaint("June", "Camaleão");
         Golpe tempestadeNebulosa = new Golpe("Tempestade Nebulosa", 10);
-        Golpear golpear = new Golpear(mu, june);
+        Movimento golpear = new Golpear(mu, june);
         
         mu.aprenderGolpe(tempestadeNebulosa);
         golpear.executar();
@@ -86,12 +86,11 @@ public class GolpearTest
         assertEquals(90, june.getVida(), 0.01);
     }
     
-    @Test
-    public void golpearComSaintSemGolpesAprendidos() {
-        SilverSaint marin = new SilverSaint("Marin", "Águia");
-        BronzeSaint june = new BronzeSaint("June", "Camaleão");
-        Golpear golpear = new Golpear(june, marin);
-        
-        assertEquals(100, marin.getVida(), 0.01);
+    @Test(expected=ArithmeticException.class)
+    public void naoGolpear() throws Exception {
+        Saint seiya = new BronzeSaint("Seiya", "Pégaso");
+        Saint aldebaran = new GoldSaint("Aldebaran", "Touro");
+        Movimento golpear = new Golpear(aldebaran, seiya);
+        golpear.executar();
     }
 }

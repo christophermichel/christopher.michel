@@ -119,4 +119,8 @@ public abstract class Saint {
     public boolean getTemGolpes() {
         return armadura.getConstelacao().getGolpes().isEmpty();
     }
+    
+    public void golpear(Saint golpeado) {
+        this.adicionarMovimento(new Golpear(this, golpeado));
+    }
 }
