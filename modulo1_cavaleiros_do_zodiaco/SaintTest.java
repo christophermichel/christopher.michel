@@ -6,6 +6,10 @@ import org.junit.Test;
 public class SaintTest {
     
     //Saint.zeraQtdSaints();
+    @After
+    public void tearDown() {
+        System.gc();
+    }
     
     @Test
     public void vestirArmaduraDeixaArmaduraVestida() throws Exception {
@@ -165,12 +169,16 @@ public class SaintTest {
     }
     
     @Test
-    public void funcaoEstaticaSaints()throws Exception{
-    int quantidade = Saint.getQtdSaints();
-    Saint seiya = new BronzeSaint("Seiya", "Andrômeda");
-    Saint mu = new BronzeSaint("Mu","Dragao");
-    assertEquals(quantidade+2, Saint.getQtdSaints());
+    public void criarUmSaintQtdSaintsDeveSerUmAMais() throws Exception {
+        Saint shun = new BronzeSaint("Shun", "Andrômeda");
+        assertEquals(1, Saint.getQtdSaints());
     }
- 
+    
+    @Test
+    public void criarDoisSaintQtdSaintsDeveSerDoisAMais() throws Exception {
+        Saint shun = new BronzeSaint("Shun", "Andrômeda");
+        Saint mu = new BronzeSaint("Mu", "Áries");
+        assertEquals(2, Saint.getQtdSaints());
+    }
 }
 

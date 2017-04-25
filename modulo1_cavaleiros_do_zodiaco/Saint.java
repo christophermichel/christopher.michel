@@ -22,6 +22,10 @@ public abstract class Saint {
         Saint.qtdSaints++;
     }
 
+    protected void finalize() throws Throwable {
+        Saint.qtdSaints--;
+    }
+    
     public Armadura getArmadura() {
         return this.armadura;
     }
