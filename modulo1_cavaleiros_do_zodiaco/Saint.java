@@ -12,10 +12,14 @@ public abstract class Saint {
     private int proximoGolpe = 0;
     private int proximoMovimento = 0;
     private ArrayList<Movimento> listaDeMovimentos = new ArrayList<>();
+    private static int qtdSaints = 0;
+    protected int id=0;
 
     public Saint(String nome, Armadura armadura) {
         this.nome = nome;
         this.armadura = armadura;
+        this.id = Saint.qtdSaints;
+        Saint.qtdSaints++;
     }
 
     public Armadura getArmadura() {
@@ -122,5 +126,17 @@ public abstract class Saint {
     
     public void golpear(Saint golpeado) {
         this.adicionarMovimento(new Golpear(this, golpeado));
+    }
+    
+    public static int getQtdSaints() {
+        return qtdSaints;
+    }
+    
+    public static void zeraQtdSaints() {
+        qtdSaints = 0;
+    }
+    
+    public int getId() {
+        return this.id;
     }
 }

@@ -4,6 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class SaintTest {
+    
+    //Saint.zeraQtdSaints();
+    
     @Test
     public void vestirArmaduraDeixaArmaduraVestida() throws Exception {
         // AAA
@@ -160,5 +163,14 @@ public class SaintTest {
         hyoga.getProximoMovimento();
         assertEquals(vestirArmadura, hyoga.getProximoMovimento());
     }
+    
+    @Test
+    public void funcaoEstaticaSaints()throws Exception{
+    int quantidade = Saint.getQtdSaints();
+    Saint seiya = new BronzeSaint("Seiya", "Andrômeda");
+    Saint mu = new BronzeSaint("Mu","Dragao");
+    assertEquals(quantidade+2, Saint.getQtdSaints());
+    }
+ 
 }
 
