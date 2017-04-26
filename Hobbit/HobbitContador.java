@@ -18,14 +18,25 @@ public class HobbitContador {
             boolean achouMMC = false;
             int produto = par.get(0) * par.get(1);
             int j=1;
-            while (!achouMMC) {
-                if (j%par.get(0)== 0 && j!=par.get(0) && j%par.get(1)==0 && j!=par.get(1)) {
-                    MMC = j;
-                    achouMMC = true;
-                    resultado = produto - MMC;
-                    resultados.add(resultado);
-                } else {
-                    j++;
+            if(par.get(0) > par.get(1) && par.get(0)% par.get(1) == 0) {
+                MMC = par.get(0);
+                resultado = produto - MMC;
+                resultados.add(resultado);
+            }
+            if(par.get(1) > par.get(0) && par.get(1)% par.get(0) == 0) {
+                MMC = par.get(1);
+                resultado = produto - MMC;
+                resultados.add(resultado);
+            } else {
+                while (!achouMMC) {
+                    if (j%par.get(0)== 0 && j!=par.get(0) && j%par.get(1)==0 && j!=par.get(1)) {
+                        MMC = j;
+                        achouMMC = true;
+                        resultado = produto - MMC;
+                        resultados.add(resultado);
+                    } else {
+                        j++;
+                    }
                 }
             }
         }
