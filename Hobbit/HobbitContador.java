@@ -2,8 +2,13 @@ import java.util.*;
 public class HobbitContador {
 
     private int produtoMenosMMC = 0;
-    
-    public int soma(ArrayList<ArrayList<Integer>> arrayDePares) {
+    private ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
+
+    public HobbitContador(ArrayList<ArrayList<Integer>> arrayDePares) {
+        this.arrayDePares = arrayDePares;
+    }
+
+    public int arrayDePares(ArrayList<ArrayList<Integer>> arrayDePares) {
         ArrayList<Integer> resultados = new ArrayList<>();
         int resultado;
         int MMC;
@@ -23,10 +28,10 @@ public class HobbitContador {
                 }
             }
         }
-        
+
         for(int k=0; k<resultados.size();k++) {
             produtoMenosMMC = produtoMenosMMC + resultados.get(k);
         }
-    return produtoMenosMMC;
+        return produtoMenosMMC;
     }
 }
