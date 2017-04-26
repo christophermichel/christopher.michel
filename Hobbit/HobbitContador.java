@@ -35,8 +35,8 @@ public class HobbitContador {
         }
         return produtoMenosMMC;
     }
-    
-    public int obterMaiorMultiploDeTres (int numero) {
+
+    public int maiorMultiploDeTres (int numero) {
         boolean multiploDeTres = false;
         int maiorMultiplo = 0;
         if (numero < 3) {
@@ -53,5 +53,16 @@ public class HobbitContador {
             }
         }
         return maiorMultiplo;
+    }
+
+    public ArrayList<Integer> multiplosDeTres (Integer numero) {
+        ArrayList<Integer> multiplosReunidos = new ArrayList<>();
+        numero = numero;
+        for(int i=0; i <= numero; i++) {
+            if (numero%3 == 0 && numero > 2) {
+                multiplosReunidos.add(numero);
+            }
+        }    
+        return multiplosReunidos;
     }
 }
