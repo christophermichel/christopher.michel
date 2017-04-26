@@ -35,4 +35,23 @@ public class HobbitContador {
         }
         return produtoMenosMMC;
     }
+    
+    public int obterMaiorMultiploDeTres (int numero) {
+        boolean multiploDeTres = false;
+        int maiorMultiplo = 0;
+        if (numero < 3) {
+            System.out.println("Número inválido");
+        }
+        else{
+            while (!multiploDeTres) {
+                if (numero%3 == 0) {
+                    maiorMultiplo = numero;
+                    multiploDeTres = true;
+                } else {
+                    numero--;
+                }
+            }
+        }
+        return maiorMultiplo;
+    }
 }

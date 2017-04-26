@@ -7,7 +7,7 @@ import java.util.*;
 public class HobbitContadorTest {
 
     @Test
-    public void com1Par() {
+    public void CalculaDiferencaCom1Par() {
         HobbitContador bilbo = new HobbitContador("Bilbo");
         ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
         arrayDePares.add(new ArrayList<>(Arrays.asList(2, 3)));
@@ -16,7 +16,7 @@ public class HobbitContadorTest {
     }
     
     @Test
-    public void com2Pares() {
+    public void calculaDiferencaCom2Pares() {
         HobbitContador bilbo = new HobbitContador("Bilbo");
         ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
         arrayDePares.add(new ArrayList<>(Arrays.asList(3, 10)));
@@ -26,10 +26,34 @@ public class HobbitContadorTest {
     }
     
     @Test
-    public void semPares() {
+    public void calculaDiferencaSemPares() {
         HobbitContador bilbo = new HobbitContador("Bilbo");
         ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
         
         assertEquals(0, bilbo.calculaDiferenca(arrayDePares));
+    }
+    
+    @Test
+    public void maiorMultiploNumeroMaiorQueTres() {
+        HobbitContador bilbo = new HobbitContador("Bilbo");
+        int teste = bilbo.obterMaiorMultiploDeTres(20);
+        
+        assertEquals(18, teste);
+    }
+    
+    @Test
+    public void maiorMultiploNumeroTres() {
+        HobbitContador bilbo = new HobbitContador("Bilbo");
+        int teste = bilbo.obterMaiorMultiploDeTres(3);
+        
+        assertEquals(3, teste);
+    }
+    
+    @Test
+    public void maiorMultiploNumeroMenorQueTres() {
+        HobbitContador bilbo = new HobbitContador("Bilbo");
+        int teste = bilbo.obterMaiorMultiploDeTres(2);
+        
+        assertEquals(0, teste);
     }
 }
