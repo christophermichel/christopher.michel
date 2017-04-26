@@ -2,13 +2,14 @@ import java.util.*;
 public class HobbitContador {
 
     private int produtoMenosMMC = 0;
+    private String nome;
     private ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
 
-    public HobbitContador(ArrayList<ArrayList<Integer>> arrayDePares) {
-        this.arrayDePares = arrayDePares;
+    public HobbitContador(String nome) {
+        this.nome = nome;
     }
 
-    public int arrayDePares(ArrayList<ArrayList<Integer>> arrayDePares) {
+    public int calculaDiferenca(ArrayList<ArrayList<Integer>> arrayDePares) {
         ArrayList<Integer> resultados = new ArrayList<>();
         int resultado;
         int MMC;
