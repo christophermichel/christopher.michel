@@ -3,7 +3,10 @@ SELECT * INTO CidadeAux FROM Cidade ;
 Truncate table CidadeAux;
 
 -- Copiar valores da Tabela Cidade onde o estado é RS
-INSERT INTO CidadeAux SELECT * FROM Cidade WHERE uf = 'RS';
+INSERT INTO CidadeAux (IDCidade, Nome, UF)
+	SELECT IDCidade, Nome, UF
+	FROM Cidade 
+	WHERE uf = 'RS';
 
 select * from CidadeAux;
 
@@ -16,7 +19,7 @@ Create table InfoProdutos
   DataDaCriacao         date not null,
   LocalnoEstoque        varchar(10) not null,
   Quantidade			int not null,
-  Preco                 decimal (10) not null,
+  Preco                 decimal (7,3) not null,
     constraint PK_InfoProdutos primary key (Codigo)
 );	
 -- Inserir valores na tabela
