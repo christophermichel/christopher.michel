@@ -3,7 +3,12 @@ Exercício 1
 Primeiro nome
 Lista qual o primeiro nome mais popular entre os clientes, considere apenas o primeiro nome.
 */
-
+SELECT TOP 1 
+LEFT([Nome],CHARINDEX(' ',[Nome] + ' ')-1)  AS [Primeiro Nome],
+Count(1) AS [Total de Ocorrências]
+FROM CLIENTE
+GROUP BY (LEFT([Nome],CHARINDEX(' ',[Nome] + ' ')-1))
+ORDER BY Count(1)DESC;
 /*
 Exercício 2
 Total do Mês
