@@ -34,22 +34,25 @@ SELECT * INTO EmpregadoAux from Empregado;
 BEGIN Transaction
 go
 
-UPDATE EmpregadoAux
-Set Salario = emp.Salario*1.173
-From Empregado emp
-INNER JOIN Departamento dep on emp.IDDepartamento = dep.IDDepartamento
-Where dep.Localizacao = 'SAO PAULO';
+UPDATE Empregado
+Set Salario = Salario*1.173
+From Empregado
+INNER JOIN Departamento on Empregado.IDDepartamento = Departamento.IDDepartamento
+Where Departamento.Localizacao = 'SAO PAULO';
 
-select*
-from EmpregadoAux;
 
-select*
-from Empregado;
 /*Exercício 4
 
 Cidades duplicadas
 
 Liste todas as cidades duplicadas (nome e UF iguais).*/
+
+SELECT COUNT(1) as [Cidades Iguais],
+		Nome as [Cidade], 
+		UF as [Estado] 
+FROM CIDADE 
+GROUP BY Nome,uf
+having COUNT(1) >= 2
 
 
 /*Exercício 5
@@ -61,3 +64,15 @@ Faça uma alteraçao nas cidades que tenham nome+UF duplicados, adicione no final 
 Explicação adicional - VIEW
 
 Para reaproveitar uma consulta SQL um dos recursos oferecidos é a criação de VIEWS. Neste recurso o comando SQL é salvo no dicionário de dados do SGBD e pode ser reutilizado novamente. */
+
+BEGIN TRANSACTION
+UPDATE Cidade 
+SET Nome = Nome + '*'
+WHERE Nome IN (SELECT Nome as [Nome Da Cidade] 
+FROM Cidade 
+GROUP BY Nome
+having Count(1) >= 2) 
+AND IDCidade in (Select Max(IDCidade) 
+				From Cidade 
+				Group by Nome 
+				Having Nome = Cidade.Nome);
