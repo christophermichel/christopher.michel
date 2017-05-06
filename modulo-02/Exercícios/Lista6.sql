@@ -25,7 +25,19 @@ Estados x Clientes
 Identifique qual o estado (coluna UF da tabela Cidade) possuí o maior número de clientes 
 (tabela Cliente), liste também qual o Estado possuí o menor número de clientes.
 */
-
+select * 
+from (select Top 1 cid.UF, count(cli.idCliente) as TotalClientes
+				from cidade cid
+				inner join cliente cli on cli.IDCidade = cid.IDCidade
+				group by cid.uf
+				order by TotalClientes) as Top1Asc
+union
+select * 
+from (select Top 1 cid.UF, count(cli.idCliente) as TotalClientes
+				from cidade cid
+				inner join cliente cli on cli.IDCidade = cid.IDCidade
+				group by cid.uf
+				order by TotalClientes desc) as Top1Desc;
 /*
 Exercício 4
 Novo Produto
@@ -55,3 +67,10 @@ Exercício 6
 Principais Produtos
 Liste os 30 produtos que mais geraram lucro em 2016.
 */
+select top 30 Sum(PedI.Quantidade * (PedItem.PrecoUnitario -Pro.PrecoCusto)) as Lucro, Pro.Nome 
+  from PedidoItem PedItem
+  inner join Produto as Pro on Pro.IDProduto = PedItem.IDProduto
+  inner join Pedido as Ped on Ped.IDPedido = PedItem.IDPedido
+  and year(Ped.DataEntrega) = 2016 
+  group by Pro.Nome  
+  order by lucro desc;
