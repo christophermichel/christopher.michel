@@ -14,6 +14,7 @@ public abstract class Saint {
     private ArrayList<Movimento> listaDeMovimentos = new ArrayList<>();
     private static int qtdSaints = 0, acumuladorQtdSaints = 0;
     private int id;
+    protected boolean naoVaiTomarDano;
 
     public Saint(String nome, Armadura armadura) {
         this.nome = nome;

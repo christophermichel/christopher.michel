@@ -7,15 +7,22 @@ public class Golpear implements Movimento{
         this.golpeado = golpeado; 
     } 
 
-    public void executar() { 
-        int dano = golpeador.getProximoGolpe().getFatorDano(); 
-        if (golpeador.getArmaduraVestida()) { 
-            dano = dano * (1 + golpeador.getCategoria().getValor());
-        } 
-        this.golpeado.perderVida(dano); 
-        if (dano == 0) {
-            System.out.println("Dano do golpe é nulo");
+    public void executar() {
+        int danoDoGolpe = golpeador.getProximoGolpe().getFatorDano();
+        if(golpeado.naoVaiTomarDano == false){
+            if (golpeador.getArmaduraVestida() == true) {
+                danoDoGolpe  = danoDoGolpe*(1 + golpeador.getCategoriaArmadura());
+            }
+            this.golpeado.perderVida(danoDoGolpe);
         }
-    } 
-        
+        else{ 
+            this.golpeador.perderVida(golpeador.getVida() * 0.25);
+            golpeado.naoVaiTomarDano = false;
+        }
+    }
+
+    public boolean equals(Object outro){
+        Golpear outroGolpear =(Golpear)outro;
+        return this.golpeador.equals(outroGolpear.golpeador) && this.golpeado.equals(outroGolpear.golpeado);
+    }    
 }

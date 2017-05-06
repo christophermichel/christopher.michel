@@ -8,18 +8,24 @@ public class AtaqueDuplo implements Movimento {
     }
 
     public void executar () {
-        if(new DadoD3().sortear() == 2) {
-            int dano = golpeador.getProximoGolpe().getFatorDano(); 
-            if (golpeador.getArmaduraVestida()) { 
-                dano = dano * (1 + golpeador.getCategoria().getValor());
-            } 
-            this.golpeado.perderVida(2*dano); 
-            if (dano == 0) {
-                System.out.println("Dano do golpe é nulo");
+        Sorteador comDadoD3 = new DadoD3();
+        AcertoCritico acertoCritico = new AcertoCritico(comDadoD3);
+        int danoDoGolpe= golpeador.getProximoGolpe().getFatorDano();
+        if(golpeado.naoVaiTomarDano==false){
+            if(acertoCritico.isCriticalHit()){
+                if (golpeador.getArmaduraVestida() == true) {
+                    danoDoGolpe  *= (1 + golpeador.getCategoriaArmadura());
+                }
+                this.golpeado.perderVida(2*danoDoGolpe);
             }
-        } else {
-            new Golpear(golpeador, golpeado).executar();
-            golpeador.perderVida(golpeador.getVida() * 0.05);
+            else {
+                golpeador.perderVida(golpeador.getVida()*0.05);
+                this.golpeado.perderVida(danoDoGolpe);
+            }
+        }
+        else {
+            golpeador.perderVida(0.25*golpeador.getVida());
+            golpeado.naoVaiTomarDano = false;
         }
     }
 }
