@@ -14,38 +14,29 @@ body{
   width: 100%;
 }
 
-.coluna1 {
+.coluna {
   display: inline-block;
-  width: 25%;
-  height: 100%;
-  background-color: red;
   font-size: initial;
   border: solid 2px;
+  height: 100%;
+}
+
+.coluna1 {
+  width: 25%;
+  background-color: red;
 }
 
 .coluna2 {
-  display: inline-block;
   width: 50%;
-  height: 100%;
   background-color: blue;
-  font-size: initial;
-  border: solid 2px;
 }
 
 .coluna3 {
-  display: inline-block;
   width: 100%;
-  height: 100%;
   background-color: purple;
-  font-size: initial;
-  border: solid 2px;
 }
 
 .coluna4 {
-  display: inline-block;
   width: 10%;
-  height: 100%;
   background-color: yellow;
-  font-size: initial;
-  border: solid 2px;
 }
