@@ -28,8 +28,6 @@ body{
   display: inline-block;
   font-size: initial;
   border: 20px;
-  min-height: 80%;
-  text-align: center;
   border: solid 2px;
   margin-top: 3%;
   background-color: white;
@@ -47,6 +45,55 @@ body{
   margin-left: 2%;
 }
 
-.titulo{
+.embaixo{
+  width: 40%;
+  margin-left: 52%;
+}
 
+.texto{
+  margin: 4%;
+}
+.titulo{
+  font-size: 30px;
+  text-align: left;
+  font-weight: bold;
+  color: #c4170c;
+  line-height: 1;
+}
+
+.subtitulo{
+  color:#bbb;
+  font-size: 15px;
+}
+
+.conteudo{
+  color:#333;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.imagem{
+  display: inline-block;
+  width: 30%auto;
+}
+
+.inicio_texto {
+  display: inline-block;
+  width: 70%;
+}
+.primeirochar{
+  color:  #c4170c;
+  float: left;
+  font-size: 50px;
+  line-height: 40px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  text-transform:uppercase;
+}
+
+.data{
+  color:#ccc;
+  font-size: 15px;
+  text-align: right;
 }
