@@ -74,3 +74,15 @@ p,h1{
   padding-bottom: 60px;
   padding-left: 20px;
 }
+
+.foto{
+    height:45%;
+    width:38%;
+    margin-right:12px;
+    position:relative;
+    float:left;
+    clear:both;
+    padding-right: 30px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+}
