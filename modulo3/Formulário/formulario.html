@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title>Formulário</title>
+    <meta charset="utf-8"></meta>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+      <style>
+        .container-fluid {
+        height: 100vh;
+        margin-left: 6%;
+        margin-bottom: 10px;
+        }
+        .titulo{
+          font-size: 45px;
+          padding-top: 20px;
+          padding-bottom: 45px;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 titulo">
+          Formulário de Cadastro
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1"><strong>Nome Completo</strong></label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ex.: João">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1"><strong>Email</strong></label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ex.: email@email.com">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1"><strong>Data de Nascimento</strong></label>
+            <input type="date" class="form-control" id="exampleInputEmail1">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label><strong>Estado</strong></label>
+          <select class="form-control">
+            <option hidden>Selecione a cidade</option>
+            <option>Rio Grande do Sul</option>
+            <option>Bahia</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1"><strong>Cidade</strong></label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ex.: João">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label><strong>Sexo</strong></label>
+          <select class="form-control">
+            <option hidden>Selecione o sexo</option>
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12 text-right" >
+          <input type="submit" class="btn btn-primary"> </input>
+          <input type="reset" class="btn btn-primary"> </input>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
