@@ -8,6 +8,9 @@ body{
   background-size:100%;
   background-repeat:no-repeat;
 }
+.clearfix {
+  overflow: auto;
+}
 
 .menu {
   width: 100%;
