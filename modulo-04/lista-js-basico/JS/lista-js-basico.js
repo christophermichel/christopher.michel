@@ -26,3 +26,21 @@ function maiorTexto(a) {
 
 console.log(maiorTexto(["ie aihf aoefh oa","odhif aiofh", "aehioaehfioaehfiaohfiohioahfiohfiehieoh"]))
 console.log(maiorTexto(["","ja"]))
+
+//Exercício 3
+function imprime(arrayDeStrings, funcao) {
+    if(typeof funcao !== "function")
+      return console.log("Isso não é uma função");
+    for(var i = 0; i < arrayDeStrings.length; i++)
+        funcao(arrayDeStrings[i]);
+}
+
+//Exercício 4
+function somaDiferentona(a) {
+    return function(b) {
+        return parseInt(a) + parseInt(b);
+    };
+}
+
+console.log("Soma Diferentona de (3)(4) é: ",somaDiferentona(3)(4));
+console.log("Soma Diferentona de (5642)(8749) é: ",somaDiferentona(5642)(8749));
