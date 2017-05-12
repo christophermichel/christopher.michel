@@ -7,6 +7,13 @@ function daisyGame(a) {
   }
   else {
     console.log("Love me")
+
+/* Método "mais excêntrico"
+ function daisyGame(numero){
+ var impar = numero % 2 !== 0
+ return `Love me ${impar ? '' : 'not'}`
+}
+*/
   }
 }
 
@@ -59,16 +66,15 @@ function fibonacci(a){
     }
 }
 
-/*function fiboSum(numeroDeTermos){
-  var soma = 0;
-  for(var i = 1, i<numeroDeTermos, i++) {
-    soma = soma + fibonacci(i);
+function fiboSum(numeroDeTermos){
+  if (n === 1) {
+    return 1;
   }
-  return soma
-}*/
+  return fibonacci(n) + fiboSum(n-1);
+}
 
 //Exercício 6
-
+/*
 function bubbleSort(a) {
     var trocarposicoes;
     var a = a;
@@ -87,9 +93,11 @@ function bubbleSort(a) {
 
 function queroCafe (mascada, precos)
   var precos = precos;
+  var possiveis;
   for(i=0, i<precos.length, i++) {
     if(precos[i] <= mascada)
-        possiveis.push(precos[i]);
+       possiveis.push(precos[i]);
   }
   return bubbleSort(possiveis).toString();
 }
+*/
