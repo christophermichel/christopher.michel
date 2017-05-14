@@ -56,9 +56,9 @@ console.log("Exercício 4: Teste false - " + procurarPorNome(series,"Christopher
 
 //Exercício 5
 
-function MascadaEmSerie(serie) {
-	var pagamentoFinal;
-	for(atores of serie.eleco){
+function mascadaEmSerie(serie) {
+	var pagamentoFinal = 0;
+	for(atores of serie.elenco){
 		pagamentoFinal += 40000;
 	}
 	for(atores of serie.diretor){
@@ -66,3 +66,30 @@ function MascadaEmSerie(serie) {
 	}
 	return pagamentoFinal;
 }
+console.log(("Exercício 5: " + mascadaEmSerie(series[5])));
+console.log(("Exercício 5: " + mascadaEmSerie(series[7])));
+
+//Exercício 6 A
+
+function queroGenero(genero) {
+	var seriesPorGenero = Array();
+		for(serie of series) {
+			for(a of series.genero){
+				if(genero === generos) {
+					seriesPorGenero.push(serie.titulo);
+				}
+			}
+		}
+	return seriesPorGenero;
+}
+
+//Exercício 6 B
+
+function queroTitulo(titulo) {
+    var filtro = function(serie) {
+        return (serie.titulo.toLowerCase()).includes(titulo.toLowerCase());
+    };
+    return series.filter(filtro);
+}
+console.log("Exercício 6B: ", queroTitulo("of"));
+console.log("Exercício 6B: ", queroTitulo("The"));
