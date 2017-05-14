@@ -93,3 +93,32 @@ function queroTitulo(titulo) {
 }
 console.log("Exercício 6B: ", queroTitulo("of"));
 console.log("Exercício 6B: ", queroTitulo("The"));
+
+//Exercício 8
+
+function atoresIlluminati(series){
+	var atores = Array();
+  for(serie of series){
+    var nomesAbreviados = 0;
+    for(ator of serie.elenco){
+      if(ator.includes(".")) {
+        nomesAbreviados++;
+      	if(nomesAbreviados === serie.elenco.length) {
+					for(ator of serie.elenco){
+						atores.push(ator)
+					}
+        }
+      }
+    }
+  }
+  return atores;
+}
+
+function fraseIlluminati(atores) {
+	var stringFinal = "#"
+	for(ator of atores) {
+		var letra = ator.charAt(ator.indexOf(".")-1);
+		stringFinal = stringFinal + letra;
+	}
+	return stringFinal;
+}
