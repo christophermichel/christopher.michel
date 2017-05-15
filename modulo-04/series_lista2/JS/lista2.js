@@ -1,17 +1,14 @@
 //Exercício 1
 function seriesInvalidas(series) {
-  var seriesQueNaoDevemAparecer = new Array;
-  series
-  .forEach(i => {
-     if(i.anoEstreia > new Date().getFullYear()) {
-       seriesQueNaoDevemAparecer.push(i.titulo)
-      }
-    });
-  return "Séries Inválidas: " + seriesQueNaoDevemAparecer.join(" - ");
+  let invalidas = series.filter(serie => {
+    // for (let campo in serie) { }
+    let algumCampoInvalido = Object.values(serie).some(v => v === null || typeof v === 'undefined');
+    let estreiaInvalida = serie.anoEstreia > new Date().getFullYear();
+    return estreiaInvalida || algumCampoInvalido;
+  });
+  return `Séries Inválidas: ${ invalidas.map(s => s.titulo).join(" - ") }`;
 }
 console.log("Exercicio 1: " + seriesInvalidas(series));
-
-
 
 //Exercício 2
 function seriesPorAno(series,ano) {
@@ -93,6 +90,27 @@ function queroTitulo(titulo) {
 }
 console.log("Exercício 6B: ", queroTitulo("of"));
 console.log("Exercício 6B: ", queroTitulo("The"));
+
+//Exercício 7
+
+String.prototype.pegarUltimoNome = function(a, b) {
+  let partesNome = this.trim().split(" ");
+  return partesNome[partesNome.length - 1];
+}
+
+function creditosIlluminatis(serie) {
+  let criterioDeOrdenacao = (s1, s2) => {
+    return s1.pegarUltimoNome().localeCompare(s2.pegarUltimoNome())
+  }
+  let elencoOrdenado = serie.elenco.sort(criterioDeOrdenacao);
+  let diretoresOrdenados = serie.diretor.sort(criterioDeOrdenacao);
+
+  console.log(serie.titulo);
+  console.log("Diretores");
+  console.log(diretoresOrdenados);
+  console.log("Elenco");
+  console.log(elencoOrdenado);
+}
 
 //Exercício 8
 
