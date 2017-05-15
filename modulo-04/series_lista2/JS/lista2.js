@@ -118,7 +118,7 @@ function fraseIlluminati(atores) {
 	var stringFinal = "#"
 	for(ator of atores) {
 		var letra = ator.charAt(ator.indexOf(".")-1);
-		stringFinal = stringFinal + letra;
+		stringFinal = stringFinal.concat(letra);
 	}
 	return stringFinal;
 }
