@@ -1,0 +1,22 @@
+<html ng-app="aula1">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémon</title>
+    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script src="JS/pokemon.js"></script>
+</head>
+
+<body>
+    <div ng-controller="a">
+        <label></label>
+        <input ng-model="pokemon.nome" type="text" >
+        <h1>{{digitarPokemon}}</h1>
+        <h1>Nome: {{pokemon.nome}}</h1>
+        <input ng-model="pokemon.tipo" type="text" >
+        <h1>Tipo: {{pokemon.tipo}}</h1>
+    </div>
+    
+</body>
+
+</html>
