@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="pokemon.css">
+    </head>
+    <body>
+      <div class="container">
+        <div class="titulo">BUSCAR POKÉMON</div>
+        <form id="pokemonASerBuscado" onsubmit="event.preventDefault(); buscarPokemon();">
+            <input name="id" type="number" min="1" required>
+            <input name="submitBt" type="submit" value="Buscar">
+        </form>
+        <div id="resultado"></div>
+        <script type="text/javascript" src="JS/pokemon.js"></script>
+      </div>
+    </body>
+</html>
