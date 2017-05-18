@@ -1,6 +1,6 @@
 var aula2 = angular.module('aula2',[]);
 
-aula2.controller('buscarPorData', function($scope) {
+aula2.controller('buscarPorData', function($scope, $filter) {
   $scope.dataRecebida = "";
   $scope.funcaoData = funcaoData;
   $scope.data = data;
@@ -14,6 +14,6 @@ aula2.controller('buscarPorData', function($scope) {
 
   var funcaoData = function(a, b, c) {
     var array = [b, a, c];
-    var stringDaData = a.split(/);
-    var data = new Date(stringDaData);
+    var stringDaData = a.split(.);
+    $scope.data = new Date(stringDaData);
 });

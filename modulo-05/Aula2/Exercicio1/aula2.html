@@ -9,9 +9,11 @@
 
 <body>
     <div ng-controller="buscarPorData">
-        <label></label>
-        <input ng-model="dataRecebida" type="text" >
-        <h1  | date:{dataRecebida: procurarPokemon}">
+      <label for="dataRecebida">Data Digitada</label>
+      <input type="text" ng-model="dataRecebida" placeholder="dd/mm/aaaa"/>
+      <button ng-click="converter()">Submit</button>
+      <span>{{ dataObjeto | date: 'mediumDate' }}</span>
+      <span>{{ dataPronta }}</span>
 
     </div>
 </body>
