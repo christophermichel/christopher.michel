@@ -3,6 +3,7 @@ var modulo = angular.module('diaUm',[]);
 modulo.controller('listaPokemon', function($scope){
     $scope.topoDaPagina = "Busca Pokémon"
     $scope.procurarPokemon = "";
+    $scope.procurarTipo = "";
     $scope.pokemons = [
       {nome:'Bulbasaur', tipo:'grama'},
       {nome:'Charmander', tipo:'fogo'},

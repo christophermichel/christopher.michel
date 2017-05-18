@@ -3,16 +3,32 @@
     <head>
       <meta charset="utf-8">
       <title>Tema Dia 1</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
       <script src="JS/main.js"></script>
+      <link rel="stylesheet" href="filtro.css">
     </head>
     <body ng-controller="listaPokemon">
-      <h1>{{topoDaPagina}}</h1>
-      <input type="text" ng-model="procurarPokemon">
-      <ul>
-        <li ng-repeat="pokemon in pokemons | filter:{nome: procurarPokemon}">
-          Nome: {{pokemon.nome}} - Tipo: {{pokemon.tipo}}
-        </li>
-      </ul>
+      <div class="container">
+        <div class="col-md-12"><h1>{{topoDaPagina}}</h1></div>
+        <div class="col-md-12"><h2>Filtre por pokemon: <input type="text" ng-model="procurarPokemon"></h2></div>
+        <div class="col-md-12">
+          <ul>
+            <li ng-repeat="pokemon in pokemons | filter:{nome: procurarPokemon}">
+            <h2>Nome: {{pokemon.nome}} - Tipo: {{pokemon.tipo}}</h2>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-12"><h2>Filtre por tipo: <input type="text" ng-model="procurarTipo"></h2></div>
+        <div class="col-md-4">
+          <ul>
+            <li ng-repeat="pokemon in pokemons | filter:{tipo: procurarTipo}">
+            <h2>Nome: {{pokemon.nome}} - Tipo: {{pokemon.tipo}}</h2>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </body>
 </html>
