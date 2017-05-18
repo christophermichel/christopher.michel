@@ -10,17 +10,21 @@
     </head>
     <body ng-controller="listaPokemon">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12"><h1 class="list-group-item active">{{topoDaPagina}}</h1></div>
+        <div class="row" class="navbar navbar-fixed-top center">
+          <div class="navbar-inner" class="col-md-10"><h1 class="list-group-item active">{{topoDaPagina}}</h1></div>
         </div>
         <div class="row">
-          <div class="col-md-6"><h2 class="list-group-item list-group-item-danger">Filtre por pokemon: <input type="text" ng-model="procurarPokemon"></h2></div>
-          <div class="col-md-6"><h2 class="list-group-item list-group-item-danger">Filtre por tipo: <input type="text" ng-model="procurarTipo"></h2></div>
+          <div class="col-md-2" >
+          </div>
+          <div class="col-md-4"><h2 class="list-group-item list-group-item-danger">Filtre por pokemon: <input type="text" ng-model="procurarPokemon"></h2></div>
+          <div class="col-md-4"><h2 class="list-group-item list-group-item-danger">Filtre por tipo: <input type="text" ng-model="procurarTipo"></h2></div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
+        <div class="row" id="lista">
+          <div class="col-md-3" >
+          </div>
+          <div class="col-md-6">
             <ul class="list-group">
-              <li class="list-group-item" class="text-center" ng-repeat="pokemon in pokemons | filter:{nome: procurarPokemon, tipo: procurarTipo}">
+              <li class="list-group-item" ng-repeat="pokemon in pokemons | filter:{nome: procurarPokemon, tipo: procurarTipo}">
                 <h2>Nome: {{pokemon.nome}} - Tipo: {{pokemon.tipo}}</h2>
               </li>
             </ul>

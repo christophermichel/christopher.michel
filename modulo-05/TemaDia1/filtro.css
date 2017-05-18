@@ -2,19 +2,23 @@
 body{
   margin: 0;
   padding: 0;
-  //background-image: url(fundo.jpg);
-  background-size:cover;
+  background-image: url(fundo.jpg);
+  opacity: 0.85;
+  background-size: cover;
 }
 h2 {
+  text-align: center;
   font-size: 15px;
   margin: 5px;
   color: black;
   font-weight: bold;
 }
 h1 {
+  text-align: center;
   color: red;
   font-weight: bold;
 }
-.container {
-  background-image: url(fundo.jpg);
+
+#lista {
+  padding-top: 20px;
 }
