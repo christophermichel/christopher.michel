@@ -1,0 +1,20 @@
+<html ng-app="aula2">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Instrutores</title>
+    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script src="JS/aula2.js"></script>
+</head>
+
+<body>
+    <div ng-controller="a">
+        <ul>
+          <li ng-repeat="instrutor in instrutores">
+             {{instrutor.nome}}
+          </li>
+        </ul>
+    </div>
+</body>
+
+</html>
