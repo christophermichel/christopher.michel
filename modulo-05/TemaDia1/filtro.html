@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+  <html  ng-app="diaUm">
+    <head>
+      <meta charset="utf-8">
+      <title>Tema Dia 1</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="JS/main.js"></script>
+    </head>
+    <body ng-controller="listaPokemon">
+      <h1>{{topoDaPagina}}</h1>
+      <input type="text" ng-model="procurarPokemon">
+      <ul>
+        <li ng-repeat="pokemon in pokemons | filter:{nome: procurarPokemon}">
+          Nome: {{pokemon.nome}} - Tipo: {{pokemon.tipo}}
+        </li>
+      </ul>
+    </body>
+</html>
