@@ -1,7 +1,5 @@
 var aula2 = angular.module('aula2',[]);
 
-app.filter('nunes', function())
-
 aula2.controller('a', function($scope) {
   $scope.instrutores = [{
     nome: 'Bernardo',
@@ -38,3 +36,8 @@ aula2.controller('a', function($scope) {
   }
 ];
 });
+
+aula2.filter('mascada',function(){
+    return function(nome){
+      return nome.replace(/nunes/gi,'$' + nome + '$');
+}});
