@@ -1,21 +1,1 @@
-<html ng-app="aula2">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Aula 2 - Filtros</title>
-    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
-    <script src="JS/aula2.js"></script>
-</head>
-
-<body>
-    <div ng-controller="buscarPorData">
-      <label for="dataRecebida">Data Digitada</label>
-      <input type="text" ng-model="dataRecebida" placeholder="dd/mm/aaaa"/>
-      <button ng-click="converter()">Submit</button>
-      <span>{{ dataObjeto | date: 'mediumDate' }}</span>
-      <span>{{ dataPronta }}</span>
-
-    </div>
-</body>
-
-</html>
+<!DOCTYPE html><html ng-app="modulo">    <head>        <title>Exercício sobre data</title>        <link href="style.css" rel="stylesheet">        <script src="https://code.angularjs.org/1.6.4/angular.js"></script>        <script src="JS/aula2.js"></script>    </head>    <body ng-controller="aula2">        <div>            <input type="text" input="text" placeholder="Ex.: 12/30/2013" ng-model="dataEntrada">            <button name="button" ng-click="convert()">Converter</button>        </div>        <div>            <h2>{{dataSaida | date : 'mediumDate'}}</h2>        </div>    </body></html>
