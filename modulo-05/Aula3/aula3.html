@@ -1,0 +1,27 @@
+<html ng-app="aula3">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Instrutores</title>
+    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script src="JS/aula3.js"></script>
+</head>
+<body>
+    <div class="container" ng-controller="a">
+      <form novalidate name="meuForm">
+        <label for="nome">Novo Nome: </label>
+        <input type="text" name="nome" minlength="3" ng-model="novoNome" required />
+        <span ng-show="meuForm.nome.$error.minlength">
+          Deve ter no mínimo 3 letras
+        </span>
+        <button ng-click="incluir(novoNome)">Incluir</button>
+      </form>
+        <ul>
+          <li ng-repeat="nome in nomes">
+             {{nome}};
+          </li>
+        </ul>
+    </div>
+</body
+</html>
