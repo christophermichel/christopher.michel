@@ -1,0 +1,57 @@
+<html ng-app="aula3">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Instrutores</title>
+    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script src="JS/aula3.js"></script>
+</head>
+<body>
+    <div class="container" ng-controller="a">
+      <form novalidate name="meuForm">
+        <!--incluir nome do instrutor em array de nomes-->
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" maxlength="20" minlength="3" ng-model="novoNome" required />
+        <br>
+        <!--incluir sobrenome do instrutor em array de sobrenomes-->
+        <label for="nome">Sobrenome: </label>
+        <input type="text" name="sobrenome" maxlength="30" ng-model="novoSobrenome"/>
+        <br>
+        <!--incluir idade do instrutor-->
+        <label for="nome">Idade: </label>
+        <input type="number" name="idade" ng-model="novaIdade" required />
+        <br>
+        <!--incluir email do instrutor-->
+        <label for="nome">Email: </label>
+        <input type="email" name="email" ng-model="novoEmail" required />
+        <br>
+        <!--ja deu aula-->
+        <label for="nome"></label>
+        <input type="checkbox" name="jaDeuAula" value="Sim"> Já deu aula?
+        <br>
+        <!--marcar aula-->
+        <label for="nome">Qual aula ministra?</label>
+        <select>
+          <option value="OO">OO</option>
+          <option value="Banco de dados">Banco de dados</option>
+          <option value="AngularJS">AngularJS</option>
+          <option value="Javascript">Javascript</option>
+        </select>
+        <button ng-click="incluirEmail(novoEmail)">Incluir</button>
+        <br>
+        <!--Condições-->
+        <span ng-show="meuForm.nome.$error.minlength">
+          Não contém o mínimo de letras.
+        </span>
+        <span ng-show="meuForm.nome.$error.maxlength">
+        </span>
+      </form>
+        <ul>
+          <li ng-repeat="sobrenome in sobrenomes">
+             {{sobrenome}};
+          </li>
+        </ul>
+    </div>
+</body
+</html>
