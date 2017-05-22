@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,700);
+
+body{
+   font-family: 'Dosis', sans-serif;
+}
+
+div{
+  padding-bottom: 15px;
+}
+
+#foto {
+  margin-left: 40px;
+}
