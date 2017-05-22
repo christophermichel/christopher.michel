@@ -9,33 +9,41 @@ modulo.controller('aulas', function($scope){
 //incluir novo instrutor
   $scope.incluirInstrutor = function (){
       if($scope.novoInstrutorForm.$valid){
-        let jaCadastrado = false;
-        let emailInvalido = false;
+        var naoCadastrado = true;
+        var emailValido = true;
         for(cadaUm of instrutores){
-          if(cadaUm.nome === $scope.novoInstrutor.nome &&
-             cadaUm.sobrenome === $scope.novoInstrutor.sobrenome)
-            jaCadastrado = true;
           if(cadaUm.email === $scope.novoInstrutor.email &&
              $scope.novoInstrutor.email != null )
-             emailInvalido = true;
-          else {
+             emailValido = false;
+          if(cadaUm.nome === $scope.novoInstrutor.nome &&
+            cadaUm.sobrenome === $scope.novoInstrutor.sobrenome)
+            naoCadastrado = false;
+        }
+        if(naoCadastrado && emailValido)
+        {
           $scope.novoInstrutor.id = instrutores.length;
-          var arrayDeAulas = [];
+          let aulasInstrutor = [];
           if($scope.novoInstrutor.aula != null)
-            for(a of aulas)
-              for(cadaUm of $scope.novoInstrutor.aula){
-                if(a.nome === cadaUm){
-                  arrayDeAulas.push(a);
+          for(a of aulas)
+              for(cadaUm of $scope.novoInstrutor.aula)
+            {
+              if(a.nome === cadaUm)
+              {
+                aulasInstrutor.push(a);
               }
           }
-          $scope.novoInstrutor.aula = arrayDeAulas;
+          $scope.novoInstrutor.aula = aulasInstrutor;
           instrutores.push($scope.novoInstrutor);
           $scope.novoInstrutor = {};
-          
+          alert("Instrutor inserido com sucesso!")
         }
-        }
+        else jaCadastrado ? alert("Instrutor já cadastrado.") : alert("Email já está sendo utilizado.")
+
       }
-  }
+    }
+
+
+
 
 
 //alterar instrutor já existente
@@ -104,6 +112,37 @@ modulo.controller('aulas', function($scope){
   }
 
 // deletar aula
+
+$scope.deletarAula = function(id) {
+      if($scope.deletarAulaForm.$invalid){
+         return;
+      }
+      for (var cadaUm = 0; cadaUm < $scope.aulas.length; cadaUm++)
+      {
+        if ($scope.aulas[cadaUm].id === id)
+        {
+          for (cadaUm of instrutores)
+          {
+            for(var i = 0; i < cadaUm.aula.length; i++)
+            {
+              if(cadaUm.aula[i] === id)
+              {
+                window.alert('Não é possível excluir esta aula. Está sendo utilizada.');
+                $scope.idAula = "";
+                return;
+              }
+            }
+          }
+          $scope.aulas.splice(cadaUm, 1);
+          window.alert('Aula excluída com sucesso.');
+          $scope.idAula = "";
+          return;
+        }
+      }
+       window.alert('Aula não cadastrada.');
+       $scope.idAula="";
+      return;
+  }
 });
 
 
