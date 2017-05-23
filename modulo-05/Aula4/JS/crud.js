@@ -12,18 +12,11 @@
       controller: 'instrutores',
       templateUrl: 'instrutores.html'
     })
-    .otherwise({redirectTo: '/instrutores'});
+    .otherwise({redirectTo: '/aulas'});
 });
 
-modulo.controller('instrutores', function($scope){});
-
-modulo.controller('aulas', function($scope){
-  $scope.aulas = aulas;
-  $scope.instrutores = instrutores;
-
-
-
-//incluir novo instrutor
+modulo.controller('instrutores', function($scope){
+$scope.instrutores = instrutores;
   $scope.incluirInstrutor = function (){
       if($scope.novoInstrutorForm.$valid){
         var naoCadastrado = true;
@@ -96,6 +89,18 @@ modulo.controller('aulas', function($scope){
         }
       }
     }
+
+
+
+});
+
+modulo.controller('aulas', function($scope){
+  $scope.aulas = aulas;
+
+
+
+
+//incluir novo instrutor
 
 //Incluir nova aula
   $scope.incluirAula = function ()
