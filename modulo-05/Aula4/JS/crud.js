@@ -1,6 +1,7 @@
-var modulo = angular.module(`modulo`,[]);
+ var modulo = angular.module(`modulo`,['ngRoute']);
 
-modulo.config(function ($routeProvider) {
+
+ modulo.config(function ($routeProvider) {
 
   $routeProvider
     .when('/aulas', {
@@ -8,17 +9,13 @@ modulo.config(function ($routeProvider) {
       templateUrl: 'aulas.html'
     })
     .when('/instrutores', {
-      controller: 'aulas',
+      controller: 'instrutores',
       templateUrl: 'instrutores.html'
     })
-    .otherwise({redirectTo: '/pagina01'});
+    .otherwise({redirectTo: '/instrutores'});
 });
 
-
-
-
-
-
+modulo.controller('instrutores', function($scope){});
 
 modulo.controller('aulas', function($scope){
   $scope.aulas = aulas;
