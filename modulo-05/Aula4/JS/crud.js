@@ -15,7 +15,7 @@
     .otherwise({redirectTo: '/aulas'});
 });
 
-modulo.controller('instrutores', function($scope){
+modulo.controller('instrutores', function($scope, $http){
 $scope.instrutores = instrutores;
   $scope.incluirInstrutor = function (){
       if($scope.novoInstrutorForm.$valid){
@@ -77,93 +77,28 @@ $scope.instrutores = instrutores;
   }
 
 //deletar instrutor
-    $scope.deletarInstrutor = function (){
-      let dandoAula = false;
-      if($scope.deletarInstrutorForm.$valid){
-        for (cadaUm of instrutores){
-          let indexAtual = instrutores.indexOf(cadaUm);
-          if(cadaUm.nome === $scope.instrutorDeletar){
-                instrutores.splice(indexAtual, 1);
-                alert("Instrutor deletado com sucesso!");
-          }
-        }
-      }
-    }
-
-
+function deletarInstrutor(instrutor){
+    aulaService.deletarInstrutor(instrutor)
+    };
 
 });
 
-modulo.controller('aulas', function($scope){
+modulo.controller('aulas', function($scope, $http){
   $scope.aulas = aulas;
 
 
 
-
-//incluir novo instrutor
-
 //Incluir nova aula
-  $scope.incluirAula = function ()
-  {
-    if($scope.aulasForm.$valid)
-    {
-      var aulaExiste = true;
-      for(a of aulas)
-      {
-        if(a.nome === $scope.novaAula.nome)
-          aulaExiste = false;
-      }
-      if(aulaExiste)
-      {
-        $scope.novaAula.id = aulas.length;
-        aulas.push($scope.novaAula);
-        $scope.novaAula = {};
-        alert("Aula incluida com sucesso!");
-      }
-    } else
-    {
-      alert("Não foi possível incluir a aula")
-    }
-  }
-
-
+function incluirAula(aula) {
+  aulaService.incluirAula(aula);
+}
 //alterar aula já existente
-  $scope.alterarAula = function(){
-    aulas[$scope.selecionarAula.id].nome = $scope.alterarAula.nome;
-    alert("Aula modificada com sucesso!");
+function alterarAula(aula){
+    aulaService.alterarAula(aula);
   }
-
 // deletar aula
-
-$scope.deletarAula = function(id) {
-      if($scope.deletarAulaForm.$invalid){
-         return;
-      }
-      for (var cadaUm = 0; cadaUm < $scope.aulas.length; cadaUm++)
-      {
-        if ($scope.aulas[cadaUm].id === id)
-        {
-          for (cadaUm of instrutores)
-          {
-            for(var i = 0; i < cadaUm.aula.length; i++)
-            {
-              if(cadaUm.aula[i] === id)
-              {
-                window.alert('Não é possível excluir esta aula. Está sendo utilizada.');
-                $scope.idAula = "";
-                return;
-              }
-            }
-          }
-          $scope.aulas.splice(cadaUm, 1);
-          window.alert('Aula excluída com sucesso.');
-          $scope.idAula = "";
-          return;
-        }
-      }
-       window.alert('Aula não cadastrada.');
-       $scope.idAula="";
-      return;
+function deletarAula(aula) {
+      aulaService.deletarAula(aula);
   }
 });
 
