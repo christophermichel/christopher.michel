@@ -1,0 +1,6 @@
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\Aula1\aula1\demonstracao1\bin\Debug\demonstracao1.exe.config
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\Aula1\aula1\demonstracao1\obj\Debug\demonstracao1.csprojResolveAssemblyReference.cache
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\Aula1\aula1\demonstracao1\bin\Debug\demonstracao1.exe
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\Aula1\aula1\demonstracao1\bin\Debug\demonstracao1.pdb
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\Aula1\aula1\demonstracao1\obj\Debug\demonstracao1.exe
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\Aula1\aula1\demonstracao1\obj\Debug\demonstracao1.pdb
