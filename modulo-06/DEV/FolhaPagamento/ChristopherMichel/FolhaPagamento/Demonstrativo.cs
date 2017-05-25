@@ -42,5 +42,20 @@ namespace FolhaPagamento
             TotalLiquido = totalLiquido;
             Fgts = fgts;
         }
+
+        public void demonstrativoNoConsole()
+        {
+            Console.WriteLine("DEMONSTRATIVO DE FOLHA DE PAGAMENTO (CONTRA-CHEQUE)");
+            Console.WriteLine(string.Concat("Salario Mensalista (", this.HrsConvencao,"): ", this.SalarioBase));
+            Console.WriteLine(string.Concat("Horas Extras (", this.HorasExtras.QtdHoras , "): " , this.HorasExtras.Calcular()));
+            Console.WriteLine(string.Concat("Horas Descontadas (" , this.HorasDescontadas.QtdHoras , "): " , this.HorasDescontadas.Calcular()));
+            Console.WriteLine(string.Concat("Total de Proventos: " , this.TotalProventos));
+            Console.WriteLine(string.Concat("INSS(" , this.Inss.Aliquota , "): " , this.Inss.CalcularDesconto()));
+            Console.WriteLine(string.Concat("IRRF(" , this.Irrf.Aliquota , "): " , this.Irrf.CalcularDesconto()));
+            Console.WriteLine(string.Concat("Total de Descontos: " , this.TotalDescontos));
+            Console.WriteLine(string.Concat("Total de Líquido: " , this.TotalLiquido));
+            Console.WriteLine(string.Concat("FGTS(" , this.Fgts.Aliquota , "): " + this.Fgts.CalcularDesconto()));
+            Console.ReadKey();
+        }
     }
 }

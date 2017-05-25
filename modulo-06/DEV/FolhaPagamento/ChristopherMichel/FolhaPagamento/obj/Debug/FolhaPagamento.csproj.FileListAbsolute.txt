@@ -1,0 +1,6 @@
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\FolhaPagamento\ChristopherMichel\FolhaPagamento\obj\Debug\FolhaPagamento.csprojResolveAssemblyReference.cache
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\FolhaPagamento\ChristopherMichel\FolhaPagamento\bin\Debug\FolhaPagamento.exe.config
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\FolhaPagamento\ChristopherMichel\FolhaPagamento\bin\Debug\FolhaPagamento.exe
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\FolhaPagamento\ChristopherMichel\FolhaPagamento\bin\Debug\FolhaPagamento.pdb
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\FolhaPagamento\ChristopherMichel\FolhaPagamento\obj\Debug\FolhaPagamento.exe
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\FolhaPagamento\ChristopherMichel\FolhaPagamento\obj\Debug\FolhaPagamento.pdb

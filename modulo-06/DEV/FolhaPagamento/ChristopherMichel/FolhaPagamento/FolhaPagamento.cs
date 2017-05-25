@@ -10,7 +10,21 @@ namespace FolhaPagamento
     {
         public Demonstrativo GerarDemonstrativo(int horasCategoria, double salarioBase, double horasExtras, double horasDescontadas)
         {
-            return;
+            double PrecoPorHoras = Math.Round(salarioBase / horasCategoria, 2);
+            HorasCalculadas CustoHorasExtras = new HorasCalculadas(horasExtras, PrecoPorHoras);
+            HorasCalculadas TotalHorasDescontadas = new HorasCalculadas(horasDescontadas, PrecoPorHoras);
+            double TotalDeProventos = Math.Round(salarioBase + CustoHorasExtras.Calcular() - TotalHorasDescontadas.Calcular(), 2);
+            Desconto INSS = new Desconto(INSS_aliquota(TotalDeProventos), TotalDeProventos);
+            Desconto IRRF = new Desconto(IRRF_aliquota(TotalDeProventos - INSS.CalcularDesconto()), TotalDeProventos - INSS.CalcularDesconto());
+            double TotalDescontos = INSS.CalcularDesconto() + IRRF.CalcularDesconto();
+            double SalarioLiquido = Math.Round(TotalDeProventos - TotalDescontos, 2);
+            Desconto FGTS = new Desconto((11 / 100), TotalDeProventos);
+        
+            Demonstrativo modelo = new Demonstrativo (salarioBase, horasCategoria, CustoHorasExtras, TotalHorasDescontadas, TotalDeProventos, INSS, IRRF, TotalDescontos, SalarioLiquido, FGTS);
+
+            modelo.demonstrativoNoConsole();
+       
+            return modelo;
         }
 
         public double INSS_aliquota(double totalProventos)

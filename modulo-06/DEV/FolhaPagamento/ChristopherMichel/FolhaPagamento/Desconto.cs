@@ -17,7 +17,7 @@ namespace FolhaPagamento
             Valor = valor;
         }
 
-        public double Calcular()
+        public double CalcularDesconto()
         {
             return Math.Round(this.Valor * this.Aliquota, 2);
         }
