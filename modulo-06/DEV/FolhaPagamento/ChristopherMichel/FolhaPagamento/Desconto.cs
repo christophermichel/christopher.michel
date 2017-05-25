@@ -8,14 +8,19 @@ namespace FolhaPagamento
 {
     public class Desconto
     {
+        public double Aliquota { get; private set; }
+        public double Valor { get; private set; }
+
         public Desconto(double aliquota, double valor)
         {
             Aliquota = aliquota;
             Valor = valor;
         }
 
-        public double Aliquota { get; private set; }
-        public double Valor { get; private set; }
+        public double Calcular()
+        {
+            return Math.Round(this.Valor * this.Aliquota, 2);
+        }
     }
 
 }

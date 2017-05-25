@@ -8,6 +8,17 @@ namespace FolhaPagamento
 {
     public class Demonstrativo
     {
+        public double SalarioBase { get; private set; }
+        public double HrsConvencao { get; private set; }
+        public HorasCalculadas HorasExtras { get; private set; }
+        public HorasCalculadas HorasDescontadas { get; private set; }
+        public double TotalProventos { get; private set; }
+        public Desconto Inss { get; private set; }
+        public Desconto Irrf { get; private set; }
+        public double TotalDescontos { get; private set; }
+        public double TotalLiquido { get; private set; }
+        public Desconto Fgts { get; private set; }
+
         public Demonstrativo(
             double salarioBase,
             double hrsConvencao,
@@ -31,16 +42,5 @@ namespace FolhaPagamento
             TotalLiquido = totalLiquido;
             Fgts = fgts;
         }
-
-        public double SalarioBase { get; private set; }
-        public double HrsConvencao { get; private set; }
-        public HorasCalculadas HorasExtras { get; private set; }
-        public HorasCalculadas HorasDescontadas { get; private set; }
-        public double TotalProventos { get; private set; }
-        public Desconto Inss { get; private set; }
-        public Desconto Irrf { get; private set; }
-        public double TotalDescontos { get; private set; }
-        public double TotalLiquido { get; private set; }
-        public Desconto Fgts { get; private set; }
     }
 }

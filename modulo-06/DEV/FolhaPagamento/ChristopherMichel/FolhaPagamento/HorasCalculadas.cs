@@ -15,5 +15,12 @@ namespace FolhaPagamento
         }
         public double QtdHoras { get; private set; }
         public double ValorTotalHoras { get; private set; }
+
+        public double Calcular()
+        {
+            double HorasMultiplicaValor = (this.QtdHoras * this.ValorTotalHoras);
+            return HorasMultiplicaValor;
+        }
     }
+
 }
