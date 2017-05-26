@@ -1,0 +1,5 @@
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\TemaDia2\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.dll
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\TemaDia2\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.pdb
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\TemaDia2\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\TemaDia2\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.dll
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\TemaDia2\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.pdb
