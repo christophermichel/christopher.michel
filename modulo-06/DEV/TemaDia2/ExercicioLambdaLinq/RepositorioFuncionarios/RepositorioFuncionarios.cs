@@ -152,17 +152,38 @@ namespace Repositorio
 
         public IList<dynamic> BuscaRapida()
         {
-            throw new NotImplementedException();
+            dynamic lista = new List<Object>();
+
+            foreach (var funcionario in Funcionarios)
+            {
+                var objetoParaRetorno = new { NomeFuncionario = funcionario.Nome, TituloCargo = funcionario.Cargo.Titulo };
+                lista.Add(objetoParaRetorno);
+            }
+
+            return lista;
         }
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
         {
-            throw new NotImplementedException();
+            return Funcionarios
+                        .GroupBy(funcionario => funcionario.TurnoTrabalho)
+                        .Select(funcionario => new
+                        {
+                            Turno = funcionario.First().TurnoTrabalho,
+                            Quantidade = funcionario.Count()
+                        })
+                        .Cast<dynamic>().ToList();
         }
 
         public dynamic FuncionarioMaisComplexo()
         {
             throw new NotImplementedException();
+        }
+
+        int ContarConsoantes(string nome)
+        {
+            string consoantes = "bcdfghjklmnpqrstvwxyz";
+            return nome.Count(arrayDeConsoantes => consoantes.Contains(char.ToLowerInvariant(arrayDeConsoantes)));
         }
     }
 }
