@@ -1,0 +1,7 @@
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.Infraestrutura\obj\Debug\Demo1.Infraestrutura.csprojResolveAssemblyReference.cache
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.Infraestrutura\bin\Debug\Demo1.Infraestrutura.dll
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.Infraestrutura\bin\Debug\Demo1.Infraestrutura.pdb
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.Infraestrutura\bin\Debug\Demo1.Dominio.dll
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.Infraestrutura\bin\Debug\Demo1.Dominio.pdb
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.Infraestrutura\obj\Debug\Demo1.Infraestrutura.dll
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.Infraestrutura\obj\Debug\Demo1.Infraestrutura.pdb

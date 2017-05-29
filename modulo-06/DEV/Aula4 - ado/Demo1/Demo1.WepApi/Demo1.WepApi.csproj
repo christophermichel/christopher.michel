@@ -89,7 +89,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +102,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Demo1.Dominio\Demo1.Dominio.csproj">
+      <Project>{391AA920-0032-422B-8938-11C1FB44FF74}</Project>
+      <Name>Demo1.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo1.Infraestrutura\Demo1.Infraestrutura.csproj">
+      <Project>{D61631B6-B938-458B-BF30-F8C3028031D8}</Project>
+      <Name>Demo1.Infraestrutura</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

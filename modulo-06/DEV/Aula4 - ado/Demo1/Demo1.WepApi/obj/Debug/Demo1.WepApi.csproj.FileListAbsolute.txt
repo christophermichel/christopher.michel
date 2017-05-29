@@ -43,3 +43,7 @@ C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - a
 C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.WepApi\obj\Debug\Demo1.WepApi.csprojResolveAssemblyReference.cache
 C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.WepApi\obj\Debug\Demo1.WepApi.dll
 C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.WepApi\obj\Debug\Demo1.WepApi.pdb
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.WepApi\bin\Demo1.Dominio.dll
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.WepApi\bin\Demo1.Infraestrutura.dll
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.WepApi\bin\Demo1.Dominio.pdb
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula4 - ado\Demo1\Demo1.WepApi\bin\Demo1.Infraestrutura.pdb
