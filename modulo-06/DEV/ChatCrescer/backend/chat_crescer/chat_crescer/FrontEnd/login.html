@@ -1,0 +1,19 @@
+<div ng-controller="UsuarioController">
+    <div id="arrumarLogin"></div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class="paginaLogin">
+                <form name="login" ng-submit="addUsuario(usuario)">
+                    <div class="form-group">
+                        <label class="margem text-center">USERNAME</label>
+                        <input type="text" class="form-control" minlength="3" placeholder="Ex.: Harry Potter" ng-model="usuario.Nome">
+                        <label class="margem text-center">FOTO DE PERFIL</label>
+                        <input type="text" class="form-control down" minlength="8" placeholder="Ex.: https:Foto_do_harry.jpeg" ng-model="usuario.UrlFoto">
+                        <button type="submit" class="btn btn-primary btn-block" ng-disabled="login.$invalid">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

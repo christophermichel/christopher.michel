@@ -12,6 +12,7 @@ namespace chat_crescer
             // Serviços e configuração da API da Web
 
             // Rotas da API da Web
+            config.EnableCors(new System.Web.Http.Cors.EnableCorsAttribute("*", "*", "*"));
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

@@ -1,0 +1,80 @@
+body {
+  background-image: url(capa.png);
+  background-size:100%;
+  background-repeat:no-repeat;
+}
+
+#hora {
+  text-align: right;
+}
+
+.container-fluid {
+  opacity: 0.6;
+}
+
+#arrumarLogin {
+    margin-bottom: 180px;
+}
+
+#arrumarChat {
+    margin-bottom: 60px;
+}
+
+}
+span{
+    float: right;
+}
+
+label {
+  color: black;
+  font-weight: bold;
+}
+
+.send{
+    margin-top: 20px;
+}
+
+.fundo {
+  padding-bottom: 20%;
+}
+
+.top{
+    width: 100%;
+    height: 200px;
+}
+
+.paginaLogin{
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #800000;
+}
+
+.down{
+  margin-bottom: 20px;
+}
+
+.mensagem{
+    border-radius: 15px;
+    overflow: auto;
+    height: 460px;
+    background-color: #800000;
+}
+
+.imagem {
+  border-radius: 10px;
+}
+
+.margem {
+  margin: 10px;
+}
+
+ul{
+    background-color: #00BFFF;
+    border-radius: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 8px;
+    padding: 8px;
+    list-style: none;
+}
+}

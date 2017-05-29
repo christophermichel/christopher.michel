@@ -1,0 +1,25 @@
+<div id="arrumarChat"></div>
+<div class="row">
+    <div class="col-md-1"></div>
+        <div class="col-md-5">
+                <div class="mensagem">
+                    <ul ng-repeat="mensagem in mensagens">
+                        <li>
+                            <img ng-src="{{mensagem.usuario.UrlFoto}}" class="imagem" width="75px" height="55px">
+                            <strong>{{mensagem.usuario.Nome}}:</strong>
+                            {{mensagem.Texto}}
+                            <p id="hora">{{mensagem.HoraDeEnvio | date:'MM/dd/yyyy HH:mm'}}</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <form name="mensagem" class="send" ng-submit="addMensagem(mensagem)">
+                    <div class="form-group">
+                        <textarea class="form-control" minlength="1" rows="2" ng-model="mensagem.Texto"></textarea>
+                        <button type="submit" class="btn btn-primary btn-block" ng-disabled="mensagem.$invalid">Enviar Mensagem</button>                      
+                    </div>
+                </form>
+            </div>
+            
+        </div>   
+</div>
