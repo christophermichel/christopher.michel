@@ -15,6 +15,11 @@ namespace Demo1.WebApi.Controllers
 
         public IHttpActionResult Post(Pedido pedido)
         {
+            List<string> listaErros;
+            if (!pedido.Validar(out listaErros))
+            {
+                return BadRequest(string.Join(".\n", listaErros.ToArray()));
+            }
             _pedidoRepositorio.Criar(pedido);
             return Ok(pedido);
         }

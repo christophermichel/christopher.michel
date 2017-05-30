@@ -14,6 +14,20 @@ namespace Demo1.Infraestrutura.Repositorios
 
         public void Alterar(Pedido pedido)
         {
+            using (var conexao = new SqlConnection(stringConexao))
+            {
+                conexao.Open();
+                using (var command = conexao.CreateCommand())
+                {
+                    command.CommandText =
+                                            @"UPDATE Pedido SET NomeCliente = @nome 
+                                            WHERE Id = @pedidoId";
+                    command.Parameters.AddWithValue("nome", pedido.NomeCliente);
+                    command.Parameters.AddWithValue("pedidoId", pedido.Id);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                }
+            }
         }
 
         public void Criar(Pedido pedido)
@@ -21,47 +35,38 @@ namespace Demo1.Infraestrutura.Repositorios
             using (var conexao = new SqlConnection(stringConexao))
             {
                 conexao.Open();
-
-                using (var comando = conexao.CreateCommand())
+                using (var command = conexao.CreateCommand())
                 {
-                    comando.CommandText = "INSERT INTO Pedido (NomeCliente) VALUES (@nomeCliente)";
-                    comando.CommandTimeout = 120;
+                    command.CommandText =
+                                            @"INSERT INTO Pedido (NomeCliente) 
+                                            VALUES (@nome)";
+                    command.Parameters.AddWithValue("nome", pedido.NomeCliente);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
 
-                    comando.Parameters.AddWithValue("@nomeCliente", pedido.NomeCliente);
-
-                    comando.ExecuteNonQuery();
-                }
-
-                using (var comando = conexao.CreateCommand())
-                {
-                    comando.CommandText = "SELECT @@IDENTITY";
-                    comando.CommandTimeout = 120;
-
-                    var resultado = (decimal)comando.ExecuteScalar();
-                    pedido.Id = (int)resultado;
-                }
-
-                using (var comando = conexao.CreateCommand())
-                {
-                    foreach (var itemPedido in pedido.Itens)
+                    foreach (var item in pedido.Itens)
                     {
-                        comando.CommandText = "INSERT INTO ItemPedido (PedidoId, ProdutoId, Quantidade) VALUES (@pedidoId, @produtoId, @quantidade)";
-                        comando.CommandTimeout = 120;
+                        command.CommandText =
+                                              @"INSERT INTO ItemPedido (PedidoId, ProdutoId, Quantidade) 
+                                              VALUES(@pedidoId, @produtoId, @quantidade)";
+                        command.Parameters.AddWithValue("pedidoId", item.Id);
+                        command.Parameters.AddWithValue("produtoId", item.ProdutoId);
+                        command.Parameters.AddWithValue("quantidade", item.Quantidade);
+                        command.ExecuteNonQuery();
+                        command.Parameters.Clear();
 
-                        comando.Parameters.AddWithValue("@pedidoId", pedido.Id);
-                        comando.Parameters.AddWithValue("@produtoId", itemPedido.ProdutoId);
-                        comando.Parameters.AddWithValue("@quantidade", itemPedido.Quantidade);
-
-                        comando.ExecuteNonQuery();
-
-                        comando.CommandText = "UPDATE Produto SET Estoque -= @quantidade WHERE Id = @itemProdutoId";
-
-                        comando.Parameters.AddWithValue("@itemProdutoId", itemPedido.ProdutoId);
-
-                        comando.ExecuteNonQuery();
-
-                        comando.Parameters.Clear();
+                        command.CommandText =
+                                              @"UPDATE Produto SET Estoque = Estoque -  @quantidade 
+                                              WHERE Id = @itemProdutoId";
+                        command.Parameters.AddWithValue("quantidade", item.Quantidade);
+                        command.Parameters.AddWithValue("itemProdutoId", item.ProdutoId);
+                        command.Parameters.Clear();
                     }
+                }
+                using (var command = conexao.CreateCommand())
+                {
+                    command.CommandText = "SELECT @@IDENTITY";
+                    pedido.Id = (int)(decimal)command.ExecuteScalar();
                 }
             }
         }
