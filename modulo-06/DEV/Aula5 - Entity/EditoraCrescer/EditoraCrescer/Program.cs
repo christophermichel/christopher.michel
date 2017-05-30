@@ -1,4 +1,5 @@
-﻿using EditoraCrescer.Infraestrutura.Entidades;
+﻿using EditoraCrescer.Infraestrutura;
+using EditoraCrescer.Infraestrutura.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;

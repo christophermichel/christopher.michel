@@ -56,5 +56,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EditoraCrescer.Infraestrutura\EditoraCrescer.Infraestrutura.csproj">
+      <Project>{E3694031-6F1B-4134-A6B8-2120E69241C0}</Project>
+      <Name>EditoraCrescer.Infraestrutura</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
