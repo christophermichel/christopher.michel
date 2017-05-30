@@ -72,7 +72,30 @@ namespace Demo1.Infraestrutura.Repositorios
 
         public IEnumerable<Pedido> Listar()
         {
-            throw new NotImplementedException();
+            var listaPedidos = new List<Pedido>();
+            using (var conexao = new SqlConnection(stringConexao))
+            {
+                conexao.Open();
+                using (var comando = conexao.CreateCommand())
+                {
+                    comando.CommandText = @"SELECT (id, nomeCliente, Itens)
+                                          FROM Pedido";
+                    var dataReader = comando.ExecuteReader();
+                    do
+                    {
+                        var pedido = new Pedido();
+
+                        pedido.Id = (int)dataReader["id"];
+                        pedido.NomeCliente = (string)dataReader["NomeCliente"];
+                        pedido.Itens = (List<ItemPedido>)dataReader["Itens"];
+
+                        listaPedidos.Add(pedido);
+                    }
+
+                    while (dataReader.Read());
+                }
+            }
+            return listaPedidos;
         }
 
         public Pedido Obter(int id)

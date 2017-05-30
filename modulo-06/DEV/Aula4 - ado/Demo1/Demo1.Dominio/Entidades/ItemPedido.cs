@@ -12,7 +12,6 @@ namespace Demo1.Dominio.Entidades
         public int ProdutoId { get; set; }
         public int Quantidade { get; set; }
 
-
         public bool Validar(out List<string> mensagens)
         {
             mensagens = new List<string>();
