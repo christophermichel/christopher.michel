@@ -17,7 +17,14 @@ namespace Demo1.Dominio.Entidades
         {
             mensagens = new List<string>();
             if (Quantidade <= 0)
+            {
                 mensagens.Add("Quantidade deve ser maior que 0.");
+            }
+
+            if (ProdutoId < 1)
+            {
+                mensagens.Add("Seu pedido não contém itens.");
+            }
 
             return mensagens.Count == 0;
         }
