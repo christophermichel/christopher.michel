@@ -8,25 +8,52 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Demo1.WepApi.Controllers
+namespace Demo1.WebApi.Controllers
 {
     public class ProdutosController : ApiController
     {
-        ProdutoRepositorio _produtorepositorio = new ProdutoRepositorio();
-
+        ProdutoRepositorio _produtoRepositorio = new ProdutoRepositorio();
         public IHttpActionResult Post(Produto produto)
         {
+
             var mensagens = new List<string>();
             if (!produto.Validar(out mensagens))
                 return BadRequest(string.Join(".", mensagens.ToArray()));
+
+
+            _produtoRepositorio.Criar(produto);
+
+            return Ok(produto);
+        }
+
+        public IHttpActionResult Put(Produto produto)
+        {
+            var mensagens = new List<string>();
+
+            if (!produto.Validar(out mensagens))
+                return BadRequest(string.Join(".", mensagens.ToArray()));
+
+            _produtoRepositorio.Alterar(produto);
 
             return Ok(produto);
         }
 
         public IHttpActionResult Get()
         {
-            var produtos = _produtorepositorio.Listar();
-            return Ok(produtos);
+            return Ok(_produtoRepositorio.Listar());
         }
+
+        public IHttpActionResult Get(int id)
+        {
+            return Ok(_produtoRepositorio.Obter(id));
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            _produtoRepositorio.Excluir(id);
+
+            return Ok();
+        }
+
     }
 }
