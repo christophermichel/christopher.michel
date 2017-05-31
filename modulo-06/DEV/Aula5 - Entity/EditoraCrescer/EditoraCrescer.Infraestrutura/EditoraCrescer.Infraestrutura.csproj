@@ -50,11 +50,17 @@
     <Compile Include="Contexto.cs" />
     <Compile Include="Entidades\Autor.cs" />
     <Compile Include="Entidades\Livro.cs" />
+    <Compile Include="Entidades\Revisor.cs" />
     <Compile Include="Mapping\AutorMap.cs" />
     <Compile Include="Mapping\LivroMap.cs" />
+    <Compile Include="Mapping\RevisorMap.cs" />
     <Compile Include="Migrations\201705301948075_CriacaoDoBanco.cs" />
     <Compile Include="Migrations\201705301948075_CriacaoDoBanco.Designer.cs">
       <DependentUpon>201705301948075_CriacaoDoBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705310646290_CriarTabelaRevisores.cs" />
+    <Compile Include="Migrations\201705310646290_CriarTabelaRevisores.Designer.cs">
+      <DependentUpon>201705310646290_CriarTabelaRevisores.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705301948075_CriacaoDoBanco.resx">
       <DependentUpon>201705301948075_CriacaoDoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705310646290_CriarTabelaRevisores.resx">
+      <DependentUpon>201705310646290_CriarTabelaRevisores.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
