@@ -26,6 +26,12 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             return livro;
         }
 
+        //public list<Livro> ObterPorGenero(string Genero)
+        //{
+        //    list<Livros> livrosPorGenero = 
+        //    return livro;
+        //}
+
         public Livro Alterar(int id)
         {
             var livro = contexto.Livros.FirstOrDefault(cadaUm => cadaUm.Isbn == id);

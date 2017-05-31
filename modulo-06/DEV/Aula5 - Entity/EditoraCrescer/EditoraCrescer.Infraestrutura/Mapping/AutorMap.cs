@@ -13,7 +13,6 @@ namespace EditoraCrescer.Infraestrutura.Mapping
         public AutorMap()
         {
             ToTable("Autores");
-
         }
     }
 }
