@@ -10,6 +10,11 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
     public class LivroRepositorio
     {
         private Contexto contexto = new Contexto();
+
+        public LivroRepositorio()
+        {
+        }
+
         public List<Livro> Obter()
         {
             return contexto.Livros.ToList();

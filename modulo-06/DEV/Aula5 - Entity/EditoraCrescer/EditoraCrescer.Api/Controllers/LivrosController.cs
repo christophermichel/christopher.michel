@@ -1,4 +1,5 @@
 ﻿using EditoraCrescer.Infraestrutura;
+using EditoraCrescer.Infraestrutura.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace EditoraCrescer.Api.Controllers
 {
     public class LivrosController : ApiController
     {
-        private Contexto contexto = new Contexto();
+        private LivroRepositorio repositorio = new LivroRepositorio();
 
         public IHttpActionResult Get()
         {
-            var livros = contexto.Livros.ToList();
+            var livros = repositorio.Obter();
             return Ok(livros);
         }
     }
