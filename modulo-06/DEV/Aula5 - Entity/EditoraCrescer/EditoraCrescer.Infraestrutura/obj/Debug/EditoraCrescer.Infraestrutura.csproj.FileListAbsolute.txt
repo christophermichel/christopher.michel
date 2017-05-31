@@ -23,3 +23,5 @@ C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula
 C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.dll
 C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.pdb
 C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.Migrations.CriarTabelaRevisores.resources
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.Migrations.CriarTabelaRevisores.resources
+C:\Users\christopher.michel\Documents\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.Migrations.AdicionarCapa.resources

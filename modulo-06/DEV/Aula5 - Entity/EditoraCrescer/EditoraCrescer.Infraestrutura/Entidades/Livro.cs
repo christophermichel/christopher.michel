@@ -18,5 +18,6 @@ namespace EditoraCrescer.Infraestrutura.Entidades
         public Autor Autor { get; set; }
         public int IdRevisor { get; set; }
         public Revisor Revisor { get; set; }
+        public string Capa { get; set; }
     }
 }
