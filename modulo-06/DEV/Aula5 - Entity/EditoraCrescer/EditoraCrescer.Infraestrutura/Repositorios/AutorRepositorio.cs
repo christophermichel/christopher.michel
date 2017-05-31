@@ -7,31 +7,31 @@ using System.Threading.Tasks;
 
 namespace EditoraCrescer.Infraestrutura.Repositorios
 {
-    public class LivroRepositorio
+    public class AutorRepositorio
     {
         private Contexto contexto = new Contexto();
 
-        public LivroRepositorio()
+        public AutorRepositorio()
         {
         }
 
-        public List<Livro> Obter()
+        public List<Autor> Obter()
         {
-            return contexto.Livros.ToList();
+            return contexto.Autores.ToList();
         }
 
-        public void Criar(Livro livro)
+        public void Criar(Autor autor)
         {
-            contexto.Livros.Add(livro);
+            contexto.Autores.Add(autor);
             contexto.SaveChanges();
         }
 
-        public Livro Deletar(int Isbn)
+        public Livro Deletar(int Id)
         {
-            var livro = contexto.Livros.First(cadaUm => cadaUm.Isbn == Isbn);
-            contexto.Livros.Remove(livro);
+            var autor = contexto.Livros.First(cadaUm => cadaUm.IdAutor == Id);
+            contexto.Livros.Remove(autor);
             contexto.SaveChanges();
-            return livro;
+            return autor;
         }
     }
 }
