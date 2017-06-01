@@ -11,3 +11,16 @@ C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula
 C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\obj\Debug\EditoraCrescer.csprojResolveAssemblyReference.cache
 C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\obj\Debug\EditoraCrescer.exe
 C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\obj\Debug\EditoraCrescer.pdb
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EditoraCrescer.exe.config
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EditoraCrescer.exe
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EditoraCrescer.pdb
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EditoraCrescer.Infraestrutura.dll
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EntityFramework.dll
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EntityFramework.SqlServer.dll
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EditoraCrescer.Infraestrutura.pdb
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EditoraCrescer.Infraestrutura.dll.config
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EntityFramework.xml
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\bin\Debug\EntityFramework.SqlServer.xml
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\obj\Debug\EditoraCrescer.csprojResolveAssemblyReference.cache
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\obj\Debug\EditoraCrescer.exe
+C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer\obj\Debug\EditoraCrescer.pdb

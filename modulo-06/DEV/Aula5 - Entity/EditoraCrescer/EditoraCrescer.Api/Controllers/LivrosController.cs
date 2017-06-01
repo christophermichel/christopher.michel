@@ -24,7 +24,7 @@ namespace EditoraCrescer.Api.Controllers
         }
 
         [HttpGet]
-        [Route("/Lancamentos")]
+        [Route("Lancamentos")]
         public IHttpActionResult ObterLancamentos()
         {
             var livros = repositorio.ObterLancamentos();
