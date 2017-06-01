@@ -32,10 +32,10 @@ namespace EditoraCrescer.Api.Controllers
         }
 
         [HttpGet]
-        [Route("{isbn:int}")]
-        public IHttpActionResult ObterPorId(int Isbn)
+        [Route("{id:int}")]
+        public IHttpActionResult ObterPorId(int id)
         {
-            repositorio.ObterPorId(Isbn);
+            repositorio.ObterPorId(id);
             return Ok();
         }
 

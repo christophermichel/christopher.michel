@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="editora">
+  <head>
+    <meta charset="utf-8">
+    <title>Editora Crescer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.4/angular-locale_pt-br.min.js"></script>
+  </head>
+  <body ng-controller="IndexController">
+    <div class="container-fluid">
+      <div class="row"> <h1 class="text-center"> EDITORA CRESCER </h1> </div>
+      <div class="row"> <h1 class="text-center"> LANÇAMENTOS </h1> </div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <ul ng-repeat="livro in livros" class="text-center">
+          <li><img class="Tamanho" ng-src="{{livro.Capa}}"</li>
+          <li>{{livro.Titulo}}</li>
+          <li>{{livro.Titulo}}</li>
+          <li>{{livro.Titulo}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="JS/modulo.js"></script>
+    <script src="JS/IndexController.js"></script>
+    <script src="JS/IndexService.js"></script>
+  </body>
+</html>
