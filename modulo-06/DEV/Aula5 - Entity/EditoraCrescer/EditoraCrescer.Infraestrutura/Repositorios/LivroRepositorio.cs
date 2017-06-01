@@ -1,13 +1,14 @@
 ﻿using EditoraCrescer.Infraestrutura.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EditoraCrescer.Infraestrutura.Repositorios
 {
-    public class LivroRepositorio
+    public class LivroRepositorio : IDisposable
     {
         private Contexto contexto = new Contexto();
 
@@ -26,18 +27,17 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             return livro;
         }
 
-        //public list<Livro> ObterPorGenero(string Genero)
-        //{
-        //    list<Livros> livrosPorGenero = 
-        //    return livro;
-        //}
-
-        public Livro Alterar(int id)
+        public List<Livro> ObterPorGenero(string genero)
         {
-            var livro = contexto.Livros.FirstOrDefault(cadaUm => cadaUm.Isbn == id);
-            contexto.Entry(livro).State = System.Data.Entity.EntityState.Modified;
+            return contexto.Livros
+                            .Where(x => x.Genero.Contains(genero))
+                            .ToList();
+        }
+
+        public void Alterar(Livro livro)
+        {
+            contexto.Entry(livro).State = EntityState.Modified;
             contexto.SaveChanges();
-            return livro;
         }
 
         public void Criar(Livro livro)
@@ -52,6 +52,11 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             contexto.Livros.Remove(livro);
             contexto.SaveChanges();
             return livro;
+        }
+
+        public void Dispose()
+        {
+            contexto.Dispose();
         }
 
     }
