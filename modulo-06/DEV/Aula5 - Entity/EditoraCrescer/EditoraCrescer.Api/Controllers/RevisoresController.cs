@@ -9,22 +9,42 @@ using System.Web.Http;
 
 namespace EditoraCrescer.Api.Controllers
 {
+    [RoutePrefix("api/Revisores")]
     public class RevisoresController : ApiController
     {
         private RevisorRepositorio repositorio = new RevisorRepositorio();
 
-        public IHttpActionResult Get()
+        [HttpGet]
+        public IHttpActionResult Obter()
         {
             return Ok(repositorio.Obter());
         }
 
-        public IHttpActionResult Post(Revisor revisor)
+        [HttpGet]
+        [Route("{id:int}")]
+        public IHttpActionResult ObterRevisorPorId(int id)
+        {
+            return Ok(repositorio.ObterRevisorPorId(id));
+        }
+
+        [HttpPost]
+        public IHttpActionResult Criar(Revisor revisor)
         {
             repositorio.Criar(revisor);
             return Ok();
         }
 
-        public IHttpActionResult Delete(int id)
+        [HttpPut]
+        [Route("{id}")]
+        public IHttpActionResult Alterar(Revisor revisor)
+        {
+            repositorio.Alterar(revisor);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IHttpActionResult Deletar(int id)
         {
             repositorio.Deletar(id);
             return Ok();

@@ -1,13 +1,14 @@
 ﻿using EditoraCrescer.Infraestrutura.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EditoraCrescer.Infraestrutura.Repositorios
 {
-    public class RevisorRepositorio
+    public class RevisorRepositorio : IDisposable
     {
         private Contexto contexto = new Contexto();
 
@@ -20,9 +21,20 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             return contexto.Revisores.ToList();
         }
 
+        public Revisor ObterRevisorPorId(int id)
+        {
+            return contexto.Revisores.FirstOrDefault(x => x.Id == id);
+        }
+
         public void Criar(Revisor revisor)
         {
             contexto.Revisores.Add(revisor);
+            contexto.SaveChanges();
+        }
+
+        public void Alterar(Revisor revisor)
+        {
+            contexto.Entry(revisor).State = EntityState.Modified;
             contexto.SaveChanges();
         }
 
@@ -32,6 +44,11 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             contexto.Revisores.Remove(revisor);
             contexto.SaveChanges();
             return revisor;
+        }
+
+        public void Dispose()
+        {
+            contexto.Dispose();
         }
     }
 }
