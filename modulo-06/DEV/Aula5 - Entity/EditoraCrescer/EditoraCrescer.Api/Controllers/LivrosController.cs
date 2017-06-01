@@ -23,8 +23,16 @@ namespace EditoraCrescer.Api.Controllers
             return Ok(livros);
         }
 
-        [Route("{isbn:int}")]
         [HttpGet]
+        [Route("/Lancamentos")]
+        public IHttpActionResult ObterLancamentos()
+        {
+            var livros = repositorio.ObterLancamentos();
+            return Ok(livros);
+        }
+
+        [HttpGet]
+        [Route("{isbn:int}")]
         public IHttpActionResult ObterPorId(int Isbn)
         {
             repositorio.ObterPorId(Isbn);

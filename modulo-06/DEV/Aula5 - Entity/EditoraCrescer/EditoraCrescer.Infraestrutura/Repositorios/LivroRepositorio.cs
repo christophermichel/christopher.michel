@@ -16,9 +16,18 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
         {
         }
 
-        public List<Livro> Obter()
+        public dynamic Obter()
         {
-            return contexto.Livros.ToList();
+            return contexto.Livros
+                           .Select(x => new
+                            {
+                                Isbn = x.Isbn,
+                                Titulo = x.Titulo,
+                                Capa = x.Capa,
+                                NomeAutor = x.Autor,
+                                ObterPorGenero = x.Genero
+                            })
+                            .ToList();
         }
 
         public Livro ObterPorId(int id)
@@ -27,10 +36,33 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             return livro;
         }
 
-        public List<Livro> ObterPorGenero(string genero)
+        public dynamic ObterPorGenero(string genero)
         {
             return contexto.Livros
                             .Where(x => x.Genero.Contains(genero))
+                            .Select(x => new
+                            {
+                                Isbn = x.Isbn,
+                                Titulo = x.Titulo,
+                                Capa = x.Capa,
+                                NomeAutor = x.Autor,
+                                ObterPorGenero = x.Genero
+                            })
+                            .ToList();
+        }
+
+        public dynamic ObterLancamentos()
+        {
+            return contexto.Livros
+                           .Where(cadaUm => ((DateTime.Now - cadaUm.DataPublicacao).TotalDays) >= 7)
+                           .Select(x => new
+                           {
+                               Isbn = x.Isbn,
+                               Titulo = x.Titulo,
+                               Capa = x.Capa,
+                               NomeAutor = x.Autor,
+                               ObterPorGenero = x.Genero
+                           })
                             .ToList();
         }
 
