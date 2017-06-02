@@ -29,8 +29,9 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
                                 Isbn = x.Isbn,
                                 Titulo = x.Titulo,
                                 Capa = x.Capa,
-                                NomeAutor = x.Autor.Nome
-                            })
+                                NomeAutor = x.Autor.Nome,
+                                Genero = x.Genero
+                           })
                             .ToList();
         }
 

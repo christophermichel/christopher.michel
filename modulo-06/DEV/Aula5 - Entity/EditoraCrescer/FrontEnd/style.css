@@ -1,9 +1,54 @@
+.container-fluid {
+  background-image: url(fundo.jpg);
+  background-size:100%;
+  background-repeat:no-repeat;
+}
+
+.fundoTitulo {
+  background-image: url(capa.jpg);
+  background-size:100%;
+  background-repeat:no-repeat;
+  padding: 15px;
+  color: white;
+}
+
+.lanca {
+  background-image: url(lancamentos.jpg);
+  background-size:100%;
+  background-repeat:no-repeat;
+  color: black;
+  padding: 25px;
+}
+.lancamentos {
+  background-color: #00BFFF;
+  padding: 10px;
+  border: 10px;
+  margin: 10px;
+  border-radius: 35px;
+}
+
 .Tamanho {
   height: 75px;
   width: 50px;
 }
 
 ul {
-  list-style-type: none;
+  list-style-type: none
+}
+
+.float {
   float: left;
+}
+
+.listaLivros {
+  background-color: #BA55D3;
+  padding: 5px;
+  border: 5px;
+  margin-left: 80px;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+.fundoListaLivros {
+  background-color: black;
 }
