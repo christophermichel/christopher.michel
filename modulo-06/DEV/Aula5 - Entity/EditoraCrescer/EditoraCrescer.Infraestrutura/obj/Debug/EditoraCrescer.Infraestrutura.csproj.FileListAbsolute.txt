@@ -38,3 +38,4 @@ C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer
 C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.csproj.GenerateResource.Cache
 C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.dll
 C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.pdb
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.Migrations.AdicionarCapa.resources

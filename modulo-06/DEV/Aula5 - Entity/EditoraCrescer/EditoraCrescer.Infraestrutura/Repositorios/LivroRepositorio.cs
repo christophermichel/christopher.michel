@@ -24,15 +24,15 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
                                 Isbn = x.Isbn,
                                 Titulo = x.Titulo,
                                 Capa = x.Capa,
-                                NomeAutor = x.Autor
+                                NomeAutor = x.Autor.Nome
                             })
                             .ToList();
         }
 
         public Livro ObterPorId(int id)
         {
-            var livro = contexto.Livros.First(cadaUm => cadaUm.Isbn == id);
-            return livro;
+            return contexto.Livros.FirstOrDefault(x => x.Isbn == id);
+                                  
         }
 
         public dynamic ObterPorGenero(string genero)
@@ -44,8 +44,8 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
                                 Isbn = x.Isbn,
                                 Titulo = x.Titulo,
                                 Capa = x.Capa,
-                                NomeAutor = x.Autor,
-                                ObterPorGenero = x.Genero
+                                NomeAutor = x.Autor.Nome,
+                                Genero = x.Genero
                             })
                             .ToList();
         }
@@ -59,8 +59,7 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
                                Isbn = x.Isbn,
                                Titulo = x.Titulo,
                                Capa = x.Capa,
-                               NomeAutor = x.Autor,
-                               ObterPorGenero = x.Genero
+                               Autor = x.Autor.Nome
                            })
                             .ToList();
         }

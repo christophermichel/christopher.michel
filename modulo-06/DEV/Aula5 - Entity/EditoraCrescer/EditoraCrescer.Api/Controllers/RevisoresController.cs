@@ -17,14 +17,14 @@ namespace EditoraCrescer.Api.Controllers
         [HttpGet]
         public IHttpActionResult Obter()
         {
-            return Ok(repositorio.Obter());
+            return Ok(new { dados = repositorio.Obter() });
         }
 
         [HttpGet]
         [Route("{id:int}")]
         public IHttpActionResult ObterRevisorPorId(int id)
         {
-            return Ok(repositorio.ObterRevisorPorId(id));
+            return Ok(new { dados = repositorio.ObterRevisorPorId(id) });
         }
 
         [HttpPost]

@@ -20,7 +20,7 @@ namespace EditoraCrescer.Api.Controllers
         public IHttpActionResult ObterTodos()
         {
             var livros = repositorio.Obter();
-            return Ok(livros);
+            return Ok(new { dados = livros });
         }
 
         [HttpGet]
@@ -28,15 +28,15 @@ namespace EditoraCrescer.Api.Controllers
         public IHttpActionResult ObterLancamentos()
         {
             var livros = repositorio.ObterLancamentos();
-            return Ok(livros);
+            return Ok(new { dados = livros });
         }
 
         [HttpGet]
         [Route("{id:int}")]
         public IHttpActionResult ObterPorId(int id)
         {
-            repositorio.ObterPorId(id);
-            return Ok();
+            var livro = repositorio.ObterPorId(id);
+            return Ok(new { dados = livro });
         }
 
         [Route("{genero}")]
@@ -51,7 +51,7 @@ namespace EditoraCrescer.Api.Controllers
         public IHttpActionResult Criar(Livro livro)
         {
             repositorio.Criar(livro);
-            return Ok();
+            return Ok(new { dados = livro });
         }
 
         [HttpPut]
@@ -59,15 +59,14 @@ namespace EditoraCrescer.Api.Controllers
         public IHttpActionResult Alterar (Livro livro)
         {
             repositorio.Alterar(livro);
-            return Ok();
+            return Ok(new { dados = livro });
         }
 
         [HttpDelete]
         [Route("{isbn}")]
         public IHttpActionResult Deletar(int Isbn)
         {
-            repositorio.Deletar(Isbn);
-            return Ok();
+            return Ok(new { dados = repositorio.Deletar(Isbn) });
         }
     }
 }

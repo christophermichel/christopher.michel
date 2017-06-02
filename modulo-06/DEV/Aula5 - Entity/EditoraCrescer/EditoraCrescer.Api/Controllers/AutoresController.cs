@@ -18,7 +18,7 @@ namespace EditoraCrescer.Api.Controllers
         [HttpGet]
         public IHttpActionResult Obter()
         {
-            return Ok(repositorio.Obter());
+            return Ok(new { dados = repositorio.Obter() });
         }
 
         
@@ -26,14 +26,14 @@ namespace EditoraCrescer.Api.Controllers
         [Route("{id:int}/livros")]
         public IHttpActionResult ObterLivrosPorIdAutor(int id)
         {
-            return Ok(repositorio.ObterLivrosPorIdAutor(id));
+            return Ok(new { dados = repositorio.ObterLivrosPorIdAutor(id) });
         }
 
         [HttpGet]
         [Route("{id:int}")]
         public IHttpActionResult ObterAutorPorId(int id)
         {
-            return Ok(repositorio.ObterAutorPorId(id));
+            return Ok(new { dados = repositorio.ObterAutorPorId(id) });
         }
 
         [HttpPost]

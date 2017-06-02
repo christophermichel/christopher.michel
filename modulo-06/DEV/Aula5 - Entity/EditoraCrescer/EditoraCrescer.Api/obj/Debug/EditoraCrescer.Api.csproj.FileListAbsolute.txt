@@ -157,3 +157,6 @@ C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer
 C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Api\bin\System.Web.Cors.dll
 C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Api\bin\System.Web.Http.Cors.dll
 C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Api\bin\System.Web.Http.Cors.xml
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Api\bin\System.Web.Cors.dll
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Api\bin\System.Web.Http.Cors.dll
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Api\bin\System.Web.Http.Cors.xml
