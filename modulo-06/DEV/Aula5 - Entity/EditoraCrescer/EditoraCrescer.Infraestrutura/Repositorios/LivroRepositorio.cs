@@ -18,6 +18,11 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
 
         public dynamic Obter()
         {
+            return contexto.Livros.ToList();
+        }
+
+        public dynamic ObterResumido()
+        {
             return contexto.Livros
                            .Select(x => new
                             {
@@ -52,15 +57,18 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
 
         public dynamic ObterLancamentos()
         {
+            var seteDiasAtras = DateTime.Now.AddDays(-7);
+
             return contexto.Livros
-                           .Where(cadaUm => ((DateTime.Now - cadaUm.DataPublicacao).TotalDays) >= 7)
+                           .Where(x => (x.DataPublicacao > seteDiasAtras))
                            .Select(x => new
                            {
-                               Isbn = x.Isbn,
-                               Titulo = x.Titulo,
-                               Capa = x.Capa,
-                               Autor = x.Autor.Nome
-                           })
+                                Isbn = x.Isbn,
+                                Titulo = x.Titulo,
+                                Capa = x.Capa,
+                                NomeAutor = x.Autor.Nome,
+                                Genero = x.Genero
+                            })
                             .ToList();
         }
 

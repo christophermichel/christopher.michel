@@ -51,7 +51,7 @@ namespace EditoraCrescer.Api.Controllers
         public IHttpActionResult Criar(Livro livro)
         {
             repositorio.Criar(livro);
-            return Ok(new { dados = livro });
+            return Ok();
         }
 
         [HttpPut]
@@ -59,14 +59,14 @@ namespace EditoraCrescer.Api.Controllers
         public IHttpActionResult Alterar (Livro livro)
         {
             repositorio.Alterar(livro);
-            return Ok(new { dados = livro });
+            return Ok();
         }
 
         [HttpDelete]
         [Route("{isbn}")]
         public IHttpActionResult Deletar(int Isbn)
         {
-            return Ok(new { dados = repositorio.Deletar(Isbn) });
+            return Ok();
         }
     }
 }
