@@ -35,6 +35,23 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
                             .ToList();
         }
 
+        public dynamic ObterResumidoComPegarPular(int pegar, int pular)
+        {
+            return contexto.Livros
+                           .Select(x => new
+                           {
+                               Isbn = x.Isbn,
+                               Titulo = x.Titulo,
+                               Capa = x.Capa,
+                               NomeAutor = x.Autor.Nome,
+                               Genero = x.Genero
+                           })
+                            .OrderBy(x => x.Isbn)
+                            .Skip(pular)
+                            .Take(pegar)
+                            .ToList();
+        }
+
         public Livro ObterPorId(int id)
         {
             return contexto.Livros.FirstOrDefault(x => x.Isbn == id);

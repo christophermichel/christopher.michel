@@ -17,9 +17,9 @@ namespace EditoraCrescer.Api.Controllers
 
         
         [HttpGet]
-        public IHttpActionResult ObterTodos()
+        public IHttpActionResult ObterTodos(int pegar, int pular)
         {
-            var livros = repositorio.Obter();
+            var livros = repositorio.ObterResumidoComPegarPular(pegar, pular);
             return Ok(new { dados = livros });
         }
 
