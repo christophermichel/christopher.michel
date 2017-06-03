@@ -15,7 +15,6 @@ namespace EditoraCrescer.Api.Controllers
     {
         private LivroRepositorio repositorio = new LivroRepositorio();
 
-        
         [HttpGet]
         public IHttpActionResult ObterTodos(int pegar, int pular)
         {

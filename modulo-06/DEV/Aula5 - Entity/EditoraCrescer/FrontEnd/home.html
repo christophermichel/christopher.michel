@@ -1,0 +1,24 @@
+<div ng-controller="IndexController">
+<div class="fundoTitulo row"><h1 class="text-center"> EDITORA CRESCER </h1> </div>
+<div class="lanca row"><div class="row"> <h1 class="text-center"> LANÇAMENTOS </h1> </div>
+<div class="row">
+  <div class="col-md-3"></div>
+  <ul ng-repeat="livro in lancamentos.dados" class="text-center float lancamentos">
+    <li><img class="Tamanho" ng-src="{{livro.Capa}}"</li>
+    <li>{{livro.Titulo}}</li>
+    <li>{{livro.NomeAutor}}</li>
+  </ul>
+  <div class="col-md-3"></div>
+</div>
+</div>
+
+  <h1 class="text-center row"> NOSSOS LIVROS </h1>
+  <div ng-repeat="livro in livros.dados" class="col-md-3 listaLivros">
+    <div class="float"><img class="Tamanho" ng-src="{{livro.Capa}}"></div>
+    <div class="float text-center">
+    <h4 class="text-center">  Título: {{livro.Titulo}}</h4>
+    <h4 class="text-center">  Título: {{livro.NomeAutor}}</h4>
+    <h4 class="text-center">  Gênero: {{livro.Genero}}</h4>
+  </div>
+</div>
+</div>

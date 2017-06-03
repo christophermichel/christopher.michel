@@ -7,6 +7,7 @@ function ObterLancamentos() {
       $scope.lancamentos = response.data;
       });
     }
+
 function ObterLivros() {
       IndexService.ObterLivros().then(function (response) {
       $scope.livros = response.data;
