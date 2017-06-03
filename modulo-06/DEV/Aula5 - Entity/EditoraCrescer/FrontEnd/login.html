@@ -1,0 +1,16 @@
+<div ng-controller="LoginController">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 margem">
+                <form name="login" ng-submit="addUsuario(usuario)">
+                    <div class="form-group">
+                        <label class="text-center">EMAIL</label>
+                        <input type="email" class="form-control" minlength="10" placeholder="Ex.: anana@gmail.com" ng-model="usuario.email">
+                        <label class="text-center">SENHA</label>
+                        <input type="text" class="form-control" minlength="8" ng-model="usuario.senha">
+                        <button type="submit" class="btn btn-primary btn-block" ng-disabled="login.$invalid">Entrar</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>

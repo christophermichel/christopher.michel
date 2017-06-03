@@ -1,11 +1,13 @@
 body{
   font-family: 'Open Sans', sans-serif;
-}
-
-.container-fluid {
   background-image: url(fundo.jpg);
   background-size:100%;
   background-repeat:no-repeat;
+  background-size: cover;
+}
+
+.margem {
+  margin-top: 150px;
 }
 
 .fundoTitulo {
