@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <ul ng-repeat="livro in lancamentos.dados" class="text-center float lancamentos">
-    <li><img class="Tamanho" ng-src="{{livro.Capa}}"</li>
+    <li><img class="Tamanho" ng-src="{{livro.Capa}}" </li>
     <li>{{livro.Titulo}}</li>
     <li>{{livro.NomeAutor}}</li>
   </ul>
@@ -13,10 +13,11 @@
 
   <h1 class="text-center row"> NOSSOS LIVROS </h1>
   <div ng-repeat="livro in livros.dados" class="col-md-3 listaLivros">
+    <a class="btn  botaoDetalhe" ng-href="#!/LivroDetalhado/{{livro.Isbn}}">
     <div class="float"><img class="Tamanho" ng-src="{{livro.Capa}}"></div>
     <div class="float text-center">
     <h4 class="text-center">  Título: {{livro.Titulo}}</h4>
-    <h4 class="text-center">  Título: {{livro.NomeAutor}}</h4>
+    <h4 class="text-center">  Autor: {{livro.NomeAutor}}</h4>
     <h4 class="text-center">  Gênero: {{livro.Genero}}</h4>
   </div>
 </div>

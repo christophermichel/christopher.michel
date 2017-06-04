@@ -12,5 +12,9 @@ editora.config(function ($routeProvider) {
                 controller: 'AdministrativoController',
                 templateUrl: './administrativo.html'
             })
+            .when ('/LivroDetalhado/:isbn', {
+                controller: "LivroDetalhadoController",
+                templateUrl: "./LivroDetalhado.html"
+            })
             .otherwise({redirectTo:'/home'});
     });
