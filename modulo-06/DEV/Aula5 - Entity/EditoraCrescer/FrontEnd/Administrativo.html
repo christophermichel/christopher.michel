@@ -1,0 +1,63 @@
+<div class='row'>
+  <div class='col-md-3'></div>
+  <div class='col-md-4 text-center'>
+    <form name='AdministrativoForm' novalidate ng-submit='salvar(livro)'>
+        <div class='form-group'>
+            <label for='titulo'> Titulo: </label>
+            <input type='text' class='form-control' name='titulo' ng-model='livro.Titulo' />
+        </div>
+        <div class='form-group'>
+            <label for='descricao'> Descrição: </label>
+            <input type='text' name='descricao' class='form-control' ng-model='livro.Descricao' />
+        </div>
+        <div class='form-group'>
+            <label for='genero'> Gênero: </label>
+            <input type='text' name='genero' class='form-control' ng-model='livro.Genero' />
+        </div>
+        <div class='form-group'>
+            <label for='idAutor'> Id Autor: </label>
+            <input type='number' name='idAutor' class='form-control' ng-model='livro.IdAutor' />
+        </div>
+        <div class='form-group'>
+            <label for='idRevisor'> Id Revisor: </label>
+            <input type='number' name='idRevisor' class='form-control' ng-model='livro.IdRevisor' />
+        </div>
+        <div class='form-group'>
+            <label for='Capa'> Endereço de Imagem da capa:  </label>
+            <input type='text' name='Capa' class='form-control' ng-model='livro.Capa'>
+        </div>
+        <button type='submit' class='btn btn-primary'>Salvar</button>
+    </form>
+
+    <div>
+        <table class='table table-bordered'>
+            <thead>
+                <tr>
+                    <th>Isbn</th>
+                    <th>Capa</th>
+                    <th>Título</th>
+                    <th>Gênero</th>
+                    <th>Autor</th>
+                    <th>Excluir</th>
+                    <th ng-if='auth.possuiPermissao('Revisor')'>Revisar</th>
+                    <th ng-if='auth.possuiPermissao('Publicador')'>Publicar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='livro in livros.dados'>
+                    <th>{{livro.Isbn}}</th>
+                    <th>
+                        <img ng-src='{{livro.Capa}}'>
+                    </th>
+                    <td>{{livro.Titulo}}</td>
+                    <td>{{livro.Genero}}</td>
+                    <td>{{livro.Autor.Nome}}</td>
+                    <td><button class='btn btn-danger' ng-click='deletar(livro)'>Excluir</button></td>
+                    <td><button ng-if='auth.possuiPermissao('Revisor')' class='btn btn-primary' ng-click='revisar(livro)'>Revisar</button></td>
+                    <td><button ng-if='auth.possuiPermissao('Administrador')' class='btn btn-primary' ng-click='publicar(livro)'>Publicar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
