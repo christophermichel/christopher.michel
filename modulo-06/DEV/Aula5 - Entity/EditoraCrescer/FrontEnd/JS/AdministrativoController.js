@@ -12,4 +12,9 @@ function salvar(livro)
     }
 }
 
+function deletar(livro)
+{
+    deletar(livro);
+}
+
 });
