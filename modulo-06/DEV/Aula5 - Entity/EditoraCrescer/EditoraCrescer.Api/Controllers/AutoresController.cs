@@ -1,4 +1,5 @@
-﻿using EditoraCrescer.Infraestrutura;
+﻿using EditoraCrescer.Api.App_Start;
+using EditoraCrescer.Infraestrutura;
 using EditoraCrescer.Infraestrutura.Entidades;
 using EditoraCrescer.Infraestrutura.Repositorios;
 using System;
