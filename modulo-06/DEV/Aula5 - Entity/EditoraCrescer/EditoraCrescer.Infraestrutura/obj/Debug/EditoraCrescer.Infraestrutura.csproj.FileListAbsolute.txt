@@ -40,3 +40,4 @@ C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer
 C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.pdb
 C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.Migrations.AdicionarCapa.resources
 C:\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.csprojResolveAssemblyReference.cache
+C:\Users\chris\OneDrive\Documentos\Crescer\christopher.michel\modulo-06\DEV\Aula5 - Entity\EditoraCrescer\EditoraCrescer.Infraestrutura\obj\Debug\EditoraCrescer.Infraestrutura.Migrations.CriarTabelaUsuario.resources

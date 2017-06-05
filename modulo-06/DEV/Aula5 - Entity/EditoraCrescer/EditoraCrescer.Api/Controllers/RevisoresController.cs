@@ -24,7 +24,7 @@ namespace EditoraCrescer.Api.Controllers
         [Route("{id:int}")]
         public IHttpActionResult ObterRevisorPorId(int id)
         {
-            return Ok(new { dados = repositorio.ObterRevisorPorId(id) });
+            return Ok(new { dados = repositorio.ObterUsuarioPorId(id) });
         }
 
         [HttpPost]
