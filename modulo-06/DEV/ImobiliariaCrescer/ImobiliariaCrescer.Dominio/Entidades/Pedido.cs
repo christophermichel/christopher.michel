@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ImobiliariaCrescer.Dominio.Entidades
 {
-    class Pedido
+    public class Pedido
     {
         public int Id { get; set; }
+        public Cliente Cliente { get; set; }
         public int IdCliente { get; set; }
         public List <Produto> Itens { get; set; }
         public DateTime DataPedido { get; set; }

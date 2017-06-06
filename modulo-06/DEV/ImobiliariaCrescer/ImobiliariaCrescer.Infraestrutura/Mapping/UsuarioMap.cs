@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ImobiliariaCrescer.Infraestrutura.Mapping
 {
-    public class ClienteMap : EntityTypeConfiguration<Cliente>
+    public class UsuarioMap : EntityTypeConfiguration<Usuario>
     {
-        public ClienteMap()
+        public UsuarioMap()
         {
-            ToTable("Clientes");
+            ToTable("Usuarios");
         }
     }
 }
