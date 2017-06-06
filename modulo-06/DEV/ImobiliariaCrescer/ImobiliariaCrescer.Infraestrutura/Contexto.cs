@@ -1,5 +1,4 @@
-﻿using AutDemo.Dominio.Entidades;
-using ImobiliariaCrescer.Dominio.Entidades;
+﻿using ImobiliariaCrescer.Dominio.Entidades;
 using ImobiliariaCrescer.Infraestrutura.Mapping;
 using System;
 using System.Collections.Generic;
