@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace ImobiliariaCrescer.Dominio.Entidades
 {
-    public class Produto
+    public class PedidoProduto
     {
         public int Id { get; set; }
-        public string Pacote { get; set; }
-        public string Tipo { get; set; }
+        public Produto Produto { get; set; }
         public int Quantidade { get; set; }
-        public decimal PrecoDiaria { get; set; }
     }
 }

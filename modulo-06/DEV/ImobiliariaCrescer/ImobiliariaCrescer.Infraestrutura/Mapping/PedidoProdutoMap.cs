@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace ImobiliariaCrescer.Infraestrutura.Mapping
 {
-    public class PedidoMap : EntityTypeConfiguration<Pedido>
+    public class PedidoProdutoMap : EntityTypeConfiguration<PedidoProduto>
     {
-        public PedidoMap()
+        public PedidoProdutoMap()
         {
-            ToTable("Pedidos");
-            HasRequired(x => x.Cliente)
+            ToTable("PedidoProduto");
+
+            HasRequired(x => x.Produto)
             .WithMany()
-            .Map(x => x.MapKey("IdCliente"));
+            .Map(x => x.MapKey("IdProduto"));
         }
     }
 }

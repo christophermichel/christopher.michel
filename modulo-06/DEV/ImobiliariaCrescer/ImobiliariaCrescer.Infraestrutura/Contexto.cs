@@ -21,12 +21,15 @@ namespace EditoraCrescer.Infraestrutura
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<PedidoProduto> PedidoProduto { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ClienteMap());
             modelBuilder.Configurations.Add(new PedidoMap());
             modelBuilder.Configurations.Add(new ProdutoMap());
             modelBuilder.Configurations.Add(new UsuarioMap());
+            modelBuilder.Configurations.Add(new PedidoProdutoMap());
         }
     }
 }
