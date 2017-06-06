@@ -96,14 +96,17 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BasicAuthorizationAttribute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ControllerBasica.cs" />
     <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegistrarUsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,9 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ImobiliariaCrescer.Dominio\ImobiliariaCrescer.Dominio.csproj">
+      <Project>{8A76B6AD-CC79-4A3D-8B5C-416E0AA73DBC}</Project>
+      <Name>ImobiliariaCrescer.Dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ImobiliariaCrescer.Infraestrutura\ImobiliariaCrescer.Infraestrutura.csproj">
       <Project>{8E5334F0-1F23-437E-B3B3-C8E88C005053}</Project>
       <Name>ImobiliariaCrescer.Infraestrutura</Name>
