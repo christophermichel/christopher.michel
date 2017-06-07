@@ -1,4 +1,5 @@
-﻿using ImobiliariaCrescer.Infraestrutura.Repositorios;
+﻿using ImobiliariaCrescer.Dominio.Entidades;
+using ImobiliariaCrescer.Infraestrutura.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,12 @@ namespace ImobiliariaCrescer.Api.Controllers
         }
 
         //post
+        [HttpPost]
+        public IHttpActionResult Post(Cliente cliente)
+        {
+            repositorio.Criar(cliente);
+            return Ok();
+        }
 
     }
 }

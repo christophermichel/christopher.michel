@@ -32,6 +32,12 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
                            .FirstOrDefault(x => x.Id == id);
         }
 
+        public void Criar(Produto produto)
+        {
+            contexto.Produtos.Add(produto);
+            contexto.SaveChanges();
+        }
+
         public void Dispose()
         {
             contexto.Dispose();

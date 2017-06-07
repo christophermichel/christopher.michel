@@ -18,6 +18,12 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
                            .FirstOrDefault(x => x.Id == id);
         }
 
+        public void Criar(Pedido pedido)
+        {
+            contexto.Pedidos.Add(pedido);
+            contexto.SaveChanges();
+        }
+
         public void Dispose()
         {
             contexto.Dispose();
