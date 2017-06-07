@@ -14,7 +14,12 @@ namespace ImobiliariaCrescer.Api.Controllers
     {
         private ProdutoRepositorio repositorio = new ProdutoRepositorio();
 
-        /*
+        [HttpGet]
+        public IHttpActionResult Obter()
+        {
+            return Ok(new { dados = repositorio.Obter() });
+        }
+
         //get adicionais
         [Route("adicionais")]
         [HttpGet]
@@ -31,7 +36,7 @@ namespace ImobiliariaCrescer.Api.Controllers
         {
             var produtos = repositorio.ObterCombos();
             return Request.CreateResponse(HttpStatusCode.OK, new { dados = produtos });
-        }*/
+        }
 
         //get por id
         [Route("{id:int}")]

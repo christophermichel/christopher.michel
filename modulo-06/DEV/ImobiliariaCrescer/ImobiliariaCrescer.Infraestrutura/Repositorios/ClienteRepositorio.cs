@@ -12,6 +12,10 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
     {
         private Contexto contexto = new Contexto();
 
+        public ClienteRepositorio()
+        {
+        }
+
         public Cliente ObterPorId(int id)
         {
             return contexto.Clientes

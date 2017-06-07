@@ -51,11 +51,12 @@
     <Compile Include="Mapping\ClienteMap.cs" />
     <Compile Include="Mapping\PedidoMap.cs" />
     <Compile Include="Mapping\PedidoProdutoMap.cs" />
+    <Compile Include="Mapping\PermissaoMap.cs" />
     <Compile Include="Mapping\ProdutoMap.cs" />
     <Compile Include="Mapping\UsuarioMap.cs" />
-    <Compile Include="Migrations\201706062025174_CriarBancoDeDados.cs" />
-    <Compile Include="Migrations\201706062025174_CriarBancoDeDados.Designer.cs">
-      <DependentUpon>201706062025174_CriarBancoDeDados.cs</DependentUpon>
+    <Compile Include="Migrations\201706071922239_InitialDB.cs" />
+    <Compile Include="Migrations\201706071922239_InitialDB.Designer.cs">
+      <DependentUpon>201706071922239_InitialDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,8 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706062025174_CriarBancoDeDados.resx">
-      <DependentUpon>201706062025174_CriarBancoDeDados.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706071922239_InitialDB.resx">
+      <DependentUpon>201706071922239_InitialDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@ namespace ImobiliariaCrescer.Infraestrutura.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CriarBancoDeDados : DbMigration
+    public partial class InitialDB : DbMigration
     {
         public override void Up()
         {
@@ -63,27 +63,55 @@ namespace ImobiliariaCrescer.Infraestrutura.Migrations
                 .Index(t => t.IdCliente);
             
             CreateTable(
-                "dbo.Usuarios",
+                "dbo.Permissao",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Email = c.String(),
-                        Senha = c.String(),
-                        Gerente = c.Boolean(nullable: false),
+                        Nome = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Usuario",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false, identity: true),
+                        Nome = c.String(),
+                        Email = c.String(),
+                        Senha = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.UsuarioPermissao",
+                c => new
+                    {
+                        IdUsuario = c.Guid(nullable: false),
+                        IdPermissao = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.IdUsuario, t.IdPermissao })
+                .ForeignKey("dbo.Usuario", t => t.IdUsuario, cascadeDelete: true)
+                .ForeignKey("dbo.Permissao", t => t.IdPermissao, cascadeDelete: true)
+                .Index(t => t.IdUsuario)
+                .Index(t => t.IdPermissao);
             
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.UsuarioPermissao", "IdPermissao", "dbo.Permissao");
+            DropForeignKey("dbo.UsuarioPermissao", "IdUsuario", "dbo.Usuario");
             DropForeignKey("dbo.PedidoProduto", "Pedido_Id", "dbo.Pedidos");
             DropForeignKey("dbo.Pedidos", "IdCliente", "dbo.Clientes");
             DropForeignKey("dbo.PedidoProduto", "IdProduto", "dbo.Produtos");
+            DropIndex("dbo.UsuarioPermissao", new[] { "IdPermissao" });
+            DropIndex("dbo.UsuarioPermissao", new[] { "IdUsuario" });
             DropIndex("dbo.Pedidos", new[] { "IdCliente" });
             DropIndex("dbo.PedidoProduto", new[] { "Pedido_Id" });
             DropIndex("dbo.PedidoProduto", new[] { "IdProduto" });
-            DropTable("dbo.Usuarios");
+            DropTable("dbo.UsuarioPermissao");
+            DropTable("dbo.Usuario");
+            DropTable("dbo.Permissao");
             DropTable("dbo.Pedidos");
             DropTable("dbo.Produtos");
             DropTable("dbo.PedidoProduto");

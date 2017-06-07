@@ -13,6 +13,7 @@ namespace ImobiliariaCrescer.Infraestrutura.Mapping
         public PedidoMap()
         {
             ToTable("Pedidos");
+            Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             HasRequired(x => x.Cliente)
             .WithMany()
             .Map(x => x.MapKey("IdCliente"));

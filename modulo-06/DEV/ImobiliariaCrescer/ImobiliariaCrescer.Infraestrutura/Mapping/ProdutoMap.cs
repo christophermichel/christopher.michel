@@ -13,6 +13,7 @@ namespace ImobiliariaCrescer.Infraestrutura.Mapping
         public ProdutoMap()
         {
             ToTable("Produtos");
+            Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
         }
     }
 }

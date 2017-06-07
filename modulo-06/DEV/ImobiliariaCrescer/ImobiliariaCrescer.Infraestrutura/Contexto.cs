@@ -1,5 +1,6 @@
 ﻿using ImobiliariaCrescer.Dominio.Entidades;
 using ImobiliariaCrescer.Infraestrutura.Mapping;
+using ImobiliariaCrescer.Infraestrutura.Mappings;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -21,6 +22,8 @@ namespace EditoraCrescer.Infraestrutura
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Permissao> Permissoes { get; set; }
+
         public DbSet<PedidoProduto> PedidoProduto { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -29,6 +32,7 @@ namespace EditoraCrescer.Infraestrutura
             modelBuilder.Configurations.Add(new PedidoMap());
             modelBuilder.Configurations.Add(new ProdutoMap());
             modelBuilder.Configurations.Add(new UsuarioMap());
+            modelBuilder.Configurations.Add(new PermissaoMap());
             modelBuilder.Configurations.Add(new PedidoProdutoMap());
         }
     }
