@@ -13,5 +13,12 @@ namespace ImobiliariaCrescer.Api.Controllers
     {
         private ProdutoRepositorio repositorio = new ProdutoRepositorio();
 
+
+        //get
+
+        //get por id
+
+        //post
+
     }
 }

@@ -13,5 +13,13 @@ namespace ImobiliariaCrescer.Api.Controllers
     {
         private ClienteRepositorio repositorio = new ClienteRepositorio();
 
+        //get
+
+
+        //get por id
+
+
+        //post
+
     }
 }

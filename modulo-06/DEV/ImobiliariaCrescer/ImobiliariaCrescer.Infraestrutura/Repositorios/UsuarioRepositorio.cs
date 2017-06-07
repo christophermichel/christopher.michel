@@ -17,7 +17,6 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
             var usrAdmin = new Usuario("gerente", "gerente@cwi.com.br", "123456");
             usrAdmin.AtribuirPermissoes("Administrador");
             _usuarios.Add(usrAdmin.Email, usrAdmin);
-
         }
 
         public UsuarioRepositorio()
