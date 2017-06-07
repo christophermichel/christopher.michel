@@ -15,5 +15,17 @@ namespace ImobiliariaCrescer.Dominio.Entidades
         public string Endereco { get; set; }
         public char Genero { get; set; }
         public DateTime DataDeNascimento { get; set; }
+
+        protected Cliente () { }
+
+        public Cliente (string Nome, int CPF, int telefone, string Endereco, char Genero, DateTime DataDeNascimento)
+        {
+            this.Nome = Nome;
+            this.CPF = CPF;
+            this.Telefone = telefone;
+            this.Endereco = Endereco;
+            this.Genero = Genero;
+            this.DataDeNascimento = DataDeNascimento;
+        }
     }
 }

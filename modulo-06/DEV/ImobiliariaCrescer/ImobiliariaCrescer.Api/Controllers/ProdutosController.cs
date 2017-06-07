@@ -30,7 +30,7 @@ namespace ImobiliariaCrescer.Api.Controllers
         }
 
         //get combos
-        [Route("adicionais")]
+        [Route("combos")]
         [HttpGet]
         public HttpResponseMessage ObterCombos()
         {

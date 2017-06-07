@@ -15,5 +15,7 @@ namespace ImobiliariaCrescer.Dominio.Entidades
         public decimal ValorTotal { get; set; }
         public DateTime DataEntrega { get; set; }
         public DateTime DataVencimento { get; set; }
+
+        protected Pedido() { }
     }
 }

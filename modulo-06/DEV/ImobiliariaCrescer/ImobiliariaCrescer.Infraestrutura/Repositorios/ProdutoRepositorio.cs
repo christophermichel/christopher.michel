@@ -20,14 +20,14 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
         public dynamic ObterAdicionais()
         {
             return contexto.Produtos
-                           .Where(produto => produto.Tipo.Contains("adicional"))
+                           .Where(produto => produto.Tipo.Contains("adicionais"))
                            .ToList();
         }
 
         public List<Produto> ObterCombos()
         {
             return contexto.Produtos
-                           .Where(produto => produto.Tipo != "adicional")
+                           .Where(produto => produto.Tipo != "adicionais")
                            .ToList();
         }
 

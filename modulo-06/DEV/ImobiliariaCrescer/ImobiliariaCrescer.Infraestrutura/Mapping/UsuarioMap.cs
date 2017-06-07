@@ -11,12 +11,14 @@ namespace ImobiliariaCrescer.Infraestrutura.Mappings
             ToTable("Usuario");
             Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            HasMany(x => x.Permissoes).WithMany().Map(x =>
-            {
-                x.MapLeftKey("IdUsuario");
-                x.MapRightKey("IdPermissao");
-                x.ToTable("UsuarioPermissao");
-            });
+            HasMany(x => x.Permissoes)
+                .WithMany()
+                .Map(x =>
+                {
+                    x.MapLeftKey("IdUsuario");
+                    x.MapRightKey("IdPermissao");
+                    x.ToTable("UsuarioPermissao");
+                });
         }
     }
 }

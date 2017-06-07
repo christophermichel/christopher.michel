@@ -18,9 +18,7 @@ namespace ImobiliariaCrescer.Dominio.Entidades
         public List<Permissao> Permissoes { get; private set; }
 
         // Construtor padrão para o Entity Framework
-        protected Usuario()
-        {
-        }
+        protected Usuario() {}
 
         public Usuario(string nome, string email, string senha)
         {
