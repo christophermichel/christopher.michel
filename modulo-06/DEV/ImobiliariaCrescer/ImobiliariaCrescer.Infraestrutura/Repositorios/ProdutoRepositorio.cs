@@ -12,6 +12,20 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
     {
         private Contexto contexto = new Contexto();
 
+        /*public List<Produto> ObterAdicionais()
+        {
+            return contexto.Produtos
+                           .Where(produto => produto.Tipo == "adicional")
+                           .ToList;
+        }
+
+        public List<Produto> ObterCombos()
+        {
+            return contexto.Produtos
+                           .Where(produto => produto.Tipo != "adicional")
+                           .ToList;
+        }*/
+
         public Produto ObterPorId(int id)
         {
             return contexto.Produtos
