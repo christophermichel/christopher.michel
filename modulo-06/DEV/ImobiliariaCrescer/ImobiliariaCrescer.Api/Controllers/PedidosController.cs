@@ -16,6 +16,17 @@ namespace ImobiliariaCrescer.Api.Controllers
         //get com orderby por data
 
         //get por id
+        [Route("{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage ObterPedidoPorId(int id)
+        {
+            var pedido = repositorio.ObterPorId(id);
+            if (pedido.Equals(null))
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, new { alert = "Não há registros com o ID informado." });
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, new { dados = pedido });
+        }
 
         //post
 

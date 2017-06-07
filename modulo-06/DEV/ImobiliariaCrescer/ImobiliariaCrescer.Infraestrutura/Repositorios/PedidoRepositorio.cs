@@ -12,6 +12,12 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
     {
         private Contexto contexto = new Contexto();
 
+        public Pedido ObterPorId(int id)
+        {
+            return contexto.Pedidos
+                           .FirstOrDefault(x => x.Id == id);
+        }
+
         public void Dispose()
         {
             contexto.Dispose();

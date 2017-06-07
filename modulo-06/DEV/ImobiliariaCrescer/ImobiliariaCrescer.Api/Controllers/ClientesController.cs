@@ -17,7 +17,17 @@ namespace ImobiliariaCrescer.Api.Controllers
 
 
         //get por id
-
+        [Route("{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage ObterClientePorId(int id)
+        {
+            var cliente = repositorio.ObterPorId(id);
+            if (cliente.Equals(null))
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, new { alert = "Não há registros com o ID informado." });
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, new { dados = cliente });
+        }
 
         //post
 
