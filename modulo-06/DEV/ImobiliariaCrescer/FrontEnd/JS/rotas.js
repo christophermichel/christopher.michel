@@ -1,9 +1,9 @@
 imobiliaria.config(function ($routeProvider) {
         $routeProvider
-            .when('/home', {
-                controller: 'IndexController',
-                templateUrl: './home.html'
-                
+            .when('/login', {
+                controller: 'loginController',
+                templateUrl: './login.html'
+
             })
-            .otherwise({redirectTo:'/home'});
+            .otherwise({redirectTo:'/login'});
     });
