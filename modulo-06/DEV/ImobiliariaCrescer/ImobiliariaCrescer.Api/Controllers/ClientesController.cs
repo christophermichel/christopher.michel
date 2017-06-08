@@ -15,7 +15,11 @@ namespace ImobiliariaCrescer.Api.Controllers
         private ClienteRepositorio repositorio = new ClienteRepositorio();
 
         //get
-
+        [HttpGet]
+        public IHttpActionResult Obter()
+        {
+            return Ok(new { dados = repositorio.Obter() });
+        }
 
         //get por id
         [Route("{id:int}")]
