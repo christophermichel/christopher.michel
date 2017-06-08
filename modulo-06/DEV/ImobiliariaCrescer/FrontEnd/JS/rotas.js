@@ -8,7 +8,12 @@ imobiliaria.config(function ($routeProvider) {
             .when('/pedido', {
                 controller: 'pedidoController',
                 templateUrl: './pedido.html'
-
             })
+
+            .when('/cadastro', {
+                controller: 'pedidoController',
+                templateUrl: './cadastro.html'
+            })
+
             .otherwise({redirectTo:'/login'});
     });

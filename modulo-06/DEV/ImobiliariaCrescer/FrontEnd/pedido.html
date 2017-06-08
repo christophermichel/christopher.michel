@@ -1,4 +1,4 @@
-<h1> Olá! Você já possui cadastro? </h1>
+<h1 class="text-center cor"> BUSCAR CLIENTE </h1>
 <div class="opacidade">
 <div class="row">
   <div class="col-md-1" >
@@ -11,8 +11,9 @@
     </div>
     <div class="col-md-6">
       <ul class="list-group" class="text-center">
-        <li class="list-group-item list-group-item-success text-center" id="margem" ng-repeat="cliente in clientes.dados | filter:{Nome: procurarPorNome, CPF: procurarPorCPF}">Nome: {{cliente.Nome}} || CPF: {{cliente.CPF}}</li>
+        <li class="list-group-item list-group-item-success oi" id="margem" ng-repeat="cliente in clientes.dados | filter:{Nome: procurarPorNome, CPF: procurarPorCPF}">Nome: {{cliente.Nome}} || CPF: {{cliente.CPF}}   <button type="submit" class="btn btn-primary" ng-click="clienteAtual">SELECIONAR</button></li>
       </ul>
+      <a class="btn btn-primary btn-block" ng-href="#!/cadastro">CADASTRAR </a>
     </div>
   </div>
 </div>
