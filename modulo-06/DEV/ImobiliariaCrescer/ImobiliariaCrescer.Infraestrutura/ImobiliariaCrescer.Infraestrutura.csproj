@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201706080458028_testeDeletarColunaTabelaClientes.Designer.cs">
       <DependentUpon>201706080458028_testeDeletarColunaTabelaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706082046089_alterarDataEntregaParaNullable.cs" />
+    <Compile Include="Migrations\201706082046089_alterarDataEntregaParaNullable.Designer.cs">
+      <DependentUpon>201706082046089_alterarDataEntregaParaNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\ClienteRepositorio.cs" />
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706080458028_testeDeletarColunaTabelaClientes.resx">
       <DependentUpon>201706080458028_testeDeletarColunaTabelaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706082046089_alterarDataEntregaParaNullable.resx">
+      <DependentUpon>201706082046089_alterarDataEntregaParaNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

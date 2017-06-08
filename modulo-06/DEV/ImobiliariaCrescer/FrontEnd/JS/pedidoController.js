@@ -3,6 +3,7 @@ ObterClientes()
 ObterCombos()
 ObterAdicionais()
 
+function
 
 function ObterClientes() {
       pedidoService.ObterClientes().then(function (response) {
@@ -28,5 +29,4 @@ $scope.NovoCliente = NovoCliente;
 function NovoCliente(cliente){
       console.log(cliente);pedidoService.NovoCliente(cliente).then(function (response){
       })};
-
 });

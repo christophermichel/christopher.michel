@@ -13,7 +13,7 @@ namespace ImobiliariaCrescer.Dominio.Entidades
         public List <PedidoProduto> Itens { get; set; }
         public DateTime DataPedido { get; set; }
         public decimal ValorTotal { get; set; }
-        public DateTime DataEntrega { get; set; }
+        public DateTime? DataEntrega { get; set; }
         public DateTime DataVencimento { get; set; }
 
         protected Pedido() { }
