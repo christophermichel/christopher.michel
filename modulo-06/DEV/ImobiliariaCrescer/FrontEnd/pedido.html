@@ -1,5 +1,18 @@
 <h1> Olá! Você já possui cadastro? </h1>
-<ul ng-repeat="cliente in clientes.dados" class="text-center">
-    <li>{{cliente.Nome}}</li>
-    <h1>{{oi}}</h1>
-</ul>
+<div class="opacidade">
+<div class="row">
+  <div class="col-md-1" >
+  </div>
+  <div class="col-md-5"><h3 class="list-group-item list-group-item-danger">Nome do cliente: <input type="text" ng-model="procurarPorNome"></h3></div>
+  <div class="col-md-5"><h3 class="list-group-item list-group-item-danger">CPF do cliente: <input type="text" ng-model="procurarPorCPF"></h3></div>
+  </div>
+  <div class="row" id="lista">
+    <div class="col-md-3" >
+    </div>
+    <div class="col-md-6">
+      <ul class="list-group" class="text-center">
+        <li class="list-group-item list-group-item-success text-center" id="margem" ng-repeat="cliente in clientes.dados | filter:{Nome: procurarPorNome, CPF: procurarPorCPF}">Nome: {{cliente.Nome}} || CPF: {{cliente.CPF}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

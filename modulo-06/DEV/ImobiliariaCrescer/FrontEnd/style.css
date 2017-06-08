@@ -1,0 +1,15 @@
+body{
+  background-image: url(capa.jpg);
+  background-size:100%;
+  background-repeat:cover;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+}
+
+ul {
+  margin-top: 20px;
+}
+
+#lista {
+  padding-top: 25px;
+}
