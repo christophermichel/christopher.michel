@@ -6,7 +6,7 @@
                         <label class="text-center">EMAIL</label>
                         <input type="email" class="form-control" minlength="10" placeholder="Ex.: exemplo@gmail.com" ng-model="usuario.email">
                         <label class="text-center">SENHA</label>
-                        <input type="text" class="form-control" minlength="6" maxlength="12"ng-model="usuario.senha">
+                        <input type="password" class="form-control" minlength="6" maxlength="12"ng-model="usuario.senha">
                         <button type="submit" class="btn btn-primary btn-block" ng-click="login(usuario)" ng-disabled="login.$invalid">Entrar</button>
                     </div>
                 </form>

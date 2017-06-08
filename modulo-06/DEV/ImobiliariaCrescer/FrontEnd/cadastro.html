@@ -5,9 +5,9 @@
   </div>
   <div class="form-inline margem text-center">
     <label for="email">CPF:</label>
-    <input type="number" class="form-control" required maxlength="11" ng-model="cliente.cpf"/>
+    <input type="number" class="form-control" required maxlength="11" ng-model="cliente.CPF"/>
   </div>
-  <div class="form-inline margem text-center">
+  <!--<div class="form-inline margem text-center">
       <label for="number">Telefone:</label>
       <input type="number" id="focusedInput" class="form-control" placeholder="Insira um número de telefone do cliente" required maxlength="9" ng-model="cliente.Telefone"/>
   </div>
@@ -25,6 +25,6 @@
   <div class="form-inline margem text-center">
       <label for="email">Email:</label>
       <input type="email" class="form-control" placeholder="Insira um email do cliente" ng-model="cliente.Email">
-  </div>
-  <button type="submit" class="btn btn-primary btn-block" ng-submit="NovoCliente(cliente)">Cadastrar</button>
+  </div>-->
+  <a class="btn btn-primary btn-block" ng-href="#!/cliente"><button type="submit" ng-click="NovoCliente(cliente)" class="btn btn-primary btn-block">CADASTRAR</button> </a>
 </form>

@@ -19,8 +19,8 @@ function post(cliente){
 return {
     ObterClientes: getClientes,
     ObterCombos: getCombos,
-    ObterAdicionais: getAdicionais
-  /*  NovoCliente: post */
+    ObterAdicionais: getAdicionais,
+    NovoCliente: post
 };
 
 });
