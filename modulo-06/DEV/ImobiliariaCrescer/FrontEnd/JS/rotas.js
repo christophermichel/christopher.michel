@@ -5,14 +5,19 @@ imobiliaria.config(function ($routeProvider) {
                 templateUrl: './login.html'
 
             })
-            .when('/pedido', {
+            .when('/cliente', {
                 controller: 'pedidoController',
-                templateUrl: './pedido.html'
+                templateUrl: './cliente.html'
             })
 
             .when('/cadastro', {
                 controller: 'pedidoController',
                 templateUrl: './cadastro.html'
+            })
+
+            .when('/pedido', {
+                controller: 'pedidoController',
+                templateUrl: './pedido.html'
             })
 
             .otherwise({redirectTo:'/login'});
