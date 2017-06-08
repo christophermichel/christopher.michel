@@ -3,6 +3,7 @@ body{
   background-size:100%;
   background-repeat:cover;
   background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
   opacity: 0.85;
 }
 
@@ -14,10 +15,15 @@ ul {
   padding-top: 25px;
 }
 
-.oi {
+.alinhar {
   text-align: right;
 }
 
 .cor {
+  color: white;
+}
+
+.margem{
+  padding: 10px;
   color: white;
 }
