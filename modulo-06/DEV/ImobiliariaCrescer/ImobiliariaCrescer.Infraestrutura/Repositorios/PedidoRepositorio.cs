@@ -27,12 +27,18 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
         {
             Pedido pedido = new Pedido(padrao.Cliente, padrao.Itens, padrao.DataVencimento);
             contexto.Entry(pedido.Cliente).State = EntityState.Unchanged;
-            contexto.Pedidos.Add(pedido);
 
             foreach (var item in pedido.Itens)
             {
                 contexto.Entry(item.Produto).State = EntityState.Unchanged;
             }
+            contexto.Pedidos.Add(pedido);
+            contexto.SaveChanges();
+        }
+
+        public void Alterar(int id, Pedido pedido)
+        {
+            contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
         }
 

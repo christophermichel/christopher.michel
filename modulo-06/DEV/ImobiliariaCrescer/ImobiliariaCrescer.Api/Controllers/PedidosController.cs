@@ -37,6 +37,13 @@ namespace ImobiliariaCrescer.Api.Controllers
             return Ok();
         }
 
+        [Route("{id:int}")]
+        [HttpPut]
+        public HttpResponseMessage Alterar(int id, Pedido pedido)
+        {
+            repositorio.Alterar(id, pedido);
+            return Request.CreateResponse(HttpStatusCode.OK, new { dados = pedido });
+        }
 
 
     }

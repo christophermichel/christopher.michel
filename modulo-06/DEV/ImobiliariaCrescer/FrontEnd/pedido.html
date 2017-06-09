@@ -1,8 +1,17 @@
 <h1 class="text-center cor"> BEM VINDO A ÁREA DE COMPRAS </h1>
-<ul class="list-group" class="text-center">
-  <li class="list-group-item list-group-item-success alinhar" id="margem" ng-repeat="produto in combos.dados">Nome: {{produto.Pacote}} || CPF: {{produto.Tipo}}   <button type="submit" class="btn btn-primary" ng-click="clienteAtual">ADICIONAR</button></li>
-</ul>
-
-<ul class="list-group" class="text-center">
-  <li class="list-group-item list-group-item-success alinhar" id="margem" ng-repeat="produto in adicionais.dados">Nome: {{produto.Pacote}} || CPF: {{produto.Tipo}}   <button type="submit" class="btn btn-primary" ng-click="clienteAtual">ADICIONAR</button></li>
-</ul>
+<div class="row" id="lista">
+  <div class="col-md-1" >
+  </div>
+  <div class="col-md-5">
+    <ul class="list-group" class="text-center">
+      <li class="list-group-item list-group-item-danger alinhar" id="margem" ng-repeat="produto in combos.dados">Tipo do imóvel: {{produto.Tipo}} || Pacote: {{produto.Pacote}} <button type="submit" class="btn btn-primary" ng-click="clienteAtual">ADICIONAR</button></li>
+    </ul>
+  </div>
+  <div class="col-md-1" >
+  </div>
+  <div class="col-md-3">
+    <ul class="list-group" class="text-center">
+      <li class="list-group-item list-group-item-warning alinhar" id="margem" ng-repeat="produto in adicionais.dados">Adicional: {{produto.Pacote}}<button type="submit" class="btn btn-primary" ng-click="clienteAtual">ADICIONAR</button></li>
+    </ul>
+  </div>
+</div>
