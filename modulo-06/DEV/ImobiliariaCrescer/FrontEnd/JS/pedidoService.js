@@ -16,10 +16,15 @@ function post(cliente){
     return $http.post('http://localhost:57197/api/clientes', cliente);
 };
 
+function getPedidos() {
+    return $http.get('http://localhost:57197/api/pedidos');
+};
+
 return {
     ObterClientes: getClientes,
     ObterCombos: getCombos,
     ObterAdicionais: getAdicionais,
+    ObterPedidos: getPedidos,
     NovoCliente: post
 };
 

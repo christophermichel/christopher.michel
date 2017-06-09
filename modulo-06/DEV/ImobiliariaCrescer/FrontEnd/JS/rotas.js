@@ -20,5 +20,10 @@ imobiliaria.config(function ($routeProvider) {
                 templateUrl: './pedido.html'
             })
 
+            .when('/relatorio', {
+                controller: 'pedidoController',
+                templateUrl: './relatorio.html'
+            })
+
             .otherwise({redirectTo:'/login'});
     });

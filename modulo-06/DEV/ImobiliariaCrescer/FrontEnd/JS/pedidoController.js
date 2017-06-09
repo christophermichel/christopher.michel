@@ -2,6 +2,7 @@ imobiliaria.controller('pedidoController', function ($scope, $routeParams, pedid
 ObterClientes()
 ObterCombos()
 ObterAdicionais()
+ObterPedidos()
 
 function ObterClientes() {
       pedidoService.ObterClientes().then(function (response) {
@@ -21,12 +22,11 @@ function ObterAdicionais() {
       });
     }
 
-function guardarCliente(cliente) {
-      $scope.NovoCliente = cliente;
-      console.log($scope.NovoCliente);
-}
+function ObterPedidos() {
+      pedidoService.ObterPedidos().then(function (response) {
+      $scope.pedidos = response.data;console.log($scope.pedidos);
+      });
+    }
 
-function NovoCliente(cliente){
-      console.log(cliente);pedidoService.NovoCliente(cliente).then(function (response){
-      })};
+
 });
