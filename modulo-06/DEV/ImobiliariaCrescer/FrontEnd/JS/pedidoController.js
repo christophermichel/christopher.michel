@@ -3,8 +3,6 @@ ObterClientes()
 ObterCombos()
 ObterAdicionais()
 
-function
-
 function ObterClientes() {
       pedidoService.ObterClientes().then(function (response) {
       $scope.clientes = response.data;console.log($scope.clientes);
