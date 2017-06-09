@@ -28,8 +28,9 @@ ul {
 }
 
 .margem{
-  padding: 10px;
+  padding: 25px;
   color: white;
+  font-weight: bold;
 }
 
 .azul {
@@ -42,4 +43,41 @@ ul {
 
 .vermelho {
   color: red;
+}
+
+.relatorio{
+  background-image: url(fundo.jpg);
+  background-size:100%;
+  background-repeat:cover;
+  background-repeat: no-repeat;
+  color: yellow;
+  font-weight: bold;
+}
+
+.pedido{
+  background-image: url(pedido.jpg);
+  background-size:100%;
+  background-repeat:cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+}
+
+.cadastro{
+  background-image: url(cadastro.jpg);
+  height: 500px;
+  background-size:100%;
+  background-repeat:cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+}
+
+.cliente{
+  background-image: url(cliente.jpg);
+  background-size:100%;
+  background-repeat:cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
 }
