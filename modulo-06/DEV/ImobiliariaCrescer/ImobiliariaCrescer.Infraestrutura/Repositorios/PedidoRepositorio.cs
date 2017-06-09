@@ -23,6 +23,13 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
                            .FirstOrDefault(x => x.Id == id);
         }
 
+        public dynamic ObterPorData()
+        {
+            return contexto.Pedidos.ToList()
+                                   .OrderBy(cadaUm => cadaUm.DataVencimento);
+                                  
+        }
+
         public void Criar(Pedido padrao)
         {
             Pedido pedido = new Pedido(padrao.Cliente, padrao.Itens, padrao.DataVencimento);

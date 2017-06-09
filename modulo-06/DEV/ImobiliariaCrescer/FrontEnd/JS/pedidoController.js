@@ -21,8 +21,10 @@ function ObterAdicionais() {
       });
     }
 
-
-$scope.NovoCliente = NovoCliente;
+function guardarCliente(cliente) {
+      $scope.NovoCliente = cliente;
+      console.log($scope.NovoCliente);
+}
 
 function NovoCliente(cliente){
       console.log(cliente);pedidoService.NovoCliente(cliente).then(function (response){
