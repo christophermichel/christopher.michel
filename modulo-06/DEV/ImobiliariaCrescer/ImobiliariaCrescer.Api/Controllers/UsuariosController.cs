@@ -8,7 +8,7 @@ using System.Web.Http;
 namespace ImobiliariaCrescer.WebApi.Controllers
 {
     // Permite usuário não autenticados acessarem a controller
-    [AllowAnonymous]
+    [BasicAuthorization]
     [RoutePrefix("api/acessos")]
     public class UsuarioController : ControllerBasica
     {

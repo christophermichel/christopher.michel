@@ -29,8 +29,8 @@ return {
     ObterCombos: getCombos,
     ObterAdicionais: getAdicionais,
     ObterPedidos: getPedidos,
-    ObterAlugados: getAlugados,
-    NovoCliente: post
+    NovoCliente: post,
+    ObterAlugados: getAlugados
 };
 
 });

@@ -35,5 +35,11 @@ function ObterAlugados() {
       });
     }
 
+$scope.NovoCliente = NovoCliente;
+
+function NovoCliente (cliente){
+      pedidoService.NovoCliente(cliente).then(function (response){
+      $scope.cliente = {};
+      })};
 
 });

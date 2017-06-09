@@ -52,10 +52,24 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
             contexto.SaveChanges();
         }
 
-        public void Alterar(int id, Pedido pedido)
+        public void Devolver(int id, Pedido pedido)
         {
+            //ainda não funciona, fazer método de somar no estoque
+            pedido.DataEntrega = DateTime.Now;
+            CalcularAtraso(pedido);
             contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
+        }
+
+        private void CalcularAtraso(Pedido pedido)
+        {
+            var diasDeAtraso = (pedido.DataVencimento - pedido.DataEntrega.Value).TotalDays;
+            if (diasDeAtraso < 0)
+            {
+                var multa = (Convert.ToDecimal(diasDeAtraso) * pedido.ValorTotal);
+                var novoValor = pedido.ValorTotal + multa;
+                pedido.ValorTotal = novoValor;
+            }
         }
 
         public void Dispose()

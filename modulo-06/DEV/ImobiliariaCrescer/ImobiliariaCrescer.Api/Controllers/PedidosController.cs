@@ -1,5 +1,6 @@
 ﻿using ImobiliariaCrescer.Dominio.Entidades;
 using ImobiliariaCrescer.Infraestrutura.Repositorios;
+using ImobiliariaCrescer.WebApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Web.Http;
 
 namespace ImobiliariaCrescer.Api.Controllers
 {
+    [BasicAuthorization]
     [RoutePrefix("api/pedidos")]
     public class PedidosController : ApiController
     {
@@ -49,11 +51,11 @@ namespace ImobiliariaCrescer.Api.Controllers
             return Ok();
         }
 
-        [Route("{id:int}")]
+        [Route("devolver/{id:int}")]
         [HttpPut]
         public HttpResponseMessage Alterar(int id, Pedido pedido)
         {
-            repositorio.Alterar(id, pedido);
+            repositorio.Devolver(id, pedido);
             return Request.CreateResponse(HttpStatusCode.OK, new { dados = pedido });
         }
 

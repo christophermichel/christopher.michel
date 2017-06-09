@@ -1,5 +1,6 @@
 ﻿using ImobiliariaCrescer.Dominio.Entidades;
 using ImobiliariaCrescer.Infraestrutura.Repositorios;
+using ImobiliariaCrescer.WebApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Web.Http;
 
 namespace ImobiliariaCrescer.Api.Controllers
 {
+    [BasicAuthorization]
     [RoutePrefix("api/clientes")]
     public class ClientesController : ApiController
     {
