@@ -23,8 +23,7 @@ namespace ImobiliariaCrescer.Dominio.Entidades
             this.Cliente = cliente;
             this.Itens = itens;
             this.DataPedido = DateTime.Now;
-            //Fazer calculo do pedido
-            this.ValorTotal = 0;
+            this.ValorTotal = itens.Sum(cadaUm => cadaUm.Produto.PrecoDiaria);
             DataVencimento = dataVencimento;
 
         }
