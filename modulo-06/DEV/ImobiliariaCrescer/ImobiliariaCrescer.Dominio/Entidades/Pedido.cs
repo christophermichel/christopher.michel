@@ -17,5 +17,16 @@ namespace ImobiliariaCrescer.Dominio.Entidades
         public DateTime DataVencimento { get; set; }
 
         protected Pedido() { }
+
+        public Pedido(Cliente cliente, List<PedidoProduto> itens, DateTime dataVencimento)
+        {
+            this.Cliente = cliente;
+            this.Itens = itens;
+            this.DataPedido = DateTime.Now;
+            //Fazer calculo do pedido
+            this.ValorTotal = 0;
+            DataVencimento = dataVencimento;
+
+        }
     }
 }
