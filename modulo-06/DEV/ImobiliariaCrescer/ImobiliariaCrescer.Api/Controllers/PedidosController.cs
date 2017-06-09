@@ -21,6 +21,13 @@ namespace ImobiliariaCrescer.Api.Controllers
             return Ok(new { dados = repositorio.ObterPorData() });
         }
 
+        [Route("alugados")]
+        [HttpGet]
+        public IHttpActionResult ObterAlugados()
+        {
+            return Ok(new { dados = repositorio.ObterAlugados() });
+        }
+
         //get por id
         [Route("{id:int}")]
         [HttpGet]

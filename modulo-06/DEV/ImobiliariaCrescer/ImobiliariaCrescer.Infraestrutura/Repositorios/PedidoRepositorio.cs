@@ -26,8 +26,17 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
         public dynamic ObterPorData()
         {
             return contexto.Pedidos.ToList()
+                                   .Where(cadaUm => cadaUm.DataEntrega != null)
                                    .OrderBy(cadaUm => cadaUm.DataVencimento);
                                   
+        }
+
+        public dynamic ObterAlugados()
+        {
+            return contexto.Pedidos.ToList()
+                                   .Where(cadaUm => cadaUm.DataEntrega == null)
+                                   .OrderBy(cadaUm => cadaUm.DataVencimento);
+
         }
 
         public void Criar(Pedido padrao)

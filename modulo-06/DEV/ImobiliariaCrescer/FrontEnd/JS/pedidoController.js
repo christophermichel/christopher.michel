@@ -3,6 +3,7 @@ ObterClientes()
 ObterCombos()
 ObterAdicionais()
 ObterPedidos()
+ObterAlugados()
 
 function ObterClientes() {
       pedidoService.ObterClientes().then(function (response) {
@@ -25,6 +26,12 @@ function ObterAdicionais() {
 function ObterPedidos() {
       pedidoService.ObterPedidos().then(function (response) {
       $scope.pedidos = response.data;console.log($scope.pedidos);
+      });
+    }
+
+function ObterAlugados() {
+      pedidoService.ObterAlugados().then(function (response) {
+      $scope.alugados = response.data;console.log($scope.alugados);
       });
     }
 

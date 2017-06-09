@@ -20,11 +20,16 @@ function getPedidos() {
     return $http.get('http://localhost:57197/api/pedidos');
 };
 
+function getAlugados() {
+    return $http.get('http://localhost:57197/api/pedidos/alugados');
+};
+
 return {
     ObterClientes: getClientes,
     ObterCombos: getCombos,
     ObterAdicionais: getAdicionais,
     ObterPedidos: getPedidos,
+    ObterAlugados: getAlugados,
     NovoCliente: post
 };
 
