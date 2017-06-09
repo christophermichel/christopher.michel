@@ -34,7 +34,11 @@ function ObterAlugados() {
       $scope.alugados = response.data;console.log($scope.alugados);
       });
     }
-
+$scope.clienteGuardado = clienteGuardado;
+function clienteGuardado(cliente) {
+  $scope.clienteLegal = cliente;
+  console.log(cliente);
+}
 $scope.NovoCliente = NovoCliente;
 
 function NovoCliente (cliente){

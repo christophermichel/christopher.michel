@@ -25,7 +25,7 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
 
         public dynamic ObterPorData()
         {
-            return contexto.Pedidos.ToList()
+            return contexto.Pedidos.Include(x => x.Cliente).Include(x => x.Itens)
                                    .Where(cadaUm => cadaUm.DataEntrega != null)
                                    .OrderBy(cadaUm => cadaUm.DataVencimento);
                                   
@@ -55,12 +55,14 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
         public void Devolver(int id, Pedido pedido)
         {
             //ainda não funciona, fazer método de somar no estoque
-            pedido.DataEntrega = DateTime.Now;
-            CalcularAtraso(pedido);
+            //pedido.DataEntrega = DateTime.Now;
+            //CalcularAtraso(pedido);
             contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
         }
 
+
+        //colocar dentro do pedido
         private void CalcularAtraso(Pedido pedido)
         {
             var diasDeAtraso = (pedido.DataVencimento - pedido.DataEntrega.Value).TotalDays;
