@@ -37,13 +37,20 @@ function ObterAlugados() {
 $scope.clienteGuardado = clienteGuardado;
 function clienteGuardado(cliente) {
   $scope.clienteLegal = cliente;
-  console.log(cliente);
+  console.log($scope.clienteLegal);
 }
+
 $scope.NovoCliente = NovoCliente;
+$scope.itensPedido = [];
+$scope.adicionarNovoItemNoPedido = adicionarNovoItemNoPedido;
+
+function adicionarNovoItemNoPedido (combo){
+  $scope.itensPedido.push({Produto:combo});
+  console.log($scope.itensPedido);
+}
 
 function NovoCliente (cliente){
       pedidoService.NovoCliente(cliente).then(function (response){
       $scope.cliente = {};
       })};
-
 });
