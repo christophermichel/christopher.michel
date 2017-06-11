@@ -55,7 +55,7 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
         public void Devolver(int id, Pedido pedido)
         {
             //ainda não funciona, fazer método de somar no estoque
-            //pedido.DataEntrega = DateTime.Now;
+            pedido.DataEntrega = DateTime.Now;
             //CalcularAtraso(pedido);
             contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();

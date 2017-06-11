@@ -42,7 +42,7 @@ var itensPedido = $scope.itensPedido;
 $scope.adicionarNovoItemNoPedido = adicionarNovoItemNoPedido;
 $scope.novoPedido = novoPedido;
 $scope.clienteGuardado = clienteGuardado;
-
+$scope.devolver = devolver;
 function clienteGuardado(cliente) {
     $scope.clienteLegal = cliente;
     console.log($scope.clienteLegal);
@@ -63,6 +63,12 @@ function novoPedido(){
   console.log(JSON.stringify(objetoPedido));
   pedidoService.novoPedido(objetoPedido).then(function (response){
   $scope.objetoPedido = response.data.dados;
+})};
+
+function devolver(pedido){
+  console.log(JSON.stringify(pedido));
+  pedidoService.devolver(pedido).then(function (response){
+  ObterAlugados();
 })};
 
 });

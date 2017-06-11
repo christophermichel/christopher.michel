@@ -25,7 +25,8 @@ namespace ImobiliariaCrescer.Dominio.Entidades
             this.DataPedido = DateTime.Now;
             this.DataVencimento = DateTime.Now;
             var totalDias = (DataVencimento - DataPedido).Days;
-            this.ValorTotal = Itens.Sum(cadaUm => (cadaUm.Produto.PrecoDiaria * totalDias));
+            this.ValorTotal = 0;
+                //Itens.Sum(cadaUm => (cadaUm.Produto.PrecoDiaria * totalDias));
 
         }
     }

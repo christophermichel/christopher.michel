@@ -28,6 +28,10 @@ function postPedido(objetoPedido){
     return $http.post('http://localhost:57197/api/pedidos', objetoPedido);
 };
 
+function putPedido(pedido){
+  return $http.put('http://localhost:57197/api/pedidos/devolver/'+ pedido.Id, pedido);
+};
+
 return {
     ObterClientes: getClientes,
     ObterCombos: getCombos,
@@ -35,6 +39,7 @@ return {
     ObterPedidos: getPedidos,
     NovoCliente: post,
     novoPedido: postPedido,
+    devolver: putPedido,
     ObterAlugados: getAlugados
 };
 

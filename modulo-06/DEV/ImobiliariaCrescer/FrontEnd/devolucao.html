@@ -1,0 +1,11 @@
+<div class="pedido">
+<h1 class="text-center cor"> Escolha seu Combo! </h1>
+<div class="row" id="lista">
+  <div class="col-md-1" >
+  </div>
+  <div class="col-md-5">
+    <ul class="list-group" class="text-center">
+      <li class="list-group-item list-group-item-danger alinhar" id="margem" ng-repeat="pedido in alugados.dados">Id Pedido: {{pedido.Id}}<input type="button" class="btn btn-primary" name="editar" value="DEVOLVER" ng-click ="devolver(pedido)"></li>
+    </ul>
+  </div>
+</div>
