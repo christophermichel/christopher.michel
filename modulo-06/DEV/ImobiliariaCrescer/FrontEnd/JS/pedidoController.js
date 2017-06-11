@@ -59,7 +59,7 @@ function NovoCliente (cliente){
       })};
 
 function novoPedido(){
-  var objetoPedido = {Cliente : $scope.clienteLegal, Itens : itensPedido};
+  var objetoPedido = {Cliente : $scope.clienteLegal, Itens : itensPedido, DataVencimento: $scope.data};
   console.log(JSON.stringify(objetoPedido));
   pedidoService.novoPedido(objetoPedido).then(function (response){
   $scope.objetoPedido = response.data.dados;

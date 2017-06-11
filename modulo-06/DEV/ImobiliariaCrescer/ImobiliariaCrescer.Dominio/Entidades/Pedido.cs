@@ -18,16 +18,16 @@ namespace ImobiliariaCrescer.Dominio.Entidades
 
         protected Pedido() { }
 
-        public Pedido(Cliente Cliente, List<PedidoProduto> Itens)
+        public Pedido(Cliente Cliente, List<PedidoProduto> Itens, DateTime dataVencimento)
         {
             this.Cliente = Cliente;
             this.Itens = Itens;
             this.DataPedido = DateTime.Now;
-            this.DataVencimento = DateTime.Now;
+            this.DataVencimento = dataVencimento;
             var totalDias = (DataVencimento - DataPedido).Days;
             this.ValorTotal = 0;
                 //Itens.Sum(cadaUm => (cadaUm.Produto.PrecoDiaria * totalDias));
-
+        
         }
     }
 }

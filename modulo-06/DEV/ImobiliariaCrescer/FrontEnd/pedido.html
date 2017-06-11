@@ -43,9 +43,11 @@
   </div>
   <div class="col-md-4">
     <ul class="list-group" class="text-center">
-      <li class="list-group-item list-group-item-warning alinhar" id="margem" ng-repeat="produto in adicionais.dados">Adicional: {{produto.Pacote}}<button type="submit" class="btn btn-primary" ng-click="clienteAtual">ADICIONAR</button></li>
+      <li class="list-group-item list-group-item-warning alinhar" id="margem" ng-repeat="adicional in adicionais.dados">Adicional: {{adicional.Pacote}}<button type="submit" class="btn btn-primary" ng-click="adicionarNovoItemNoPedido(adicional)">ADICIONAR</button></li>
     </ul>
   </div>
 </div>
+<label for="data"><h1>Data de Entrega</h1></label>
+      <input type="date"  class="form-control"  name="data" ng-model="data" value="">
 <button type="button" name="button" class="btn btn-primary" ng-click="novoPedido()">Fechar Pedido</button>
 </div>
