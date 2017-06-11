@@ -41,7 +41,7 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
 
         public void Criar(Pedido padrao)
         {
-            Pedido pedido = new Pedido(padrao.Cliente, padrao.Itens, padrao.DataVencimento);
+            Pedido pedido = new Pedido(padrao.Cliente, padrao.Itens);
             contexto.Entry(pedido.Cliente).State = EntityState.Unchanged;
 
             foreach (var item in pedido.Itens)

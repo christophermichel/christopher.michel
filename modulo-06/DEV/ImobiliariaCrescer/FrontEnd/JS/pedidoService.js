@@ -16,16 +16,16 @@ function post(cliente){
     return $http.post('http://localhost:57197/api/clientes', cliente);
 };
 
-function postPedido(objetoPedido){
-    return $http.post('http://localhost:57197/api/pedidos', objetoPedido);
-};
-
 function getPedidos() {
     return $http.get('http://localhost:57197/api/pedidos');
 };
 
 function getAlugados() {
     return $http.get('http://localhost:57197/api/pedidos/alugados');
+};
+
+function postPedido(objetoPedido){
+    return $http.post('http://localhost:57197/api/pedidos', objetoPedido);
 };
 
 return {
