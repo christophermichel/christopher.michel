@@ -34,24 +34,22 @@ function ObterAlugados() {
       $scope.alugados = response.data;console.log($scope.alugados);
       });
     }
-$scope.clienteGuardado = clienteGuardado;
-function clienteGuardado(cliente) {
-  $scope.clienteLegal = cliente;
-  console.log($scope.clienteLegal);
-}
 
-$scope.dataGuardada = dataGuardada;
-function dataGuardada(data) {
-  $scope.dataLegal = data;
-  console.log($scope.dataLegal);
-}
-
+cliente = $scope.cliente;
 $scope.NovoCliente = NovoCliente;
 $scope.itensPedido = [];
+var itensPedido = $scope.itensPedido;
 $scope.adicionarNovoItemNoPedido = adicionarNovoItemNoPedido;
 $scope.novoPedido = novoPedido;
+$scope.clienteGuardado = clienteGuardado;
+
+function clienteGuardado(cliente) {
+    $scope.clienteLegal = cliente;
+    console.log($scope.clienteLegal);
+    }
+
 function adicionarNovoItemNoPedido (combo){
-  $scope.itensPedido.push({Produto:combo});
+  itensPedido.push({Produto:combo});
   console.log($scope.itensPedido);
 }
 
@@ -59,10 +57,12 @@ function NovoCliente (cliente){
       pedidoService.NovoCliente(cliente).then(function (response){
       $scope.cliente = {};
       })};
-});
+
 function novoPedido(){
-  var objetoPedido = {Cliente:$scope.clienteLegal, Itens: $scope.itensPedido};
-  console.log(objetoPedido);
+  var objetoPedido = {Cliente : $scope.clienteLegal, Itens : itensPedido};
+  console.log(JSON.stringify(objetoPedido));
   pedidoService.novoPedido(objetoPedido).then(function (response){
   $scope.objetoPedido = response.data.dados;
 })};
+
+});

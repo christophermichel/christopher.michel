@@ -5,9 +5,9 @@ imobiliaria.config(function ($routeProvider) {
                 templateUrl: './login.html'
 
             })
-            .when('/cliente', {
+            .when('/devolucao', {
                 controller: 'pedidoController',
-                templateUrl: './cliente.html'
+                templateUrl: './devolucao.html'
             })
 
             .when('/cadastro', {
