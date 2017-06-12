@@ -59,8 +59,8 @@ $scope.novoPedido = novoPedido;
 $scope.clienteGuardado = clienteGuardado;
 $scope.devolver = devolver;
 function clienteGuardado(cliente) {
-    $scope.clienteLegal = cliente;
-    console.log($scope.clienteLegal);
+    $scope.clienteSelecionado = cliente;
+    console.log($scope.clienteSelecionado);
     }
 
 function adicionarNovoItemNoPedido (combo){
@@ -74,7 +74,7 @@ function NovoCliente (cliente){
       })};
 
 function novoPedido(){
-  var objetoPedido = {Cliente : $scope.clienteLegal, Itens : itensPedido, DataVencimento: $scope.data};
+  var objetoPedido = {Cliente : $scope.clienteSelecionado, Itens : itensPedido, DataVencimento: $scope.data};
   console.log(JSON.stringify(objetoPedido));
   pedidoService.novoPedido(objetoPedido).then(function (response){
   $scope.objetoPedido = response.data.dados;
