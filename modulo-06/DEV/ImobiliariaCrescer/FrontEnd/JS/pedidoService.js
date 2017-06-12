@@ -24,6 +24,10 @@ function getAlugados() {
     return $http.get('http://localhost:57197/api/pedidos/alugados');
 };
 
+function getRelatorioMensal() {
+    return $http.get('http://localhost:57197/api/pedidos/relatorio/mensal');
+};
+
 function postPedido(objetoPedido){
     return $http.post('http://localhost:57197/api/pedidos', objetoPedido);
 };
@@ -37,6 +41,7 @@ return {
     ObterCombos: getCombos,
     ObterAdicionais: getAdicionais,
     ObterPedidos: getPedidos,
+    ObterRelatorioMensal: getRelatorioMensal,
     NovoCliente: post,
     novoPedido: postPedido,
     devolver: putPedido,

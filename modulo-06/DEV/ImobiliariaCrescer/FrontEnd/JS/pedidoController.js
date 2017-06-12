@@ -4,6 +4,7 @@ ObterCombos()
 ObterAdicionais()
 ObterPedidos()
 ObterAlugados()
+ObterRelatorioMensal()
 
 function ObterClientes() {
       pedidoService.ObterClientes().then(function (response) {
@@ -32,6 +33,13 @@ function ObterPedidos() {
 function ObterAlugados() {
       pedidoService.ObterAlugados().then(function (response) {
       $scope.alugados = response.data;console.log($scope.alugados);
+      });
+    }
+
+function ObterRelatorioMensal() {
+      pedidoService.ObterRelatorioMensal().then(function (response) {
+      $scope.RelatorioMensal = response.data;
+      console.log($scope.RelatorioMensal);
       });
     }
 

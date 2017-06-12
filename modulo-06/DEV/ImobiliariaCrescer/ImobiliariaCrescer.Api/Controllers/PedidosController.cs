@@ -30,6 +30,13 @@ namespace ImobiliariaCrescer.Api.Controllers
             return Ok(new { dados = repositorio.ObterAlugados() });
         }
 
+        [Route("relatorio/mensal")]
+        [HttpGet]
+        public IHttpActionResult RelatorioMensal()
+        {
+            return Ok(new { dados = repositorio.RelatorioMensal() });
+        }
+
         //get por id
         [Route("{id:int}")]
         [HttpGet]

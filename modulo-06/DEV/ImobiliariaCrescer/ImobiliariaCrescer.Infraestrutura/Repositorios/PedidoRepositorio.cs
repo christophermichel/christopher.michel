@@ -39,6 +39,17 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
 
         }
 
+        public dynamic RelatorioMensal()
+        {
+            var pedidos = contexto.Pedidos
+                                  .Include(x => x.Cliente)
+                                  .Include(x=>x.Itens)
+                                  .ToList();
+            return pedidos.Where(x => (DateTime.Now - x.DataPedido)
+                          .TotalDays <= 30)
+                          .ToList();
+        }
+
         public void Criar(Pedido padrao)
         {
             Pedido pedido = new Pedido(padrao.Cliente, padrao.Itens, padrao.DataVencimento);
