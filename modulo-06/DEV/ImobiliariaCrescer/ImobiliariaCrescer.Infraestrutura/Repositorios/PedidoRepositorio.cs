@@ -50,6 +50,19 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
                           .ToList();
         }
 
+        public dynamic RelatorioAtrasados()
+        {
+            var atrasados = contexto.Pedidos
+                                    .Include(x => x.Itens)
+                                    .Include(x => x.Cliente)
+                                    .ToList();
+
+            return atrasados.Where(x => (x.DataVencimento - DateTime.Now).TotalDays < 0)
+                            .OrderBy(x => x.DataVencimento)
+                            .ToList();
+
+        }
+
         public void Criar(Pedido padrao)
         {
             Pedido pedido = new Pedido(padrao.Cliente, padrao.Itens, padrao.DataVencimento);

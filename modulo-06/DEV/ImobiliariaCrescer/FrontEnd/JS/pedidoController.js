@@ -41,7 +41,14 @@ function ObterRelatorioMensal() {
       $scope.RelatorioMensal = response.data;
       console.log($scope.RelatorioMensal);
       });
-    }
+}
+
+function ObterAtrasados() {
+      pedidoService.ObterAtrasados().then(function (response) {
+      $scope.RelatorioAtrasados = response.data;
+      console.log($scope.RelatorioAtrasados);
+      });
+}
 
 cliente = $scope.cliente;
 $scope.NovoCliente = NovoCliente;

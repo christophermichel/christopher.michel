@@ -28,6 +28,10 @@ function getRelatorioMensal() {
     return $http.get('http://localhost:57197/api/pedidos/relatorio/mensal');
 };
 
+function getRelatorioAtrasados() {
+    return $http.get('http://localhost:57197/api/pedidos/relatorio/atrasados');
+};
+
 function postPedido(objetoPedido){
     return $http.post('http://localhost:57197/api/pedidos', objetoPedido);
 };
@@ -45,6 +49,7 @@ return {
     NovoCliente: post,
     novoPedido: postPedido,
     devolver: putPedido,
+    ObterAtrasados: getRelatorioAtrasados,
     ObterAlugados: getAlugados
 };
 
