@@ -23,6 +23,20 @@ namespace ImobiliariaCrescer.Dominio.Entidades
             this.Quantidade = Quantidade;
             this.PrecoDiaria = PrecoDiaria;
         }
+
+        public void BaixarEstoque()
+        {
+            if (Quantidade == 0)
+            {
+                return;
+            }
+            Quantidade--;
+        }
+
+        public void DevolverEstoque()
+        {
+            Quantidade++;
+        }
     }
 
 }

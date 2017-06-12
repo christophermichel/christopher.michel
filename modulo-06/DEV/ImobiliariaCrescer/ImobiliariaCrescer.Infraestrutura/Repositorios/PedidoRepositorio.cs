@@ -59,6 +59,18 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
             {
                 contexto.Entry(item.Produto).State = EntityState.Unchanged;
             }
+
+            ProdutoRepositorio produtoRepositorio = new ProdutoRepositorio();
+            /*foreach (var item in pedido.Itens)
+            {
+                var produto = produtoRepositorio.ObterPorId(item.Produto.Id);
+                if (produto.Quantidade > 0)
+                {
+                    produto.BaixarEstoque();
+                }
+                contexto.Entry(produto).State = System.Data.Entity.EntityState.Modified;
+                contexto.SaveChanges();
+            }*/
             contexto.Pedidos.Add(pedido);
             contexto.SaveChanges();
         }
@@ -70,6 +82,7 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
             //CalcularAtraso(pedido);
             contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
+
         }
 
 

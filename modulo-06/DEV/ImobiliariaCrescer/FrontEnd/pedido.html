@@ -19,11 +19,22 @@
     <div class="col-md-3" >
     </div>
     <div class="col-md-6">
-      <ul class="list-group" class="text-center">
-        <li class="list-group-item list-group-item-success alinhar" id="margem" ng-repeat="cliente in clientes.dados | filter:{Nome: procurarPorNome, CPF: procurarPorCPF}">Nome: {{cliente.Nome}} || CPF: {{cliente.CPF}}
-          <button type="submit" class="btn btn-primary" ng-click="clienteGuardado(cliente)">SELECIONAR</button>
-        </li>
-      </ul>
+      <table class= "table table-striped danger orange text-center table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">CPF</th>
+                    <th class="text-center">Selecionar</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="cliente in clientes.dados | filter:{Nome: procurarPorNome, CPF: procurarPorCPF}">
+                <td>{{cliente.Nome}}</td>
+                <td>{{cliente.CPF}}</td>
+                <td><button type="submit" class="btn btn-primary" ng-click="clienteGuardado(cliente)">SELECIONAR</button></td>
+              </tr>
+            </tbody>
+        </table>
       <a class="btn btn-primary btn-block" ng-href="#!/cadastro">CADASTRAR </a>
     </div>
   </div>
@@ -35,19 +46,50 @@
   <div class="col-md-1" >
   </div>
   <div class="col-md-5">
-    <ul class="list-group" class="text-center">
-      <li class="list-group-item list-group-item-danger alinhar" id="margem" ng-repeat="combo in combos.dados">Tipo do imóvel: {{combo.Tipo}} || Pacote: {{combo.Pacote}}<input type="button" class="btn btn-primary" name="editar" value="ESCOLHER" ng-click ="adicionarNovoItemNoPedido(combo)"></li>
-    </ul>
+    <table class= "table table-striped danger text-center table-bordered">
+          <thead>
+              <tr>
+                  <th class="text-center">Combo</th>
+                  <th class="text-center">Inserir</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="combo in combos.dados">
+              <td>{{combo.Pacote}}</td>
+              <td><button type="submit" class="btn btn-warning btn-block" ng-click="adicionarNovoItemNoPedido(combo)">ESCOLHER</button></td>
+            </tr>
+          </tbody>
+      </table>
   </div>
   <div class="col-md-1" >
   </div>
   <div class="col-md-4">
-    <ul class="list-group" class="text-center">
-      <li class="list-group-item list-group-item-warning alinhar" id="margem" ng-repeat="adicional in adicionais.dados">Adicional: {{adicional.Pacote}}<button type="submit" class="btn btn-primary" ng-click="adicionarNovoItemNoPedido(adicional)">ADICIONAR</button></li>
-    </ul>
+    <table class= "table table-striped danger text-center table-bordered">
+          <thead>
+              <tr>
+                  <th class="text-center">Adicional</th>
+                  <th class="text-center">Inserir</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="adicional in adicionais.dados">
+              <td>{{adicional.Pacote}}</td>
+              <td><button type="submit" class="btn btn-danger btn-block" ng-click="adicionarNovoItemNoPedido(adicional)">ADICIONAR</button></td>
+            </tr>
+          </tbody>
+      </table>
   </div>
 </div>
-<label for="data"><h1>Data de Entrega</h1></label>
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4"><label class="text-center" for="data"><h1>Data de Entrega</h1></label>
       <input type="date"  class="form-control"  name="data" ng-model="data" value="">
-<button type="button" name="button" class="btn btn-primary" ng-click="novoPedido()">Fechar Pedido</button>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+  <button type="button" name="button" class="btn btn-block btn-primary" ng-click="novoPedido()">Fechar Pedido</button>
+</div>
+</div>
 </div>

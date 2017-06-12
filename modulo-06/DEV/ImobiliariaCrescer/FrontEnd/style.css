@@ -18,7 +18,10 @@ ul {
 .formulario{
   color: white;
 }
-
+.orange {
+  color: orange;
+  
+}
 .alinhar {
   text-align: right;
 }
