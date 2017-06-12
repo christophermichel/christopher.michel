@@ -20,8 +20,14 @@ ul {
 }
 .orange {
   color: orange;
-  
+  font-weight: bold;
 }
+
+.blue {
+  color: #8B008B;
+  font-weight: bold;
+}
+
 .alinhar {
   text-align: right;
 }
