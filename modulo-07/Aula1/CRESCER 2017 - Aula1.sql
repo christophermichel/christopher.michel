@@ -17,11 +17,21 @@ select * from pedido
 select * from pedidoitem
 
 
-select * from pedido 
-where datapedido  
-BETWEEN '12-02-17' AND '12-09-17'
+SELECT IDProduto, Nome
+FROM Produto 
+WHERE IDProduto NOT IN
+(SELECT IDProduto 
+FROM PedidoItem pit
+INNER JOIN Pedido ped
+ON pit.IDPedido = ped.IDPedido 
+WHERE DataPedido >= ADD_MONTHS(SYSDATE,-4)) 
 
-select IDProduto, Nome
-From Produto prod
-Left join  
 
+UPDATE Produto 
+SET Situacao = 'I'
+WHERE IDProduto NOT IN
+(SELECT IDProduto 
+FROM PedidoItem pit
+INNER JOIN Pedido ped
+ON pit.IDPedido = ped.IDPedido 
+WHERE DataPedido >= ADD_MONTHS(SYSDATE,-4)) 
