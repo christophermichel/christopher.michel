@@ -33,12 +33,13 @@ EXEC dbms_stats.gather_schema_stats(USER);
 
 UPDATE Produto 
 SET Situacao = 'I'
-WHERE IDProduto IN
-(SELECT IDProduto 
+WHERE IDProduto NOT IN;
+
+SELECT IDProduto 
 FROM PedidoItem pit
 INNER JOIN Pedido ped
 ON pit.IDPedido = ped.IDPedido 
-WHERE DataPedido >= ADD_MONTHS(SYSDATE,-4)) 
+WHERE DataPedido >= ADD_MONTHS(SYSDATE,-4);
 
 ---Usando o exists
 UPDATE Produto 
@@ -52,3 +53,13 @@ from PedidoItem item
   inner join Pedido ped on ped.IDPedido - item.IDPedido
 where item.IDProduto = :p_IDProduto
 and ped.DataPedido >= trunc(sysdate, 'yyyy');
+
+
+Begin
+ DBMS_OUTPUT.PUT_LINE('Buenas tarde!');
+End;
+
+
+
+
+
