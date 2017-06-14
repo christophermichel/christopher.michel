@@ -39,3 +39,15 @@ BEGIN
   SET VALORPEDIDO =  vValor
   WHERE IDPEDIDO = vPEDIDO;
 END;
+
+//3
+UPDATE Cliente 
+SET Situacao = 'I' 
+WHERE IdCliente NOT IN
+    (SELECT IdCliente 
+    FROM Pedido 
+    WHERE MONTHS_BETWEEN 
+    (TO_DATE(sysdate), TO_DATE(pedido.DataPedido) ) <= 6);
+
+//4
+
