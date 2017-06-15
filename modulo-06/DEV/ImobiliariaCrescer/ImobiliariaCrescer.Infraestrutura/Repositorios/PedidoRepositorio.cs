@@ -86,9 +86,9 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
                 if (produto.Quantidade > 0)
                 {
                     produto.BaixarEstoque();
+                    produtoRepositorio.Alterar(produto.Id);
+                    contexto.SaveChanges();
                 }
-                produtoRepositorio.Alterar(produto.Id);
-                contexto.SaveChanges();
             }
         }
 
@@ -98,6 +98,7 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
                                  .Include(x => x.Itens.Select(y => y.Produto))
                                  .FirstOrDefault(e => e.Id == id);
             pedido.DataEntrega = DateTime.Now;
+            var diasDeAtraso = (pedido.DataEntrega.Value - pedido.DataPedido).TotalDays;
             ProdutoRepositorio produtoRepositorio = new ProdutoRepositorio();
             foreach (var item in pedido.Itens)
             {
@@ -105,24 +106,14 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
                 if (produto.Quantidade > 0)
                 {
                     produto.DevolverEstoque();
+                    pedido.ValorTotal += Convert.ToInt32(produto.PrecoDiaria);
                 }
                 produtoRepositorio.Alterar(produto.Id);
                 contexto.SaveChanges();
             }
+            pedido.ValorTotal = pedido.ValorTotal * Convert.ToInt32(diasDeAtraso);
             contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
-        }
-
-        //colocar dentro do pedido
-        private void CalcularAtraso(Pedido pedido)
-        {
-            var diasDeAtraso = (pedido.DataVencimento - pedido.DataEntrega.Value).TotalDays;
-            if (diasDeAtraso < 0)
-            {
-                var multa = (Convert.ToDecimal(diasDeAtraso) * pedido.ValorTotal);
-                var novoValor = pedido.ValorTotal + multa;
-                pedido.ValorTotal = novoValor;
-            }
         }
 
         public void Dispose()
