@@ -87,23 +87,28 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
                 {
                     produto.BaixarEstoque();
                 }
-                produtoRepositorio.Alterar(produto.Id, produto);
+                produtoRepositorio.Alterar(produto.Id);
                 contexto.SaveChanges();
             }
         }
 
         public void Devolver(int id)
         {
-            var pedido = contexto.Pedidos.FirstOrDefault(e => e.Id == id);
+            var pedido = contexto.Pedidos
+                                 .Include(x => x.Itens.Select(y => y.Produto))
+                                 .FirstOrDefault(e => e.Id == id);
             pedido.DataEntrega = DateTime.Now;
-            //CalcularAtraso(pedido);
-            contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
-            contexto.SaveChanges();
-
-        }
-
-        public void Alterar(int id, Pedido pedido)
-        {
+            ProdutoRepositorio produtoRepositorio = new ProdutoRepositorio();
+            foreach (var item in pedido.Itens)
+            {
+                var produto = produtoRepositorio.ObterPorId(item.Produto.Id);
+                if (produto.Quantidade > 0)
+                {
+                    produto.DevolverEstoque();
+                }
+                produtoRepositorio.Alterar(produto.Id);
+                contexto.SaveChanges();
+            }
             contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
         }
