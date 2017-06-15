@@ -43,6 +43,12 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
             contexto.SaveChanges();
         }
 
+        public void Alterar(int id, Produto produto)
+        {
+            contexto.Entry(produto).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
+        }
+
         public void Dispose()
         {
             contexto.Dispose();

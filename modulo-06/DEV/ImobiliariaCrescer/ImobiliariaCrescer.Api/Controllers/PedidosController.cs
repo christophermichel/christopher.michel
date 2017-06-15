@@ -67,10 +67,10 @@ namespace ImobiliariaCrescer.Api.Controllers
 
         [Route("devolver/{id:int}")]
         [HttpPut]
-        public HttpResponseMessage Alterar(int id, Pedido pedido)
+        public HttpResponseMessage Alterar(int id)
         {
-            repositorio.Devolver(id, pedido);
-            return Request.CreateResponse(HttpStatusCode.OK, new { dados = pedido });
+            repositorio.Devolver(id);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
 

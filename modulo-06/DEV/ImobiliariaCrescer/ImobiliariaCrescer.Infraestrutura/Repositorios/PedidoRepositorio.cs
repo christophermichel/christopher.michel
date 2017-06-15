@@ -67,30 +67,34 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
         {
             Pedido pedido = new Pedido(padrao.Cliente, padrao.Itens, padrao.DataVencimento);
             contexto.Entry(pedido.Cliente).State = EntityState.Unchanged;
+            contexto.Pedidos.Add(pedido);
 
             foreach (var item in pedido.Itens)
             {
                 contexto.Entry(item.Produto).State = EntityState.Unchanged;
             }
+            DescontarQuantidade(pedido);
+            contexto.SaveChanges();
+        }
 
+        private void DescontarQuantidade(Pedido pedido)
+        {
             ProdutoRepositorio produtoRepositorio = new ProdutoRepositorio();
-            /*foreach (var item in pedido.Itens)
+            foreach (var item in pedido.Itens)
             {
                 var produto = produtoRepositorio.ObterPorId(item.Produto.Id);
                 if (produto.Quantidade > 0)
                 {
                     produto.BaixarEstoque();
                 }
-                contexto.Entry(produto).State = System.Data.Entity.EntityState.Modified;
+                produtoRepositorio.Alterar(produto.Id, produto);
                 contexto.SaveChanges();
-            }*/
-            contexto.Pedidos.Add(pedido);
-            contexto.SaveChanges();
+            }
         }
 
-        public void Devolver(int id, Pedido pedido)
+        public void Devolver(int id)
         {
-            //ainda não funciona, fazer método de somar no estoque
+            var pedido = contexto.Pedidos.FirstOrDefault(e => e.Id == id);
             pedido.DataEntrega = DateTime.Now;
             //CalcularAtraso(pedido);
             contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
@@ -98,6 +102,11 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
 
         }
 
+        public void Alterar(int id, Pedido pedido)
+        {
+            contexto.Entry(pedido).State = System.Data.Entity.EntityState.Modified;
+            contexto.SaveChanges();
+        }
 
         //colocar dentro do pedido
         private void CalcularAtraso(Pedido pedido)
