@@ -1,4 +1,4 @@
-var imobiliaria = angular.module('imobiliaria', ['ngRoute', 'auth']);
+var imobiliaria = angular.module('imobiliaria', ['ngAnimate', 'toastr', 'ngRoute', 'auth']);
 
 angular.module('imobiliaria').constant('authConfig', {
 

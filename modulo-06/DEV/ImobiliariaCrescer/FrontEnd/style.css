@@ -36,10 +36,21 @@ ul {
   color: white;
 }
 
+.margemCadastro {
+  padding-top: 25px;
+}
 .margem{
-  padding: 25px;
+  padding-left: 340px;
+  padding-right: 340px;
+  padding-bottom: 15px;
   color: white;
   font-weight: bold;
+}
+
+.login{
+  color: black;
+  font-weight: bold;
+  padding-top: 5px;
 }
 
 .azul {
