@@ -33,9 +33,10 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
 
         public dynamic ObterAlugados()
         {
-            return contexto.Pedidos.ToList()
+            return contexto.Pedidos.Include(x => x.Cliente)
                                    .Where(cadaUm => cadaUm.DataEntrega == null)
-                                   .OrderBy(cadaUm => cadaUm.DataVencimento);
+                                   .OrderBy(cadaUm => cadaUm.DataVencimento)
+                                   .ToList();
 
         }
 

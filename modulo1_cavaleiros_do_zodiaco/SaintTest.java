@@ -168,13 +168,13 @@ public class SaintTest {
         assertEquals(vestirArmadura, hyoga.getProximoMovimento());
     }
     
-    @Test
+    /*@Test
     public void criarUmSaintQtdSaintsDeveSerUmAMais() throws Exception {
         Saint shun = new BronzeSaint("Shun", "Andrômeda");
         assertEquals(1, Saint.getQtdSaints());
     }
     
-    /*@Test
+    @Test
     public void criarDoisSaintQtdSaintsDeveSerDoisAMais() throws Exception {
         Saint shun = new BronzeSaint("Shun", "Andrômeda");
         Saint mu = new BronzeSaint("Mu", "Áries");

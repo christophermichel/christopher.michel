@@ -19,16 +19,16 @@
   <table class= "table table-striped orange danger text-center table-bordered">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
+                <th class="text-center">ID Pedido</th>
+                <th class="text-center">Cliente</th>
                 <th class="text-center">Valor Total</th>
-                <th class="text-center">Data Vencimento</th>
             </tr>
         </thead>
         <tbody>
           <tr ng-repeat="alugado in alugados.dados">
             <td>{{alugado.Id}}</td>
+            <td>{{alugado.Cliente.Nome}}</td>
             <td>{{alugado.ValorTotal}}</td>
-            <td>{{alugado.DataVencimento}}</td>
           </tr>
         </tbody>
     </table>
@@ -39,7 +39,8 @@
   <table class= "table table-striped orange danger text-center table-bordered">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
+                <th class="text-center">ID Pedido</th>
+                <th class="text-center">Cliente</th>
                 <th class="text-center">Valor Total</th>
                 <th class="text-center">Data Devolução</th>
             </tr>
@@ -47,6 +48,7 @@
         <tbody>
           <tr ng-repeat="pedido in RelatorioMensal.dados">
             <td>{{pedido.Id}}</td>
+            <td>{{pedido.Cliente.Nome}}</td>
             <td>{{pedido.ValorTotal}}</td>
             <td>{{pedido.DataEntrega}}</td>
           </tr>
@@ -62,13 +64,15 @@
   <table class= "table table-striped orange danger text-center table-bordered">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
+                <th class="text-center">ID Pedido</th>
+                <th class="text-center">Cliente</th>
                 <th class="text-center">Valor Total</th>
             </tr>
         </thead>
         <tbody>
           <tr ng-repeat="pedido in RelatorioAtrasados.dados">
             <td>{{pedido.Id}}</td>
+            <td>{{pedido.Cliente.Nome}}</td>
             <td>{{pedido.ValorTotal}}</td>
           </tr>
         </tbody>
