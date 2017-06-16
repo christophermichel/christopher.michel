@@ -54,11 +54,12 @@ namespace ImobiliariaCrescer.Infraestrutura.Repositorios
         public dynamic RelatorioAtrasados()
         {
             var atrasados = contexto.Pedidos
-                                    .Include(x => x.Itens)
+                                    .Include(x => x.Itens.Select(y => y.Produto))
                                     .Include(x => x.Cliente)
                                     .ToList();
 
-            return atrasados.Where(x => (x.DataVencimento - DateTime.Now).TotalDays < 0)
+            return atrasados.Where(x => Convert.ToInt32((x.DataVencimento - DateTime.Now).TotalDays) < 0)
+                            .Where(x => x.DataEntrega == null)
                             .OrderBy(x => x.DataVencimento)
                             .ToList();
 

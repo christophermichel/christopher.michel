@@ -5,6 +5,7 @@ ObterAdicionais()
 ObterPedidos()
 ObterAlugados()
 ObterRelatorioMensal()
+ObterAtrasados()
 
 function ObterClientes() {
       pedidoService.ObterClientes().then(function (response) {
