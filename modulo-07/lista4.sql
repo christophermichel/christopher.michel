@@ -79,10 +79,10 @@ order by QtdGanhadores desc, ValorPremiacao desc;
 --3 
 --parte da aposta
 
-select log_apo.IDAPOSTA, con.IDConcurso, log_apo.DATA ,con.DATA_SORTEIO 
-from log_aposta log_apo
-INNER JOIN aposta apo on apo.IDAPOSTA = log_apo.IDAPOSTA
+select logAposta.IDAPOSTA, con.IDConcurso, logAposta.DATA ,con.DATA_SORTEIO 
+from logAposta logAposta
+INNER JOIN aposta apo on apo.IDAPOSTA = logAposta.IDAPOSTA
 INNER JOIN Concurso con on con.IDConcurso = apo.IDConcurso
-WHERE log_apo.DATA > con.DATA_SORTEIO
-AND log_apo.OPERACAO = 'I'
-OR  log_apo.OPERACAO = 'U'
+WHERE logAposta.DATA > con.DATA_SORTEIO
+AND logAposta.OPERACAO = 'I'
+OR  logAposta.OPERACAO = 'U'
