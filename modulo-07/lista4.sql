@@ -54,40 +54,8 @@ Create table LogNumeroAposta
        primary key (IDAposta)
 );
 
-Create sequence sqLogAposta;
 
-create or replace trigger TR_AUD1_Apostas
-    after insert or update or delete on APOSTA
-    for each row
-Declare
-  v_operacao char(1);
-  v_IDAposta Aposta.IdAposta%type;
-  v_IDConcurso Aposta.IdConcurso%type;
-Begin
-
-  if INSERTING then
-     v_operacao := 'I';
-  elsif UPDATING then
-     v_operacao := 'U';       
-  else
-     v_operacao := 'D';
-  end if;
-  Insert into LogCliente_Operacao (idlogaposta, IDAposta, IDConcurso, Data_hora, operacao)
-      values (sqLogAposta.nextval, v_IDAposta, v_IDConcurso, sysdate, v_operacao);
-
-End TR_AUD1_Apostas;
-
-
-Create table LogNumeroAposta (
-  IDLogNumeroAposta  integer not null,
-  Usuario        varchar2(30),
-  Data_hora           date default sysdate,  
-  Operacao       char(1) not null,
-  IDNumeroAposta_Antigo       integer,
-  IDNumeroAposta_Novo       integer,
-    constraint PK_LogNumeroAposta 
-       primary key (IDLogNumeroAposta)
-);
+--2
 
 SELECT Count(*) as QtdApostas, Cid.UF, IDConcurso
 FROM Aposta apo 
@@ -100,8 +68,21 @@ FROM Aposta apo
 INNER JOIN CIDADE cid ON cid.IDCidade = apo.IDCidade
 GROUP BY UF, IDConcurso;
 
---Falta relacionar com a cidade
-SELECT Count(*) as QtdGanhadores, Cid.UF, IDConcurso
-FROM Aposta apo 
-INNER JOIN Aposta_premiada prem ON prem.IDAposta = apo.IDAposta
-GROUP BY UF, IDConcurso;
+select count(*) as QtdGanhadores, Cid.UF , sum (prem.Valor) as ValorPremiacao
+from aposta_premiada prem
+inner join APOSTA apo on prem.IDAPOSTA = apo.IDAPOSTA
+inner join CIDADE cid on apo.IDCIDADE = cid.IDCIDADE
+group by cid.UF
+order by QtdGanhadores desc, ValorPremiacao desc;
+
+
+--3 
+--parte da aposta
+
+select log_apo.IDAPOSTA, con.IDConcurso, log_apo.DATA ,con.DATA_SORTEIO 
+from log_aposta log_apo
+INNER JOIN aposta apo on apo.IDAPOSTA = log_apo.IDAPOSTA
+INNER JOIN Concurso con on con.IDConcurso = apo.IDConcurso
+WHERE log_apo.DATA > con.DATA_SORTEIO
+AND log_apo.OPERACAO = 'I'
+OR  log_apo.OPERACAO = 'U'
