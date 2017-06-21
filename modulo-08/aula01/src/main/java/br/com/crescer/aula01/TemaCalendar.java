@@ -17,13 +17,14 @@ public class TemaCalendar implements CalendarUtils{
         SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
         return formatoData;
     }
+    SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
     Calendar calendar = Calendar.getInstance();
     
     public static void main (String[] args) throws ParseException {
         TemaCalendar testa = new TemaCalendar();
-        System.out.println(testa.diaSemana(new SimpleDateFormat("dd/MM/yyyy").parse("19/06/2015")));
-        System.out.println(testa.diaSemana(new SimpleDateFormat("dd/MM/yyyy").parse("21/06/2017")));
-        System.out.println(testa.tempoDecorrido(new SimpleDateFormat("dd/MM/yyyy").parse("21/05/2015")));
+        System.out.println(testa.diaSemana(testa.formatoData.parse("19/06/2015")));
+        System.out.println(testa.diaSemana(testa.formatoData.parse("21/06/2017")));
+        System.out.println(testa.tempoDecorrido(testa.formatoData.parse("21/05/2015")));
     }
     
     @Override
@@ -43,8 +44,8 @@ public class TemaCalendar implements CalendarUtils{
         
         int anos = dataAtual.get(Calendar.YEAR) - dataInformada.get(Calendar.YEAR); 
         int meses = dataAtual.get(Calendar.MONTH) - dataInformada.get(Calendar.MONTH);
-        
-        String dataFormatada = anos + " anos " + meses + " meses " + " dias";
+        int dias = dataAtual.get(Calendar.DATE) - dataInformada.get(Calendar.DATE);
+        String dataFormatada = anos + " anos " + meses + " meses " + dias + " dias";
         
         return dataFormatada;
     }
