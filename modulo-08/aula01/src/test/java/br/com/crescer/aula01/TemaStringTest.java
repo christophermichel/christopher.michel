@@ -105,6 +105,47 @@ public class TemaStringTest {
         boolean result = instance.isPalindromo(string);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
+    } 
+    
+    @Test
+    public void testIsEmpty() {
+        TemaString instance = new TemaString();
+        assertTrue(instance.isEmpty(null));
+        assertTrue(instance.isEmpty(""));
+        assertTrue(instance.isEmpty(" "));
+        assertFalse(instance.isEmpty("a"));
+        assertFalse(instance.isEmpty(" a "));
+    }
+
+    /**
+     * Test of inverter method, of class StringUtils.
+     */
+    @Test
+    public void testInverter2() {
+        TemaString instance = new TemaString();
+        assertEquals("solrac", instance.inverter("carlos"));
+    }
+
+    /**
+     * Test of contaVogais method, of class StringUtils.
+     */
+    @Test
+    public void testContaVogais2() {
+        TemaString instance = new TemaString();
+        assertEquals(2, instance.contaVogais("carlos"));
+    }
+
+    /**
+     * Test of isPalindromo method, of class StringUtils.
+     */
+    @Test
+    public void testIsPalindromo2() {
+        TemaString instance = new TemaString();
+        assertTrue(instance.isPalindromo("ovo"));
+        assertTrue(instance.isPalindromo("Ame a Ema"));
+        assertTrue(instance.isPalindromo("A sogra má e amargosa"));
+        assertFalse(instance.isPalindromo("uva"));
+        assertFalse(instance.isPalindromo("Ame a Emo"));
     }
     
 }

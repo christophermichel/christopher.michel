@@ -26,7 +26,7 @@ public class TemaString implements StringUtils{
     
     @Override
     public boolean isEmpty(String string) {
-        return string.length() == 0 || string == null;
+        return string == null || string.length() == 0;
     }
     
     @Override

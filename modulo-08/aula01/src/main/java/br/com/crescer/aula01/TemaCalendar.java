@@ -41,7 +41,7 @@ public class TemaCalendar implements CalendarUtils{
         
         dataAtual.setTime(new Date());
         dataInformada.setTime(date);
-        
+            
         int anos = dataAtual.get(Calendar.YEAR) - dataInformada.get(Calendar.YEAR); 
         int meses = dataAtual.get(Calendar.MONTH) - dataInformada.get(Calendar.MONTH);
         int dias = dataAtual.get(Calendar.DATE) - dataInformada.get(Calendar.DATE);
