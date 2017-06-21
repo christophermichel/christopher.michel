@@ -20,6 +20,7 @@ public class TemaString implements StringUtils{
         System.out.println(testa.contaVogais("sdfáslk"));
         System.out.println(testa.isPalindromo("assa"));
         System.out.println(testa.isPalindromo("asasa"));
+        System.out.println(testa.isPalindromo("a sasa"));
         
     }
     
@@ -68,6 +69,7 @@ public class TemaString implements StringUtils{
         string = 
             Normalizer
            .normalize(string, Normalizer.Form.NFD)
+           .replaceAll(" ", "")
            .replaceAll("[^\\p{ASCII}]", "");
         
         int i;
@@ -87,6 +89,6 @@ public class TemaString implements StringUtils{
             metadeFinal = string.substring((tamanho+1),string.length());
         }
 
-        return metadeInicial.toString().equals(metadeFinal);
+        return metadeInicial.toString().toLowerCase().equals(metadeFinal.toLowerCase());
     }
 }
