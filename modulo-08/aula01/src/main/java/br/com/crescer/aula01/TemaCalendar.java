@@ -23,6 +23,7 @@ public class TemaCalendar implements CalendarUtils{
         TemaCalendar testa = new TemaCalendar();
         System.out.println(testa.diaSemana(new SimpleDateFormat("dd/MM/yyyy").parse("19/06/2015")));
         System.out.println(testa.diaSemana(new SimpleDateFormat("dd/MM/yyyy").parse("21/06/2017")));
+        System.out.println(testa.tempoDecorrido(new SimpleDateFormat("dd/MM/yyyy").parse("21/05/2015")));
     }
     
     @Override
@@ -40,7 +41,11 @@ public class TemaCalendar implements CalendarUtils{
         dataAtual.setTime(new Date());
         dataInformada.setTime(date);
         
+        int anos = dataAtual.get(Calendar.YEAR) - dataInformada.get(Calendar.YEAR); 
+        int meses = dataAtual.get(Calendar.MONTH) - dataInformada.get(Calendar.MONTH);
         
-        return "falta implementar";
+        String dataFormatada = anos + " anos " + meses + " meses " + " dias";
+        
+        return dataFormatada;
     }
 }
