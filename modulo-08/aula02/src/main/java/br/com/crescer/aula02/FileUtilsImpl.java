@@ -28,6 +28,7 @@ public class FileUtilsImpl implements FileUtils{
     
     @Override
     public boolean rm(String string) {
+        file = new File(string);
         if (file.isFile()) {
             return file.delete();
         }
@@ -39,6 +40,7 @@ public class FileUtilsImpl implements FileUtils{
     
     @Override
     public String ls(String string) {
+        file = new File(string);
         if (file.isFile()) {
             return file.getAbsolutePath();
         } else {
