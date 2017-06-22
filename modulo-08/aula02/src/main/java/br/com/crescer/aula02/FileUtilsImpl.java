@@ -2,7 +2,6 @@ package br.com.crescer.aula02;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 
 /**
  *
