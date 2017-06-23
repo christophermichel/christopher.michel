@@ -89,7 +89,31 @@ public class SQLUtilsImpl implements SQLUtils {
     
     @Override
     public void importCSV(File file) {
-        return;
+        String nome = file.getName();
+        if(nome.contains(".csv") || file.isFile()) {
+            String nomeTabela = nome.substring(0, nome.lastIndexOf("."));
+            try {
+                if(!file.exists()) {
+                throw new Exception("Não foi possível encontrar o arquivo");
+                }
+                Reader reader = new FileReader(file);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                List<String> dadosLinha = bufferedReader
+                                                .lines()
+                                                .collect(toList());
+                String comandoSQL = String.format("insert into %s (%s) values (?)", nomeTabela, dadosLinha.get(0));
+                try (final Statement statement = ConnectionUtils.getConnection().createStatement()) {
+                    for(int i = 1; i < dadosLinha.size(); i++) {
+                        statement.addBatch(comandoSQL.replace("?", dadosLinha.get(i)));
+                    }
+                    statement.executeBatch();
+                } catch (Exception e) {
+                    throw new Exception("Não foi possível concluir com êxito as operações");
+                }
+            } catch (Exception e) {
+                    throw new RuntimeException("Erro: " + e.getMessage());
+            }
+        }
     }
 
     
