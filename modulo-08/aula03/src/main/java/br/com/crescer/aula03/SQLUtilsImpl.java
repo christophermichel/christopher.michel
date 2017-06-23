@@ -10,11 +10,16 @@ import java.io.Reader;
 import java.io.Writer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toList;
 
 /**
  *
@@ -61,15 +66,32 @@ public class SQLUtilsImpl implements SQLUtils {
         }
     }
     
+    @Override
     public String executeQuery(String query) {
-    
-        return "oi";
+        StringBuilder tabela = new StringBuilder();
+        try (final Statement statement = ConnectionUtils.getConnection().createStatement()) { 
+            
+            ResultSet resultSet = statement.executeQuery(query);
+            ResultSetMetaData coluna = resultSet.getMetaData();
+
+            while(resultSet.next()){                
+                for(int i = 0; i < coluna.getColumnCount(); i++) {
+                    tabela.append(resultSet.getString(i+1)).append(" "); 
+                }
+                tabela.append("\n");                
+            } 
+            
+        } catch (SQLException e) {
+            Logger.getLogger(SQLUtilsImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return tabela.toString();
     }
     
+    @Override
     public void importCSV(File file) {
-    
         return;
     }
+
     
     @Override
     public File importCSV(String query) {
