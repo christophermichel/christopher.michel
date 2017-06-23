@@ -3,14 +3,14 @@ package br.com.crescer.aula03.cidade;
 public class NewClass {
     
     public static void main(String[] args) {
-        final CidadeDao pessoaDao = new CidadeDaoImpl();
+        final CidadeDao cidadeDao = new CidadeDaoImpl();
         
-        final Cidade pessoa = new Cidade();
+        final Cidade cidade = new Cidade();
         
-        pessoa.setId(1l);
-        pessoa.setNome("Carlos");
+        cidade.setId(1l);
+        cidade.setNome("Novo Hamburgo");
         
-        pessoaDao.delete(pessoa);
+        cidadeDao.insert(cidade);
         
         
     }

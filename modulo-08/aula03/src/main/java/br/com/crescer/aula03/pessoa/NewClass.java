@@ -10,10 +10,10 @@ public class NewClass {
         
         final Pessoa pessoa = new Pessoa();
         
-        pessoa.setId(1l);
-        pessoa.setNome("Carlos");
+        pessoa.setId(2L);
+        pessoa.setNome("Chris");
         
-        pessoaDao.delete(pessoa);
+        pessoaDao.insert(pessoa);
         
         
     }
