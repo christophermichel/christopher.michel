@@ -4,8 +4,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
+import java.io.Writer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -69,8 +71,20 @@ public class SQLUtilsImpl implements SQLUtils {
         return;
     }
     
+    @Override
     public File importCSV(String query) {
-        File file = new File(query);
+        file = new File("file.csv");
+        String comandoSQL = executeQuery(query);
+        try {
+            file.createNewFile();
+            if(file.exists()){
+                Writer writer = new FileWriter(file);
+                writer.append(comandoSQL);
+                writer.flush(); 
+            }
+        } catch (Exception e) {
+            Logger.getLogger(SQLUtilsImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
         return file;
     }
 }
