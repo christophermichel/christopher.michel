@@ -10,19 +10,17 @@ import javax.persistence.Persistence;
 public class Run {
 
     public static void main(String[] args) {
-        final EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRESCER");
+        final EntityManagerFactory emf = Persistence.createEntityManagerFactory("JAVA");
         final EntityManager em = emf.createEntityManager();
         
-        final Cliente cliente = em.find(Cliente.class, 1l); 
+        final Pessoa cliente = em.find(Pessoa.class, 3l); 
         System.out.println(cliente.getNome());
         
         em.getTransaction().begin();
-        em.remove(cliente);
         
-        cliente.setId(1l);
-        cliente.setNome("Christopher");
-        em.persist(cliente);
         
+        cliente.setNome("ldnqldl");
+        em.merge(cliente);
 
         em.getTransaction().commit();
         em.close();
