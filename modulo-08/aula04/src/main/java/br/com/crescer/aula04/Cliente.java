@@ -1,5 +1,6 @@
 package br.com.crescer.aula04;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -14,7 +15,7 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class Cliente {
+public class Cliente  implements Serializable {
     
     
     @Id
