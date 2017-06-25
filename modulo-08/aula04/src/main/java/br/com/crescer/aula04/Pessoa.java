@@ -1,12 +1,13 @@
 package br.com.crescer.aula04;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Pessoa {
+public class Pessoa implements Serializable {
 
     @Id // Identifica a PK
     @Basic(optional = false)
