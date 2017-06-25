@@ -19,15 +19,21 @@ public class FuncionarioDao implements CrudDao<Funcionario, Long> {
     
     @Override
     public Funcionario save(Funcionario funcionario) {
+       em.getTransaction().begin();
        session.saveOrUpdate(funcionario);
        session.getTransaction().commit();
+       em.close();
+       emf.close();
        return funcionario;
     }
 
     @Override
     public void remove(Funcionario funcionario) {
-       session.delete(funcionario);
-       session.getTransaction().commit();
+       em.getTransaction().begin();
+       em.remove(funcionario);
+       em.getTransaction().commit();
+       em.close();
+       emf.close();
     }
 
     @Override
