@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -16,7 +17,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Cliente  implements Serializable {
-    
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CLIENTE")
@@ -67,6 +67,7 @@ public class Cliente  implements Serializable {
     
     @Basic (optional = true)
     @Column (name = "NASCIMENTO")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date nascimento;
 
     public Long getId() {
