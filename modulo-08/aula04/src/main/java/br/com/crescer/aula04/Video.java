@@ -26,7 +26,7 @@ public class Video implements Serializable {
     @Basic(optional = false)
     @Column(name = "ID")
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_VIDEO")
-    @SequenceGenerator(name = "SEQ_FUNCIONARIO", sequenceName = "SEQ_FUNCIONARIO")
+    @SequenceGenerator(name = "SEQ_VIDEO", sequenceName = "SEQ_VIDEO")
     private Long id;
     
     @Column(name = "VALOR")
