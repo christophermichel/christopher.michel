@@ -11,44 +11,44 @@ import org.hibernate.Session;
  *
  * @author chris
  */
-public class GeneroDao implements CrudDao<Genero, Long> {
+public class VideoDao implements CrudDao<Video, Long> {
 
     private final  EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRESCER");
     private final EntityManager em = emf.createEntityManager();
     private final  Session session = em.unwrap(Session.class);
     
     @Override
-    public Genero save(Genero genero) {
+    public Video save(Video video) {
        em.getTransaction().begin();
-       session.saveOrUpdate(genero);
+       session.saveOrUpdate(video);
        session.getTransaction().commit();
        em.close();
        emf.close();
-       return genero;
+       return video;
     }
 
     @Override
-    public void remove(Genero genero) {
+    public void remove(Video video) {
        em.getTransaction().begin();
-       em.remove(genero);
+       em.remove(video);
        em.getTransaction().commit();
        em.close();
        emf.close();
     }
 
     @Override
-    public Genero loadById(Long id) {
-       return em.find(Genero.class, id);
+    public Video loadById(Long id) {
+       return em.find(Video.class, id);
     }
 
     @Override
-    public List<Genero> findAll() {
+    public List<Video> findAll() {
         em.getTransaction().begin();
-        Criteria criteria = session.createCriteria(Genero.class);
-        List<Genero> genero = criteria.list();
+        Criteria criteria = session.createCriteria(Video.class);
+        List<Video> video = criteria.list();
         em.close();
         emf.close(); 
-        return genero;
+        return video;
     }
     
 }

@@ -38,12 +38,7 @@ public class FuncionarioDao implements CrudDao<Funcionario, Long> {
 
     @Override
     public Funcionario loadById(Long id) {
-       Funcionario funcionario = new Funcionario();
-       em.getTransaction().begin();
-       funcionario = (Funcionario) session.get(Funcionario.class, id);
-       em.close();
-       emf.close();   
-       return funcionario;
+       return em.find(Funcionario.class, id);
     }
 
     @Override

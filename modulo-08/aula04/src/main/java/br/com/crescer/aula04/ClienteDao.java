@@ -38,22 +38,17 @@ public class ClienteDao implements CrudDao<Cliente, Long> {
 
     @Override
     public Cliente loadById(Long id) {
-       Cliente cliente = new Cliente();
-       em.getTransaction().begin();
-       cliente = (Cliente) session.get(Cliente.class, id);
-       em.close();
-       emf.close();   
-       return cliente;
+       return em.find(Cliente.class, id);
     }
 
     @Override
     public List<Cliente> findAll() {
         em.getTransaction().begin();
         Criteria criteria = session.createCriteria(Cliente.class);
-        List<Cliente> clientes = criteria.list();
+        List<Cliente> cliente = criteria.list();
         em.close();
         emf.close(); 
-        return clientes;
+        return cliente;
     }
     
 }

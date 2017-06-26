@@ -38,12 +38,7 @@ public class LocacaoDao implements CrudDao<Locacao, Long> {
 
     @Override
     public Locacao loadById(Long id) {
-       Locacao locacao = new Locacao();
-       em.getTransaction().begin();
-       locacao = (Locacao) session.get(Locacao.class, id);
-       em.close();
-       emf.close();   
-       return locacao;
+       return em.find(Locacao.class, id);
     }
 
     @Override
