@@ -1,3 +1,7 @@
+<%@page import="br.com.crescer.aula04.Funcionario"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
+<%@page import="br.com.crescer.aula04.FuncionarioDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,44 +17,13 @@
     </head>
 
     <body>
-        <div class="container">
+        <%
+        FuncionarioDao fDao = new FuncionarioDao();
+        List<Funcionario> funcionarios = fDao.findAll();
 
-        <% String title = "FORM PESSOA"; %>
-        <h1><% out.println(title);%></h1>
-
-            <h1 class="page-header">Pessoas</h1>
-            <form>
-
-                <div class="form-group">
-                    <label class="sr-only" for="nome">Nome</label>
-                    <input type="nome" name="nome" class="form-control" id="nome" placeholder="Nome da Pessoa">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-
-            <div id="table"></div>
-
-        </div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script type="text/javascript">
-
-            var findAll = function () {
-                $.get('pessoa', function (data) {
-                    $('#table').html(data);
-                });
-            }();
-
-//            Caso o envio for feito por ajax.
-            $('form').submit(function () {
-                debugger;
-                $.post('pessoa', $('form').serialize(), function (data) {
-                    findAll();
-                });
-            });
-
-        </script>
+        for (Funcionario funcionario : funcionarios ) {
+        %>
+        <li><%=funcionario.getNome()%>, <%=funcionario.getRg()%></li>
 
     </body>
 
