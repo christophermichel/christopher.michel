@@ -35,5 +35,5 @@
         <property name="URL" value="jdbc:oracle:thin:@localhost:1521:XE"/>
         <property name="driverClass" value="oracle.jdbc.OracleDriver"/>
     </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="jdbc/crescer" object-type="system-all" pool-name="cwiPool"/>
+    <jdbc-resource enabled="true" jndi-name="jdbc/JAVA" object-type="system-all" pool-name="cwiPool"/>
 </resources>

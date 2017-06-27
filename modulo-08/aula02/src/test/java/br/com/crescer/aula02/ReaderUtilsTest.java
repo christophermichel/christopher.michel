@@ -1,4 +1,4 @@
-package br.com.crescer.aula02;
+/*package br.com.crescer.aula02;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,9 +10,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-    /**
- * @author carloshenrique
- */
+
 public class ReaderUtilsTest {
 
     private static final String TARGET_PATH = "target";
@@ -34,9 +32,7 @@ public class ReaderUtilsTest {
         Files.write(path, filename.getBytes());
     }
 
-    /**
-     * Test of read method, of class ReaderUtils.
-     */
+    
     @Test
     public void testRead() {
         final String read = readerUtils.read(filename);
@@ -44,4 +40,4 @@ public class ReaderUtilsTest {
         assertEquals(filename, read);
     }
 
-}
+}*/
