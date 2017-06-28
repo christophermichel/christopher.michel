@@ -13,8 +13,11 @@ public class GeneroService {
     @Autowired 
     GeneroRepository generoRepository;
     
-    public List<Genero> list() {
+    public List<Genero> findAll() {
         return (List)generoRepository.findAll();
     } 
-
+    
+    public void addGenero(Genero genero) {
+        generoRepository.save(genero);
+    }
 }

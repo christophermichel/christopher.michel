@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +17,12 @@ public class GeneroController {
     @Autowired GeneroService generoService; 
     
     @GetMapping("/genero")
-    public List<Genero> list() {
-        return generoService.list();
+    public List<Genero> findAll() {
+        return generoService.findAll();
     }
     
+    @PostMapping("/genero")
+    public void addGenero(@RequestBody Genero genero) {
+        generoService.addGenero(genero);
+    }
 }
