@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Bellefair);
+
+body{
+  background-image: url(capa.jpg);
+  background-size:100%;
+  background-repeat:cover;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+}
+
+.paginaLogin {
+  width: 360px;
+  padding: 7% 0 0;
+  margin: auto;
+}
+.form {
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+.form input {
+  font-family: 'Bellefair', serif;
+  outline: 0;
+  background: #f4f2f4;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  font-size: 16px;
+}
+.form button {
+  font-family: 'Bellefair', serif;
+  text-transform: uppercase;
+  background: #BC8F8F;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #A52A2A;
+}
+.form .mensagem {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+.form .mensagem a {
+  color: #BC8F8F;
+  text-decoration: none;
+}
+
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
