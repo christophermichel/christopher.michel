@@ -9,7 +9,7 @@ body{
   opacity: 0.85;
 }
 
-a{
+.coluna-links a{
   text-decoration: none;
 }
 
@@ -27,7 +27,7 @@ li {
 .navbar{
   color: white;
   background: #6A5ACD;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 5px;
   font-family: 'Bellefair', serif;
 }
