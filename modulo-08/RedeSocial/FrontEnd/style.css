@@ -9,12 +9,16 @@ body{
   opacity: 0.85;
 }
 
+a{
+  text-decoration: none;
+}
+
 li {
   list-style: none;
 }
 
 .coluna-links{
-  padding: 15px;
+  padding: 12px;
   font-size: 30px;
   font-family: 'Bellefair', serif;
   text-align: right;
@@ -24,8 +28,12 @@ li {
   color: white;
   background: #6A5ACD;
   border-radius: 30px;
-  padding: 10px;
+  padding: 5px;
   font-family: 'Bellefair', serif;
+}
+
+.alinhar-navbar{
+  padding-top: 15px;
 }
 
 .margin-feed{
@@ -75,6 +83,7 @@ li {
 .form button:hover,.form button:active,.form button:focus {
   background: #A52A2A;
 }
+
 .form .mensagem {
   margin: 15px 0 0;
   color: #b3b3b3;
@@ -88,4 +97,10 @@ li {
 .container .info {
   margin: 50px auto;
   text-align: center;
+}
+
+.titulo {
+  font-size: 32px;
+  padding-top: 12px;
+  text-align: left;
 }
