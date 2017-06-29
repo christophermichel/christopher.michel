@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Bellefair);
 
+
 body{
+  width: 100%;
   background-image: url(capa.jpg);
   background-size:100%;
   background-repeat:cover;
@@ -8,11 +10,21 @@ body{
   opacity: 0.85;
 }
 
+.margin-feed{
+  margin-left: 4.16%;
+  margin-right:4.16%;
+}
+
+.colunas-feed{
+  background-color: white;
+}
+
 .paginaLogin {
   width: 360px;
   padding: 7% 0 0;
   margin: auto;
 }
+
 .form {
   background: #FFFFFF;
   max-width: 360px;
