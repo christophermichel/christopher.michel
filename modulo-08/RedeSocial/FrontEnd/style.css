@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Bellefair);
 
-
 body{
   width: 100%;
   background-image: url(capa.jpg);
@@ -10,6 +9,25 @@ body{
   opacity: 0.85;
 }
 
+li {
+  list-style: none;
+}
+
+.coluna-links{
+  padding: 15px;
+  font-size: 30px;
+  font-family: 'Bellefair', serif;
+  text-align: right;
+}
+
+.navbar{
+  color: white;
+  background: #6A5ACD;
+  border-radius: 30px;
+  padding: 10px;
+  font-family: 'Bellefair', serif;
+}
+
 .margin-feed{
   margin-left: 4.16%;
   margin-right:4.16%;
@@ -17,6 +35,8 @@ body{
 
 .colunas-feed{
   background-color: white;
+  border-radius: 12px;
+  font-family: 'Bellefair', serif;
 }
 
 .paginaLogin {
