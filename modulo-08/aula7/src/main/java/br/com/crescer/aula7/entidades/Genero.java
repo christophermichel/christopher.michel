@@ -1,4 +1,4 @@
-package br.com.crescer.aula7;
+package br.com.crescer.aula7.entidades;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
