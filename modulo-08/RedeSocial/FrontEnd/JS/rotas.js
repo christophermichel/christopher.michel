@@ -16,5 +16,15 @@ app.config(function ($routeProvider) {
                 templateUrl: '/feed.html'
             })
 
+            .when('/amigos', {
+                controller: 'loginController',
+                templateUrl: '/amigos.html'
+            })
+
+            .when('/perfil', {
+                controller: 'loginController',
+                templateUrl: '/perfil.html'
+            })
+
             .otherwise({redirectTo:'/login'});
     });
