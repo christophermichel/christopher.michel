@@ -3,6 +3,7 @@ package br.com.crescer.social.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import static org.springframework.http.HttpMethod.GET;
+import static org.springframework.http.HttpMethod.POST;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -26,7 +27,7 @@ public class SocialWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .authorizeRequests().antMatchers(GET, securityPublic).permitAll()
+                .authorizeRequests().antMatchers(POST, "/usuario").permitAll()
                 .and()
                 .authorizeRequests().anyRequest().authenticated()
                 .and()

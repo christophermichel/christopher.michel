@@ -1,10 +1,18 @@
+<div class="row text-center  navbar">
+  <div class="col-md-4"></div>
+  <div class="col-md-1">
+    <img src="logo.png" width="70" height="70">
+  </div>
+  <div class="col-md-4 titulo"> Musician To Musician</div>
+</div>
 <div class="paginaLogin">
   <div class="form">
-    <form class="cadastroForm">
-      <input type="text" placeholder="Nome"/>
-      <input type="text" placeholder="Email"/>
-      <input type="password" placeholder="Password"/>
-      <button>cadastrar</button>
+    <form class="loginForm">
+      <input type="text" placeholder="Nome" ng-model="usuario.nome">
+      <input type="text" placeholder="Email" ng-model="usuario.email">
+      <input type="password" placeholder="Password" ng-model="usuario.senha">
+      <button type="submit" ng-click="NovoUsuario(usuario)" >CADASTRAR
+      </button>
       <p class="mensagem">Já registrado? <a ng-href="#!/login">Faça login!</a></p>
     </form>
   </div>
