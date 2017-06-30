@@ -19,7 +19,7 @@ public class Post implements Serializable {
     @Column(name = "ID")
     private Long id;
     
-    @ManyToOne
+    @Basic(optional = false)
     @JoinColumn(name = "ID")
     private Usuario usuario;
     

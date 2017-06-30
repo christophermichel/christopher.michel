@@ -24,5 +24,4 @@ public class SocialUserDetailsService implements UserDetailsService {
         }
         return new User(username, new BCryptPasswordEncoder().encode("password"), grants);
     }
-
 }

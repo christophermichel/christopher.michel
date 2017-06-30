@@ -8,8 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.SEQUENCE;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;                                                      
+import javax.persistence.Id;                                                   
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
@@ -39,13 +38,7 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(name = "NOME")
     private String nome;
-
-    @OneToMany(mappedBy = "usuario")
-    List<Post> posts;
     
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Usuario> amigos;
-
     public Long getId() {
         return id;
     }
@@ -76,21 +69,5 @@ public class Usuario implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public List<Post> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
-    }
-
-    public List<Usuario> getAmigos() {
-        return amigos;
-    }
-
-    public void setAmigos(List<Usuario> amigos) {
-        this.amigos = amigos;
     }
 }
