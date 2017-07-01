@@ -12,7 +12,7 @@ app.config(function ($routeProvider) {
             })
 
             .when('/feed', {
-                controller: 'loginController',
+                controller: 'feedController',
                 templateUrl: '/feed.html'
             })
 

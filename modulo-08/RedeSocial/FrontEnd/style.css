@@ -9,19 +9,8 @@ body{
   opacity: 0.90;
 }
 
-.coluna-links a{
-  text-decoration: none;
-}
-
 li {
   list-style: none;
-}
-
-.coluna-links{
-  padding: 12px;
-  font-size: 30px;
-  font-family: 'Bellefair', serif;
-  text-align: right;
 }
 
 .navbar{
@@ -43,7 +32,7 @@ li {
 
 .colunas-feed{
   background-color: white;
-  border-radius: 12px;
+  border-radius: 6px;
   font-family: 'Bellefair', serif;
 }
 

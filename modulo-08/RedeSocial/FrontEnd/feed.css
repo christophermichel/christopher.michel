@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Bellefair);
+
+.imagemFeed {
+  height: 70px;
+  width: 70px;
+}
+
+.coluna-links{
+  padding: 7px;
+  font-size: 30px;
+  font-family: 'Bellefair', serif;
+  text-align: right;
+}
+
+
+.colunas-feed{
+  background-color: white;
+  border-radius: 6px;
+  font-family: 'Bellefair', serif;
+}
+
+.fonteBranca{
+  color: white !important;
+}
+
+.disabled {
+  background: #6A5ACD !important;
+}
