@@ -39,7 +39,7 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(name = "NOME")
     private String nome;
-    
+
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Usuario> amigos;
@@ -95,5 +95,5 @@ public class Usuario implements Serializable {
     public void setSolicitacoes(List<Usuario> solicitacoes) {
         this.solicitacoes = solicitacoes;
     }
-
+    
 }

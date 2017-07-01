@@ -26,5 +26,20 @@ app.config(function ($routeProvider) {
                 templateUrl: '/perfil.html'
             })
 
+            .when('/perfilamigo/:idamigo',
+            {
+                controller: 'perfilAmigoController',
+                templateUrl: '/perfilAmigo.html'
+            })
+
+            .when("/logout", {
+                templateUrl: "logout.html",
+                resolve: {
+                    removerAuth: function  (authService)  {
+                        return authService.logout();
+                    }
+                }
+            })
+
             .otherwise({redirectTo:'/login'});
     });
