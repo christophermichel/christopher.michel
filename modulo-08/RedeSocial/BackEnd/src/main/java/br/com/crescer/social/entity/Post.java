@@ -1,8 +1,8 @@
 package br.com.crescer.social.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,30 +11,42 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
+/**
+ *
+ * @author chris
+ */
 
 @Entity
 public class Post implements Serializable {
+
     @Id
+    @Basic(optional = false)
+    @Column(name = "ID")
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_POST")
     @SequenceGenerator(name = "SEQ_POST", sequenceName = "SEQ_POST", allocationSize = 1)
-    @Column(name = "ID")
     private Long id;
     
     @Basic(optional = false)
-    @JoinColumn(name = "ID")
-    private Usuario usuario;
-    
-    @Basic(optional = false)
-    @Column(name = "TITULO")
-    private String titulo;
-    
-    @Basic(optional = true)
+    @Size(min = 1, max = 250)
     @Column(name = "IMAGEM")
     private String imagem;
-
+    
     @Basic(optional = false)
+    @Size(min = 1, max = 250)
     @Column(name = "CONTEUDO")
     private String conteudo;
+    
+    @Basic(optional = false)
+    @Column(name = "DATAPUBLICACAO")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataPublicacao;
+    
+    @JoinColumn(name = "IDUSUARIO", referencedColumnName = "ID")
+    @ManyToOne(optional = false)
+    private Usuario idUsuario;
     
     public Long getId() {
         return id;
@@ -44,22 +56,6 @@ public class Post implements Serializable {
         this.id = id;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
     public String getImagem() {
         return imagem;
     }
@@ -67,12 +63,28 @@ public class Post implements Serializable {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
-    
+
     public String getConteudo() {
         return conteudo;
     }
 
     public void setConteudo(String conteudo) {
         this.conteudo = conteudo;
+    }
+
+    public Date getDataPublicacao() {
+        return dataPublicacao;
+    }
+
+    public void setDataPublicacao(Date dataPublicacao) {
+        this.dataPublicacao = dataPublicacao;
+    }
+
+    public Usuario getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Usuario idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }
