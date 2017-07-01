@@ -25,8 +25,29 @@ public class UsuarioService {
         return usuarioRepositorio.findOne(id);
     }
     
+    public Usuario getByEmail (String email) {
+        return usuarioRepositorio.getByEmail(email);
+    }
+    
     public void remove(Usuario usuario) {
         usuarioRepositorio.delete(usuario);
+    }
+    
+    public Usuario put(Usuario usuario) {
+        return usuarioRepositorio.save(usuario);
+    }
+    
+    public void enviarSolicitacaoDeAmizade(Usuario mandaSolicitacao, Usuario recebeSolicitacao) {
+        recebeSolicitacao.getSolicitacoes().add(mandaSolicitacao);
+        put(recebeSolicitacao);
+    }
+    
+    public void aceitarSolicitacaoDeAmizade(Usuario recebeSolicitacao, Usuario mandaSolicitacao) {
+        recebeSolicitacao.getSolicitacoes().remove(mandaSolicitacao);
+        recebeSolicitacao.getAmigos().add(mandaSolicitacao);
+        mandaSolicitacao.getAmigos().add(recebeSolicitacao);
+        put(recebeSolicitacao);
+        put(mandaSolicitacao);
     }
 
 }

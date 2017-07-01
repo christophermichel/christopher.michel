@@ -1,5 +1,6 @@
 package br.com.crescer.social.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -9,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;                                                   
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
 /**
@@ -39,6 +40,14 @@ public class Usuario implements Serializable {
     @Column(name = "NOME")
     private String nome;
     
+    @JsonIgnore
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Usuario> amigos;
+
+    @JsonIgnore
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Usuario> solicitacoes;
+
     public Long getId() {
         return id;
     }
@@ -70,4 +79,21 @@ public class Usuario implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    
+    public List<Usuario> getAmigos() {
+        return amigos;
+    }
+
+    public void setAmigos(List<Usuario> amigos) {
+        this.amigos = amigos;
+    }
+
+    public List<Usuario> getSolicitacoes() {
+        return solicitacoes;
+    }
+
+    public void setSolicitacoes(List<Usuario> solicitacoes) {
+        this.solicitacoes = solicitacoes;
+    }
+
 }
