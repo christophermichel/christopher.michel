@@ -7,10 +7,10 @@
 </div>
 <div class="paginaLogin">
   <div class="form">
-    <form class="loginForm">
-      <input type="text" placeholder="Email"/>
-      <input type="password" placeholder="Password"/>
-      <button>login</button>
+    <form novalidate name="formLogin" class="loginForm">
+      <input type="text" placeholder="Email" ng-model="usuario.email">
+      <input type="password" placeholder="Password" ng-model="usuario.senha">
+      <button type="submit" class="btn btn-primary btn-md" ng-click="login(usuario)">Login</button>
       <p class="mensagem">Ainda não registrado? <a ng-href="#!/cadastro">Crie uma conta!</a></p>
     </form>
   </div>

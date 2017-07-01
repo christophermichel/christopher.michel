@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
             })
 
             .when('/cadastro', {
-                controller: 'loginController',
+                controller: 'cadastroController',
                 templateUrl: '/cadastro.html'
             })
 
