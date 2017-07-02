@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;                                                   
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 /**
@@ -47,6 +48,10 @@ public class Usuario implements Serializable {
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Usuario> solicitacoes;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "idUsuario")
+    private List<Post> posts;
 
     public Long getId() {
         return id;
@@ -94,6 +99,14 @@ public class Usuario implements Serializable {
 
     public void setSolicitacoes(List<Usuario> solicitacoes) {
         this.solicitacoes = solicitacoes;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
     
 }

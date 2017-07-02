@@ -17,6 +17,9 @@ public class PostService {
     @Autowired
     private PostRepository postRepositorio;
     
+    @Autowired
+    private UsuarioService usuarioService;
+    
     public List<Post> findAll() {
         return (List)postRepositorio.findAll();
     }
@@ -34,8 +37,8 @@ public class PostService {
         postRepositorio.delete(post);
     }
     
-    public List<Post> findByIdUsuario (Long id) {
-        return postRepositorio.findByIdUsuario(id);
+    public List<Post> findPostsById(Long id) {
+        return usuarioService.getById(id).getPosts();
     }
 
 
