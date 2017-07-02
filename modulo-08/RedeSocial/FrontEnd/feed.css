@@ -5,11 +5,54 @@
   width: 70px;
 }
 
+.largura {
+  width: 500px !important;
+}
+
 .coluna-links{
   padding: 7px;
   font-size: 30px;
   font-family: 'Bellefair', serif;
   text-align: right;
+}
+
+.postagem {
+  background: #FFFFFF;
+  max-width: 700px;
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.bordaPostagem {
+  background-color: #6A5ACD;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.postagem input {
+  font-family: 'Bellefair', serif;
+  outline: 0;
+  background: #f4f2f4;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.postagem button {
+  font-family: 'Bellefair', serif;
+  text-transform: uppercase;
+  background: #A52A2A;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #A52A2A;
 }
 
 .margin-feed{

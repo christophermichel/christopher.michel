@@ -13,17 +13,17 @@
       <div class"row coluna-links"><a ng-href="#!/logout">Logout</a></div>
   </div>
   <div class="col-md-6 colunas-feed margin-feed">
-    <div class"row">NOVO POST</div><hr>
-    <div class="form">
-      <form novalidate name="formPost" class="loginForm">
-        <input type="text" placeholder="Qual a novidade de hoje?" ng-model="post.conteudo">
-        <input type="text" placeholder="Data de publicacão" ng-model="post.dataPublicacao">
-        <input type="text" placeholder="Imagem" ng-model="post.imagem">
-        <button type="submit" class="btn btn-primary btn-md" ng-click="novoPost(post)">Publicar</button>
-      </form>
+    <div class"row">
+    <div class="postagem">
+      <div class="bordaPostagem">
+        <form novalidate name="formPost">
+          <input type="text" placeholder="O que está tocando você hoje?" ng-model="post.conteudo">
+          <input type="text" placeholder="Coloque aqui uma URL que represente o post" ng-model="post.imagem">
+          <button type="submit" class="btn btn-primary btn-block btn-md" ng-click="novoPost(post)">Publicar</button>
+        </form>
+      </div>
     </div>
-
-
+    </div>
     <ul class="list-group" ng-repeat="post in posts">
       <div class"row">
         <li class="list-group-item disabled fonteBranca">{{post.idUsuario.nome}}</li>
