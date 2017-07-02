@@ -9,9 +9,14 @@ angular.module('app').factory('perfilAmigoService', function ($http, $routeParam
     return $http.get('http://localhost:9090/post');
     };
 
+    function solicitarAmizade() {
+        return $http.post('http://localhost:9090/usuario/solicitacao/' + $routeParams.idamigo);
+    };
+
     return {
         getPerfil: getPerfil,
-        getPosts: getPosts
+        getPosts: getPosts,
+        solicitarAmizade: solicitarAmizade
     };
 
 });

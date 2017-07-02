@@ -19,4 +19,16 @@ getPosts()
       });
     }
 
+    $scope.solicitarAmizade = function () {
+      if ($scope.formSolicitacao.$valid) {
+          console.log();
+          perfilAmigoService.solicitarAmizade().then(function (){
+              toastr.success('Boa! Network é vida!');
+          });
+      } else {
+          toastr.warning('Poxa, vocês não podem ser amigos!');
+
+        }
+      };
+
 });
