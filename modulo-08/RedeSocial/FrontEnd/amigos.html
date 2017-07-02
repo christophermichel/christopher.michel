@@ -27,16 +27,16 @@
                     <th class="pesquisar">Foto</th>
                     <th class="pesquisar">Nome</th>
                     <th class="pesquisar">Email</th>
-                    <th class="pesquisar">Convite</th>
+                    <th class="pesquisar">Perfil</th>
                 </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="usuario in amigosUsuario | filter:{nome: procurarPorNome}">
+              <tr ng-repeat="amigo in amigosUsuario">
                 <td class="pesquisar">Aguarde</td>
-                <td class="pesquisar">{{usuario.nome}}</td>
-                <td class="pesquisar">{{usuario.email}}</td>
+                <td class="pesquisar">{{amigo.nome}}</td>
+                <td class="pesquisar">{{amigo.email}}</td>
                 <td>
-                  <a class="pesquisar btn btn-block btn-default  b1" ng-href="#!/perfilamigo/{{usuario.id}}"> Visualizar Perfil</a>
+                  <a class="pesquisar btn btn-block btn-default  b1" ng-href="#!/perfilamigo/{{amigo.id}}"> Visualizar Perfil</a>
                 </td>
               </tr>
             </tbody>

@@ -37,11 +37,30 @@
         </div>
       </div>
     </ul>
-
-
   </div>
   <div class="col-md-3 colunas-feed">
-    <div class"row">AMIGOS</div><hr>
-    <div class"row">LISTA AMIGOS</div>
+    <div class"row pesquisar">Solicitações de Amizade</div><hr>
+    <div class"row">
+      <table class= "table table-striped danger orange text-center table-bordered">
+            <thead>
+                <tr>
+                    <th class="pesquisar">Foto</th>
+                    <th class="pesquisar">Nome</th>
+                    <th class="pesquisar">Email</th>
+                    <th class="pesquisar">Aceitar</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="usuario in solicitacoes | filter:{nome: procurarPorNome}">
+                <td class="pesquisar">Aguarde</td>
+                <td class="pesquisar">{{usuario.nome}}</td>
+                <td class="pesquisar">{{usuario.email}}</td>
+                <td>
+                  <a class="pesquisar btn btn-block btn-default  b1" ng-href="#!/perfilamigo/{{usuario.id}}"> Aceitar</a>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
   </div>
 </div>

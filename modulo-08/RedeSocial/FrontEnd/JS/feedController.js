@@ -2,6 +2,7 @@ angular.module('app').controller('feedController', function ($scope, feedService
 
 getPosts()
 getUsuarioAtual()
+getSolicitacoes();
 $scope.postOrdenado;
     function getPosts() {
       feedService.getPosts().then(function (response) {
@@ -12,6 +13,15 @@ $scope.postOrdenado;
 //        }
 //        $scope.posts.sort(ordemDecrescente);
 //        console.log($scope.posts);
+      });
+    }
+
+
+
+    function getSolicitacoes() {
+      feedService.getSolicitacoes().then(function (response) {
+        console.log(response);
+        $scope.solicitacoes = response.data;
       });
     }
 

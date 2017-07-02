@@ -5,6 +5,10 @@ angular.module('app').factory('feedService', function ($http) {
     return $http.get(urlBase);
     };
 
+    function getSolicitacoes() {
+    return $http.get('http://localhost:9090/usuario/solicitacoes');
+    };
+
     function getUsuarioAtual() {
     return $http.get('http://localhost:9090/usuario/atual');
     };
@@ -16,7 +20,8 @@ angular.module('app').factory('feedService', function ($http) {
     return {
         getPosts: getPosts,
         novoPost: novoPost,
-        getUsuarioAtual: getUsuarioAtual
+        getUsuarioAtual: getUsuarioAtual,
+        getSolicitacoes: getSolicitacoes
     };
 
 });

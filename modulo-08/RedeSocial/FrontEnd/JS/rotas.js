@@ -17,7 +17,7 @@ app.config(function ($routeProvider) {
             })
 
             .when('/amigos', {
-                controller: 'loginController',
+                controller: 'amigosController',
                 templateUrl: '/amigos.html'
             })
 
