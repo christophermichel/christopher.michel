@@ -5,6 +5,7 @@ import br.com.crescer.social.service.UsuarioService;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
@@ -65,5 +66,16 @@ public class UsuarioController {
     public List<Usuario> listUsers(){
         return (List) usuarioService.findAll();
     }
-
+    
+    @GetMapping(value = "/usuario/amigos")
+    public Set<Usuario> getAmigos(@AuthenticationPrincipal User user){
+       Usuario usuario = usuarioService.getByEmail(user.getUsername());
+       return usuario.getAmigos();
+    }
+    
+    @GetMapping(value = "/usuario/solicitacoes")
+    public Set<Usuario> getSolicitacoes(@AuthenticationPrincipal User user){
+       Usuario usuario = usuarioService.getByEmail(user.getUsername());
+       return usuario.getSolicitacoes();
+    }
 }
