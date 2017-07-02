@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngAnimate', 'toastr', 'ngRoute', 'auth']);
+var app = angular.module('app', ['ngAnimate', 'toastr', 'ngStorage', 'ngRoute', 'auth']);
 
 angular.module('app').constant('authConfig', {
 

@@ -5,8 +5,13 @@ angular.module('app').factory('feedService', function ($http) {
     return $http.get(urlBase);
     };
 
+    function novoPost(post) {
+        return $http.post(urlBase, post);
+    };
+
     return {
-        getPosts: getPosts
+        getPosts: getPosts,
+        novoPost: novoPost
     };
 
 });
