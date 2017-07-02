@@ -2,7 +2,9 @@ package br.com.crescer.social.controller;
 
 import br.com.crescer.social.entity.Usuario;
 import br.com.crescer.social.service.UsuarioService;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
@@ -50,5 +52,12 @@ public class UsuarioController {
         Usuario recebeuSolicitacao = usuarioService.getByEmail(user.getUsername());
         Usuario mandouSolicitacao = usuarioService.getById(id);
         usuarioService.aceitarSolicitacaoDeAmizade(recebeuSolicitacao, mandouSolicitacao);
+    }
+    
+        
+    @GetMapping(value = "/usuario/atual")
+    public Usuario getUsuarioAtual(@AuthenticationPrincipal User usuario){
+       Usuario user = usuarioService.getByEmail(usuario.getUsername());
+       return user;
     }
 }
