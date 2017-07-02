@@ -24,7 +24,7 @@ public class SocialUserDetailsService implements UserDetailsService {
     
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario usuario = usuarioRepositorio.getByEmail(username);
+        Usuario usuario = usuarioRepositorio.findByEmail(username);
         if( usuario == null) {
             throw new UsernameNotFoundException("Usuario não cadastrado");
         }

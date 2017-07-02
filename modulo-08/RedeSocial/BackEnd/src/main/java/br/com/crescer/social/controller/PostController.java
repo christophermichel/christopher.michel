@@ -20,6 +20,11 @@ public class PostController {
     public List<Post> findAll() {
         return postService.findAll();
     }
+    
+    @GetMapping("/post/usuario/{id}")
+    public List<Post> findByIdUsuario (@PathVariable Long id) {
+        return postService.findByIdUsuario(id);
+    }
         
     @PostMapping("/post")
     public void post(@RequestBody Post post) {

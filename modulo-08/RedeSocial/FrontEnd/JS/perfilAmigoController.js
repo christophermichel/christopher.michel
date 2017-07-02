@@ -1,9 +1,15 @@
 angular.module('app').controller('perfilAmigoController', function ($scope, perfilAmigoService, $routeParams, $location, toastr) {
 
 getPerfil()
+getPosts()
 
-    $scope.parametro = {
-      message: "Olá" + $routeParams.idamigo + "querido amigo"
+    $scope.postsAmigo = [];
+
+    function getPosts() {
+      perfilAmigoService.getPosts().then(function (response) {
+        console.log(response);
+        $scope.posts = response.data;
+      });
     }
 
     function getPerfil() {
@@ -12,4 +18,5 @@ getPerfil()
         $scope.perfil = response.data;
       });
     }
+
 });

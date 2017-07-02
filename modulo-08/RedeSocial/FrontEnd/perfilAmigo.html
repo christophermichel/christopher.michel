@@ -5,7 +5,7 @@
   </div>
   <div class="col-md-4 titulo"> Musician To Musician</div>
 </div>
-<div class="row text-center">
+<div class="row">
   <div class="col-md-2 colunas-feed coluna-links">
     <div class="row coluna-links"><a ng-href="#!/feed">Dashboard</a></div><hr>
     <div class"row coluna-links"><a ng-href="#!/perfil">Perfil</a></div><hr>
@@ -13,7 +13,7 @@
     <div class"row coluna-links">Logout</div>
   </div>
   <div class="col-md-1"></div>
-  <div class="col-md-8 colunas-feed">
+  <div class="col-md-8 colunas-feed padding">
     <div class="row">
       <h1>Informações Amigo</h1>
     </div><hr>
@@ -22,6 +22,19 @@
     </div>
     <div class="row">
       <h1>{{perfil.email}}</h1>
+    </div>
+    <div class="row">
+      <h1>lnf</h1>
+      <ul class="list-group" ng-repeat="post in posts">
+        <div class"row">
+          <li class="list-group-item disabled fonteBranca">{{post.idUsuario.nome}}</li>
+          <div class="list-group-item">
+            <li>{{post.conteudo}}</li>
+            <li><img class="imagemFeed" ng-src="{{post.imagem}}"></li>
+          </div>
+          <hr>
+        </div>
+      </ul>
     </div>
   </div>
 </div>

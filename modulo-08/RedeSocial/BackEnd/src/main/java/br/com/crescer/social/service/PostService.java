@@ -2,6 +2,7 @@ package br.com.crescer.social.service;
 
 import br.com.crescer.social.entity.Post;
 import br.com.crescer.social.repository.PostRepository;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +32,10 @@ public class PostService {
     public void remove(Post post) {
         postRepositorio.delete(post);
     }
+    
+    public List<Post> findByIdUsuario (Long id) {
+        return postRepositorio.findByIdUsuario(id);
+    }
+
 
 }

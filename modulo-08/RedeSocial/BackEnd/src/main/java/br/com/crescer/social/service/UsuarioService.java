@@ -1,4 +1,5 @@
 package br.com.crescer.social.service;
+import br.com.crescer.social.entity.Post;
 import br.com.crescer.social.entity.Usuario;
 import br.com.crescer.social.repository.UsuarioRepository;
 import java.util.List;
@@ -26,7 +27,7 @@ public class UsuarioService {
     }
     
     public Usuario getByEmail (String email) {
-        return usuarioRepositorio.getByEmail(email);
+        return usuarioRepositorio.findByEmail(email);
     }
     
     public void remove(Usuario usuario) {
