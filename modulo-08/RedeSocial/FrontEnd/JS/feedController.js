@@ -1,4 +1,4 @@
-angular.module('app').controller('feedController', function ($scope, feedService, $localStorage, $sessionStorage, $location, toastr) {
+angular.module('app').controller('feedController', function ($scope, feedService, $http, $localStorage, $sessionStorage, $location, toastr) {
 
 getPosts()
 getUsuarioAtual()
@@ -16,14 +16,19 @@ $scope.postOrdenado;
       });
     }
 
-
-
     function getSolicitacoes() {
       feedService.getSolicitacoes().then(function (response) {
         console.log(response);
         $scope.solicitacoes = response.data;
       });
     }
+
+    $scope.aceitarAmizade = function (id) {
+          console.log(id);
+          $http.post('http://localhost:9090/usuario/aceitar/' + id).then(function (){
+              toastr.success('Boa! Network é vida!');
+        });
+      };
 
     function getUsuarioAtual() {
       feedService.getUsuarioAtual().then(function (response) {

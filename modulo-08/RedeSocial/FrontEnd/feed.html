@@ -54,9 +54,11 @@
               <tr ng-repeat="usuario in solicitacoes | filter:{nome: procurarPorNome}">
                 <td class="pesquisar">Aguarde</td>
                 <td class="pesquisar">{{usuario.nome}}</td>
-                <td class="pesquisar">{{usuario.email}}</td>
+                <td class="pesquisar">{{usuario.email}}{{usuario.id}}</td>
                 <td>
-                  <a class="pesquisar btn btn-block btn-default  b1" ng-href="#!/perfilamigo/{{usuario.id}}"> Aceitar</a>
+                  <form novalidate name="formAceitarAmizade">
+                    <button type="submit" class="btn btn-primary btn-block btn-md" ng-click="aceitarAmizade(usuario.id)">Aceitar</button>
+                  </form>
                 </td>
               </tr>
             </tbody>
