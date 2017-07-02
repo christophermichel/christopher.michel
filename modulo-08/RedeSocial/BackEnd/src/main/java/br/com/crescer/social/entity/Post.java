@@ -36,7 +36,7 @@ public class Post implements Serializable {
     private String imagem;
     
     @Basic(optional = false)
-    @Size(min = 1, max = 250)
+    @Size(min = 1, max = 750)
     @Column(name = "CONTEUDO")
     private String conteudo;
     

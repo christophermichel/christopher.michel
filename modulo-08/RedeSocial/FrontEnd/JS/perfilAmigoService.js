@@ -5,8 +5,8 @@ angular.module('app').factory('perfilAmigoService', function ($http, $routeParam
     return $http.get(urlBase);
     };
 
-    function getPosts() {
-    return $http.get('http://localhost:9090/post');
+    function getPostsAmigo() {
+    return $http.get('http://localhost:9090/post/usuario/' + $routeParams.idamigo);
     };
 
     function solicitarAmizade() {
@@ -15,7 +15,7 @@ angular.module('app').factory('perfilAmigoService', function ($http, $routeParam
 
     return {
         getPerfil: getPerfil,
-        getPosts: getPosts,
+        getPostsAmigo: getPostsAmigo,
         solicitarAmizade: solicitarAmizade
     };
 

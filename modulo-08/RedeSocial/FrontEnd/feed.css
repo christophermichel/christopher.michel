@@ -17,6 +17,10 @@
   text-align: right;
 }
 
+.links:hover,.links:active,.links:focus{
+  background: #6A5ACD;
+}
+
 .postagem {
   background: #FFFFFF;
   max-width: 700px;

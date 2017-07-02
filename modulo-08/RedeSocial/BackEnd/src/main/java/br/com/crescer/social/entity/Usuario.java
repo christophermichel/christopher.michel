@@ -3,6 +3,7 @@ package br.com.crescer.social.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import org.hibernate.validator.constraints.Email;
 
 /**
  *
@@ -29,6 +31,7 @@ public class Usuario implements Serializable {
     @Column(name = "ID")
     private Long id;
     
+    @Email
     @Basic(optional = false)
     @Column(name = "EMAIL")
     private String email;
@@ -43,11 +46,11 @@ public class Usuario implements Serializable {
 
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
-    private List<Usuario> amigos;
+    private Set<Usuario> amigos;
 
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
-    private List<Usuario> solicitacoes;
+    private Set<Usuario> solicitacoes;
     
     @JsonIgnore
     @OneToMany(mappedBy = "idUsuario")
@@ -85,19 +88,19 @@ public class Usuario implements Serializable {
         this.senha = senha;
     }
     
-    public List<Usuario> getAmigos() {
+    public Set<Usuario> getAmigos() {
         return amigos;
     }
 
-    public void setAmigos(List<Usuario> amigos) {
+    public void setAmigos(Set<Usuario> amigos) {
         this.amigos = amigos;
     }
 
-    public List<Usuario> getSolicitacoes() {
+    public Set<Usuario> getSolicitacoes() {
         return solicitacoes;
     }
 
-    public void setSolicitacoes(List<Usuario> solicitacoes) {
+    public void setSolicitacoes(Set<Usuario> solicitacoes) {
         this.solicitacoes = solicitacoes;
     }
 

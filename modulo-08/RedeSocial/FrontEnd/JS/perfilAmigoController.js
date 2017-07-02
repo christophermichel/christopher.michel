@@ -1,14 +1,12 @@
 angular.module('app').controller('perfilAmigoController', function ($scope, perfilAmigoService, $routeParams, $location, toastr) {
 
 getPerfil()
-getPosts()
+getPostsAmigo()
 
-    $scope.postsAmigo = [];
-
-    function getPosts() {
-      perfilAmigoService.getPosts().then(function (response) {
+    function getPostsAmigo() {
+      perfilAmigoService.getPostsAmigo().then(function (response) {
         console.log(response);
-        $scope.posts = response.data;
+        $scope.postsAmigo = response.data;
       });
     }
 

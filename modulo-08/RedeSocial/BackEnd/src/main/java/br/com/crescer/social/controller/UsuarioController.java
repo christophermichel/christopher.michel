@@ -60,4 +60,10 @@ public class UsuarioController {
        Usuario user = usuarioService.getByEmail(usuario.getUsername());
        return user;
     }
+    
+    @GetMapping(value = "/usuario/todos")
+    public List<Usuario> listUsers(){
+        return (List) usuarioService.findAll();
+    }
+
 }

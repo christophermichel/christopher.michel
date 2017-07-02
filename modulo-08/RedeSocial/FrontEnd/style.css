@@ -82,3 +82,13 @@ li {
   padding-top: 12px;
   text-align: left;
 }
+
+.pesquisar:hover,.pesquisar:active,.pesquisar:focus {
+  background: #6A5ACD;
+}
+.pesquisar {
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Bellefair', serif;
+  font-weight: normal;
+}

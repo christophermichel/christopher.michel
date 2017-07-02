@@ -1,0 +1,46 @@
+<div class="row text-center  navbar">
+  <div class="col-md-1"></div>
+  <div class="col-md-1">
+    <img src="logo.png" width="70" height="70">
+  </div>
+  <div class="col-md-4 titulo"> Musician To Musician</div>
+  <div class="col-md-3 alinhar-navbar form-group">
+    <input type="pesquisa" placeholder="Pesquisar amigo" class="form-control" ng-model="procurarPorNome">
+  </div>
+  <div class="col-md-1 alinhar-navbar">
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-md-2 colunas-feed coluna-links">
+      <div class="row links"><a ng-href="#!/feed">Dashboard  <span class="glyphicon glyphicon-home"></span></a></div><hr>
+      <div class="row links"><a ng-href="#!/perfil">Perfil  <span class="glyphicon glyphicon-user"></a></div><hr>
+      <div class="row links"><a ng-href="#!/amigos">Amigos <span class="glyphicon glyphicon-music"></span></a></div><hr>
+      <div class="row links"><a ng-href="#!/pesquisar">Pesquisar <span class="glyphicon glyphicon-search"></span></a></div><hr>
+      <div class="row links"><a ng-href="#!/logout">Logout <span class="glyphicon glyphicon-asterisk"></span></a></div>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-8 colunas-feed">
+    <div class="row">
+      <table class= "table table-striped danger orange text-center table-bordered">
+            <thead>
+                <tr>
+                    <th class="pesquisar">Foto</th>
+                    <th class="pesquisar">Nome</th>
+                    <th class="pesquisar">Email</th>
+                    <th class="pesquisar">Convite</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="usuario in usuarios | filter:{nome: procurarPorNome}">
+                <td class="pesquisar">Aguarde</td>
+                <td class="pesquisar">{{usuario.nome}}</td>
+                <td class="pesquisar">{{usuario.email}}</td>
+                <td>
+                  <a class="pesquisar btn btn-block btn-default  b1" ng-href="#!/perfilamigo/{{usuario.id}}"> Visualizar Perfil</a>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>

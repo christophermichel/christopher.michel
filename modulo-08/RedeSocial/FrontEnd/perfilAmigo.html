@@ -7,10 +7,11 @@
 </div>
 <div class="row text-center">
   <div class="col-md-2 colunas-feed coluna-links">
-    <div class="row coluna-links"><a ng-href="#!/feed">Dashboard</a></div><hr>
-    <div class"row coluna-links"><a ng-href="#!/perfil">Perfil</a></div><hr>
-    <div class="row coluna-links"><a ng-href="#!/amigos">Amigos</a></div><hr>
-    <div class"row coluna-links">Logout</div>
+      <div class="row coluna-links"><a ng-href="#!/feed">Dashboard  <span class="glyphicon glyphicon-home"></span></a></div><hr>
+      <div class"row coluna-links"><a ng-href="#!/perfil">Perfil  <span class="glyphicon glyphicon-user"></a></div><hr>
+      <div class="row coluna-links"><a ng-href="#!/amigos">Amigos <span class="glyphicon glyphicon-music"></span></a></div><hr>
+      <div class="row coluna-links"><a ng-href="#!/pesquisar">Pesquisar <span class="glyphicon glyphicon-search"></span></a></div><hr>
+      <div class"row coluna-links"><a ng-href="#!/logout">Logout <span class="glyphicon glyphicon-asterisk"></span></a></div>
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-8 colunas-feed padding">
@@ -25,11 +26,11 @@
     </div>
     <div class="row">
       <form novalidate name="formSolicitacao">
-        <button type="submit" class="btn btn-primary btn-block btn-md" ng-click="solicitarAmizade()">Publicar</button>
+        <button type="submit" class="btn btn-primary btn-block btn-md" ng-click="solicitarAmizade()">Solicitar Amizade</button>
       </form>
     <div>
     <div class="row">
-      <ul class="list-group" ng-repeat="post in posts">
+      <ul class="list-group" ng-repeat="post in postsAmigo">
         <div class"row">
           <li class="list-group-item disabled fonteBranca">{{post.idUsuario.nome}}</li>
           <div class="list-group-item">

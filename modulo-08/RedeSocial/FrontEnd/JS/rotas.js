@@ -26,6 +26,11 @@ app.config(function ($routeProvider) {
                 templateUrl: '/perfil.html'
             })
 
+            .when('/pesquisar', {
+                controller: 'pesquisarController',
+                templateUrl: '/pesquisar.html'
+            })
+
             .when('/perfilamigo/:idamigo',
             {
                 controller: 'perfilAmigoController',
