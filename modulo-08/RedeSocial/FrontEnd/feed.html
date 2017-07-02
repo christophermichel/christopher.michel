@@ -7,14 +7,14 @@
 </div>
 <div class="row">
   <div class="col-md-2 colunas-feed coluna-links">
-      <div class="row coluna-links"><a ng-href="#!/feed">Dashboard</a></div><hr>
-      <div class"row coluna-links"><a ng-href="#!/perfil">Perfil</a></div><hr>
-      <div class="row coluna-links"><a ng-href="#!/amigos">Amigos</a></div><hr>
-      <div class"row coluna-links"><a ng-href="#!/logout">Logout</a></div>
+      <div class="row coluna-links"><a ng-href="#!/feed">Dashboard  <span class="glyphicon glyphicon-home"></span></a></div><hr>
+      <div class"row coluna-links"><a ng-href="#!/perfil">Perfil  <span class="glyphicon glyphicon-user"></a></div><hr>
+      <div class="row coluna-links"><a ng-href="#!/amigos">Amigos <span class="glyphicon glyphicon-music"></span></a></div><hr>
+      <div class"row coluna-links"><a ng-href="#!/logout">Logout <span class="glyphicon glyphicon-asterisk"></span></a></div>
   </div>
-  <div class="col-md-6 colunas-feed margin-feed">
-    <div class"row">
-    <div class="postagem">
+  <div class="col-md-6 colunas-feed margin-feed fundo">
+    <div class"row fundo">
+    <div class="postagem fundo">
       <div class="bordaPostagem">
         <form novalidate name="formPost">
           <input type="text" placeholder="O que está tocando você hoje?" ng-model="post.conteudo">
@@ -28,10 +28,12 @@
       <div class"row">
         <li class="list-group-item disabled fonteBranca">{{post.idUsuario.nome}}</li>
         <div class="list-group-item">
-          <li>{{post.conteudo}}</li>
-          <li><img class="imagemFeed" ng-src="{{post.imagem}}"></li>
+          <li>
+            <div class="col-md-2"><img class="imagemFeed" ng-src="{{post.imagem}}"></div>
+            <div class="col-md-10">{{post.conteudo}}</div>
+          </li>
+          <li><div class="dataPublicacao">Publicado em: {{post.dataPublicacao}}</div></li>
         </div>
-        <hr>
       </div>
     </ul>
 

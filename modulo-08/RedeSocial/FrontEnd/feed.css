@@ -5,8 +5,9 @@
   width: 70px;
 }
 
-.largura {
-  width: 500px !important;
+.dataPublicacao {
+  text-align: right;
+  padding: 5px;
 }
 
 .coluna-links{
@@ -26,7 +27,7 @@
 
 .bordaPostagem {
   background-color: #6A5ACD;
-  padding: 15px;
+  padding: 20px;
   border-radius: 5px;
 }
 
@@ -72,4 +73,8 @@
 
 .disabled {
   background: #6A5ACD !important;
+}
+
+.fundo {
+    background-color: #F0E68C !important;
 }
