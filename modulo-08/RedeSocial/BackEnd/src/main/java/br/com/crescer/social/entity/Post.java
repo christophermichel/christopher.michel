@@ -3,6 +3,7 @@ package br.com.crescer.social.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -50,6 +52,9 @@ public class Post implements Serializable {
     @ManyToOne(optional = false)
     private Usuario idUsuario;
     
+    @OneToMany(mappedBy = "postCurtir")
+    private List<Curtir> curtidas;
+    
     public Long getId() {
         return id;
     }
@@ -88,5 +93,13 @@ public class Post implements Serializable {
 
     public void setIdUsuario(Usuario idUsuario) {
         this.idUsuario = idUsuario;
+    }
+    
+    public List<Curtir> getCurtir() {
+        return curtidas;
+    }
+
+    public void setLikes(List<Curtir> curtidas) {
+        this.curtidas = curtidas;
     }
 }
