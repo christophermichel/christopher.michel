@@ -21,10 +21,9 @@
     <div class="row">
       <div class="form">
         <form novalidate name="formAlterarUsuario" class="loginForm">
-          <input type="text" placeholder="{{usuarioLogado.nome}}" ng-model="usuario.nome">
-          <input type="email" placeholder="{{usuarioLogado.email}}" ng-model="usuario.email">
-          <input type="password" placeholder="Digite sua senha" ng-model="usuario.senha">
-          <button type="submit" class="btn btn-primary btn-md" ng-click="alterarUsuario(usuario)">Alterar</button>
+          <input type="text" ng-model="usuarioLogado.nome">
+          <input type="text" ng-model="usuarioLogado.email">
+          <button type="submit" class="btn btn-primary btn-md" ng-click="alterarUsuario(usuarioLogado)">Alterar</button>
         </form>
       </div>
     </div>

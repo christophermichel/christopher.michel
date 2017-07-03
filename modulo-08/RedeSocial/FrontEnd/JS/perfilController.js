@@ -11,7 +11,7 @@ getUsuarioAtual()
 
 $scope.alterarUsuario = function(usuario){
   if ($scope.formAlterarUsuario.$valid) {
-    console.log(usuario);
+    usuario.senha =   $scope.usuarioLogado.senha;
     usuario.id =   $scope.usuarioLogado.id;
     usuarioService.putUsuario(usuario).then(function (){
       toastr.success('Dados alterados com sucesso!');
