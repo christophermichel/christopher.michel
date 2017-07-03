@@ -13,7 +13,7 @@ getPostsAmigo()
     function getPerfil() {
       perfilAmigoService.getPerfil().then(function (response) {
         console.log(response);
-        $scope.perfil = response.data;
+        $scope.perfilAmigo = response.data;
       });
     }
 

@@ -16,6 +16,9 @@
   font-family: 'Bellefair', serif;
   text-align: right;
 }
+.coluna-links a{
+  color: black;
+}
 
 .links:hover,.links:active,.links:focus{
   background: #6A5ACD;

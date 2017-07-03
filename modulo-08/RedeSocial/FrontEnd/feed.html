@@ -35,6 +35,11 @@
           </li>
           <li><div class="dataPublicacao">Publicado em: {{post.dataPublicacao}}</div></li>
         </div>
+          <form novalidate name="formSolicitacao" class="larguraCurtir ">
+            <button type="submit" class="btn fundoCurtir" ng-click="curtir()"><li class="larguraCurtir">{{post.curtir.length}} curtidas
+             </button>
+          </form>
+        </li>
       </div>
     </ul>
   </div>
@@ -52,12 +57,15 @@
             </thead>
             <tbody>
               <tr ng-repeat="usuario in solicitacoes | filter:{nome: procurarPorNome}">
-                <td class="pesquisar">Aguarde</td>
+                <td class="pesquisar"><img class="imagemFeed" ng-src="{{usuario.urlFoto}}"></td>
                 <td class="pesquisar">{{usuario.nome}}</td>
                 <td class="pesquisar">{{usuario.email}}</td>
                 <td>
                   <form novalidate name="formAceitarAmizade">
                     <button type="submit" class="btn btn-primary btn-block btn-md" ng-click="aceitarAmizade(usuario.id)">Aceitar</button>
+                  </form>
+                  <form novalidate name="formRejeitarAmizade">
+                    <button type="submit" class="btn btn-primary btn-block btn-md" ng-click="rejeitarAmizade(usuario.id)">Rejeitar</button>
                   </form>
                 </td>
               </tr>

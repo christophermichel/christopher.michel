@@ -1,4 +1,4 @@
-angular.module('app').controller('perfilController', function ($scope, usuarioService, $http, feedService, $routeParams, $location, toastr) {
+angular.module('app').controller('perfilController', function ($scope, usuarioService, $http, usuarioService, feedService, $routeParams, $location, toastr) {
 
 getUsuarioAtual()
 getPostsUsuarioLogado()
@@ -12,9 +12,8 @@ getPostsUsuarioLogado()
 
 $scope.alterarUsuario = function(usuario){
   if ($scope.formAlterarUsuario.$valid) {
-    usuario.senha =   $scope.usuarioLogado.senha;
     usuario.id =   $scope.usuarioLogado.id;
-    usuarioService.putUsuario(usuario).then(function (){
+    usuarioService.novoUsuario(usuario).then(function (){
       toastr.success('Dados alterados com sucesso!');
   })};
 };

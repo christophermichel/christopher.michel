@@ -49,5 +49,10 @@ public class UsuarioService {
         put(recebeSolicitacao);
         put(mandaSolicitacao);
     }
+    
+    public void rejeitarSolicitacaoDeAmizade(Usuario recebeSolicitacao, Usuario mandaSolicitacao) {
+        recebeSolicitacao.getSolicitacoes().remove(mandaSolicitacao);
+        put(recebeSolicitacao);
+    }
 
 }

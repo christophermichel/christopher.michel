@@ -37,6 +37,20 @@ $scope.postOrdenado;
       });
     }
 
+    $scope.rejeitarAmizade = function (id) {
+          console.log(id);
+          $http.post('http://localhost:9090/usuario/rejeitar/' + id).then(function (){
+              toastr.success('Solicitação de amizade rejeitada');
+        });
+      };
+
+    function getUsuarioAtual() {
+      feedService.getUsuarioAtual().then(function (response) {
+        console.log(response);
+        $scope.usuarioAtual = response.data;
+      });
+    }
+
     $scope.novoPost = function (post) {
       if ($scope.formPost.$valid) {
         console.log(post);
@@ -50,4 +64,8 @@ $scope.postOrdenado;
       }
     };
 
+    $scope.curtir = function () {
+      getUsuarioAtual()
+      console.log($scope.usuarioAtual);
+    }
 });

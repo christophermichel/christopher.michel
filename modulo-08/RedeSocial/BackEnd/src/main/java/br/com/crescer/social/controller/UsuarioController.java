@@ -56,6 +56,13 @@ public class UsuarioController {
         usuarioService.aceitarSolicitacaoDeAmizade(recebeuSolicitacao, mandouSolicitacao);
     }
     
+    @PostMapping(value = "/usuario/rejeitar/{id}")
+    public void rejeitarConvite(@PathVariable Long id, @AuthenticationPrincipal User user) {
+        Usuario recebeuSolicitacao = usuarioService.getByEmail(user.getUsername());
+        Usuario mandouSolicitacao = usuarioService.getById(id);
+        usuarioService.rejeitarSolicitacaoDeAmizade(recebeuSolicitacao, mandouSolicitacao);
+    }
+    
         
     @GetMapping(value = "/usuario/atual")
     public Usuario getUsuarioAtual(@AuthenticationPrincipal User usuario){

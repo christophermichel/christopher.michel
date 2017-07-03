@@ -1,0 +1,19 @@
+{
+	"email":"slash@slash",
+	"senha":"slash",
+	"nome":"slash",
+	"urlFoto":"http://2.bp.blogspot.com/-KWnvU9HzuIc/U73Wg4eDnYI/AAAAAAAACx0/UPBYRHS6yI4/s1600/233724.jpg"
+}
+{
+	"email":"axl@axl",
+	"senha":"axl",
+	"nome":"axl",
+	"urlFoto":"http://images.virgula.uol.com.br/2016/10/AxlRose-718x479.jpg"
+}
+
+Post
+{
+	"conteudo":"Mais um dia de turnê que se foi! Amanhã em Morro da Pedra para mais um show, valeu galera!",
+	"imagem":"http://images.virgula.uol.com.br/2016/10/AxlRose-718x479.jpg",
+	"idUsuario": {"id":1}
+}
