@@ -1,5 +1,4 @@
 package br.com.crescer.social.service;
-import br.com.crescer.social.entity.Post;
 import br.com.crescer.social.entity.Usuario;
 import br.com.crescer.social.repository.UsuarioRepository;
 import java.util.List;

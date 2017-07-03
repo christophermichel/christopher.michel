@@ -5,8 +5,13 @@ angular.module('app').factory('usuarioService', function ($http) {
         return $http.post(urlBase, usuario);
     };
 
+    function putUsuario(usuario){
+        return $http.put(urlBase, usuario);
+    };
+
     return {
-        novoUsuario: postUsuario
+        novoUsuario: postUsuario,
+        putUsuario: putUsuario
     };
 
 })

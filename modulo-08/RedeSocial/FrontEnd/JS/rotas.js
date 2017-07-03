@@ -22,7 +22,7 @@ app.config(function ($routeProvider) {
             })
 
             .when('/perfil', {
-                controller: 'loginController',
+                controller: 'perfilController',
                 templateUrl: '/perfil.html'
             })
 

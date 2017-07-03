@@ -16,10 +16,17 @@
   <div class="col-md-1"></div>
   <div class="col-md-8 colunas-feed">
     <div class="row">
-      <h1>Informações</h1>
+      <h1>Editar Perfil</h1>
     </div><hr>
     <div class="row">
-      <h1>Meus post's</h1>
+      <div class="form">
+        <form novalidate name="formAlterarUsuario" class="loginForm">
+          <input type="text" placeholder="{{usuarioLogado.nome}}" ng-model="usuario.nome">
+          <input type="email" placeholder="{{usuarioLogado.email}}" ng-model="usuario.email">
+          <input type="password" placeholder="Digite sua senha" ng-model="usuario.senha">
+          <button type="submit" class="btn btn-primary btn-md" ng-click="alterarUsuario(usuario)">Alterar</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
