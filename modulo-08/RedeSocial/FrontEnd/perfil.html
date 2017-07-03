@@ -5,26 +5,46 @@
   </div>
   <div class="col-md-4 titulo"> Musician To Musician</div>
 </div>
-<div class="row text-center">
+<div class="row">
   <div class="col-md-2 colunas-feed coluna-links">
-      <div class="row coluna-links"><a ng-href="#!/feed">Dashboard  <span class="glyphicon glyphicon-home"></span></a></div><hr>
-      <div class"row coluna-links"><a ng-href="#!/perfil">Perfil  <span class="glyphicon glyphicon-user"></a></div><hr>
-      <div class="row coluna-links"><a ng-href="#!/amigos">Amigos <span class="glyphicon glyphicon-music"></span></a></div><hr>
-      <div class="row coluna-links"><a ng-href="#!/pesquisar">Pesquisar <span class="glyphicon glyphicon-search"></span></a></div><hr>
-      <div class"row coluna-links"><a ng-href="#!/logout">Logout <span class="glyphicon glyphicon-asterisk"></span></a></div>
+      <div class="row coluna-links links"><a ng-href="#!/feed">Dashboard  <span class="glyphicon glyphicon-home"></span></a></div><hr>
+      <div class="row coluna-links links"><a ng-href="#!/perfil">Perfil  <span class="glyphicon glyphicon-user"></a></div><hr>
+      <div class="row coluna-links links"><a ng-href="#!/amigos">Amigos <span class="glyphicon glyphicon-music"></span></a></div><hr>
+      <div class="row coluna-links links"><a ng-href="#!/pesquisar">Pesquisar <span class="glyphicon glyphicon-search"></span></a></div><hr>
+      <div class="row coluna-links links"><a ng-href="#!/logout">Logout <span class="glyphicon glyphicon-asterisk"></span></a></div>
   </div>
   <div class="col-md-1"></div>
-  <div class="col-md-8 colunas-feed">
-    <div class="row">
+  <div class="col-md-8 colunas-feed fundo margin-feed">
+    <div class="row text-center">
       <h1>Editar Perfil</h1>
-    </div><hr>
+    </div>
     <div class="row">
-      <div class="form">
-        <form novalidate name="formAlterarUsuario" class="loginForm">
+      <div class="postagem">
+        <form novalidate name="formAlterarUsuario">
+          <h2>Nome</h2>
           <input type="text" ng-model="usuarioLogado.nome">
+          <h2>Email</h2>
           <input type="text" ng-model="usuarioLogado.email">
           <button type="submit" class="btn btn-primary btn-md" ng-click="alterarUsuario(usuarioLogado)">Alterar</button>
         </form>
+    </div>
+    </div>
+      <div class="row text-center">
+        <h1>Minhas Publicações</h1>
+      </div><hr>
+      <div class="row">
+        <ul class="list-group" ng-repeat="post in postsUsuarioLogado">
+          <div class"row">
+            <li class="list-group-item disabled fonteBranca">{{post.idUsuario.nome}}</li>
+            <div class="list-group-item">
+              <li>
+                <div class="col-md-2"><img class="imagemFeed" ng-src="{{post.imagem}}"></div>
+                <div class="col-md-10">{{post.conteudo}}</div>
+              </li>
+              <li><div class="dataPublicacao">Publicado em: {{post.dataPublicacao}}</div></li>
+            </div>
+          </div>
+        </ul>
       </div>
     </div>
   </div>
