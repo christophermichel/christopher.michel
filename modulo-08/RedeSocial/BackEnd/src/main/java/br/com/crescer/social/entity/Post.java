@@ -1,6 +1,7 @@
 package br.com.crescer.social.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -99,7 +100,7 @@ public class Post implements Serializable {
         return curtidas;
     }
 
-    public void setLikes(List<Curtir> curtidas) {
+    public void setCurtir(List<Curtir> curtidas) {
         this.curtidas = curtidas;
     }
 }

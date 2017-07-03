@@ -1,5 +1,6 @@
 package br.com.crescer.social.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,6 +28,7 @@ public class Curtir implements Serializable {
     @JoinColumn(name = "ID_USUARIO_CURTIR")
     private Usuario usuarioCurtir;
     
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "ID_POST")
     private Post postCurtir;
