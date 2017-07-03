@@ -19,8 +19,8 @@ import javax.persistence.SequenceGenerator;
 public class Curtir implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_LIKE")
-    @SequenceGenerator(name = "SEQ_LIKE", sequenceName = "SEQ_LIKE", allocationSize = 1)
+    @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_CURTIR")
+    @SequenceGenerator(name = "SEQ_CURTIR", sequenceName = "SEQ_CURTIR", allocationSize = 1)
     @Column(name = "ID_CURTIR")
     private Long id;
     
@@ -49,6 +49,7 @@ public class Curtir implements Serializable {
         this.usuarioCurtir = usuarioCurtir;
     }
 
+    @JsonIgnore
     public Post getPost() {
         return postCurtir;
     }

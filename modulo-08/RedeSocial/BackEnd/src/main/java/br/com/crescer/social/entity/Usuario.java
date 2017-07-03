@@ -40,6 +40,10 @@ public class Usuario implements Serializable {
     @Column(name = "PASSWORD")
     private String senha;
     
+    @Basic(optional = true)
+    @Column(name = "urlFoto")
+    private String urlFoto;
+    
     @Basic(optional = false)
     @Column(name = "NOME")
     private String nome;
@@ -111,5 +115,12 @@ public class Usuario implements Serializable {
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
-    
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
 }
