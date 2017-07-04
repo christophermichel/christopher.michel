@@ -8,9 +8,13 @@
 <div class="paginaLogin">
   <div class="form">
     <form novalidate name="formCadastro" class="loginForm">
-      <input type="text" placeholder="Nome" ng-model="usuario.nome">
-      <input type="text" placeholder="Email" ng-model="usuario.email">
-      <input type="password" placeholder="Password" ng-model="usuario.senha">
+      <input type="text" required placeholder="Nome" ng-model="usuario.nome">
+      <input type="text" required placeholder="Email" ng-model="usuario.email">
+      <input type="text" placeholder="URL Foto" ng-model="usuario.urlFoto">
+      <input type="text" placeholder="Sexo" ng-model="usuario.sexo">
+      <input type="date" required ng-model="usuario.dataNascimento">
+      <input type="password" required placeholder="Password" ng-model="usuario.senha">
+      <input type="text" placeholder="Instrumento musical" ng-model="usuario.instrumento">
       <button type="submit" class="btn btn-primary btn-md" ng-click="novoUsuario(usuario)">Cadastrar</button>
       <p class="mensagem">Já registrado? <a ng-href="#!/login">Faça login!</a></p>
     </form>

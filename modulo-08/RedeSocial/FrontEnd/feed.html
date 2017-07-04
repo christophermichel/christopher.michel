@@ -36,7 +36,7 @@
           <li><div class="dataPublicacao">Publicado em: {{post.dataPublicacao}}</div></li>
         </div>
           <form novalidate name="formSolicitacao" class="larguraCurtir ">
-            <button type="submit" class="btn fundoCurtir" ng-click="curtir()"><li class="larguraCurtir">{{post.curtir.length}} curtidas
+            <button type="submit" class="btn fundoCurtir" ng-click="curtir(post.id)"><li class="larguraCurtir">{{post.curtir.length}} curtidas
              </button>
           </form>
         </li>

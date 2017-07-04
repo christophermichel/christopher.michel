@@ -1,7 +1,9 @@
 package br.com.crescer.social.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.Basic;
@@ -14,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
 import org.hibernate.validator.constraints.Email;
 
 /**
@@ -43,6 +46,20 @@ public class Usuario implements Serializable {
     @Basic(optional = true)
     @Column(name = "urlFoto")
     private String urlFoto;
+    
+    @Basic(optional = true)
+    @Column(name = "sexo")
+    private String sexo;
+    
+    @Basic(optional = true)
+    @Column(name = "instrumento_musical")
+    private String instrumentoMusical;
+    
+    @Basic(optional = true)
+    @JsonFormat(pattern="dd/MM/yyyy")
+    @Column(name = "data_nascimento")
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataNascimento;
     
     @Basic(optional = false)
     @Column(name = "NOME")
@@ -123,4 +140,30 @@ public class Usuario implements Serializable {
     public void setUrlFoto(String urlFoto) {
         this.urlFoto = urlFoto;
     }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getInstrumentoMusical() {
+        return instrumentoMusical;
+    }
+
+    public void setInstrumentoMusical(String instrumentoMusical) {
+        this.instrumentoMusical = instrumentoMusical;
+    }
+    
+    
 }

@@ -53,9 +53,7 @@ $scope.postOrdenado;
 
     $scope.novoPost = function (post) {
       if ($scope.formPost.$valid) {
-        console.log(post);
-        post.idUsuario = $scope.usuarioAtual;
-        console.log(post);
+        post.idUsuario = {id:$scope.usuarioAtual.id};
         feedService.novoPost(post).then( function (){
             toastr.success('Todo dia é um bom dia para falar sobre música!');
         });
@@ -64,7 +62,8 @@ $scope.postOrdenado;
       }
     };
 
-    $scope.curtir = function () {
+    $scope.curtir = function (post) {
+      console.log(post.id);
       getUsuarioAtual()
       console.log($scope.usuarioAtual);
     }

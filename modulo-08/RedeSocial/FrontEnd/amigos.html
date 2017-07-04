@@ -32,7 +32,7 @@
             </thead>
             <tbody>
               <tr ng-repeat="amigo in amigosUsuario">
-                <td class="pesquisar">Aguarde</td>
+                <td class="pesquisar"><img class="imagemFeed" ng-src="{{amigo.urlFoto}}"></td>
                 <td class="pesquisar">{{amigo.nome}}</td>
                 <td class="pesquisar">{{amigo.email}}</td>
                 <td>
