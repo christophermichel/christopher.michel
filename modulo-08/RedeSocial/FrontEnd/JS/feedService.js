@@ -17,7 +17,12 @@ angular.module('app').factory('feedService', function ($http) {
         return $http.post(urlBase, post);
     };
 
+    function curtir(id, objeto) {
+        return $http.post('http://localhost:9090/curtir/' + id, objeto);
+    };
+
     return {
+        curtir:curtir,
         getPosts: getPosts,
         novoPost: novoPost,
         getUsuarioAtual: getUsuarioAtual,

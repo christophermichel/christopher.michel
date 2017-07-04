@@ -27,6 +27,7 @@ $scope.postOrdenado;
           console.log(id);
           $http.post('http://localhost:9090/usuario/aceitar/' + id).then(function (){
               toastr.success('Boa! Network é vida!');
+              getSolicitacoes();
         });
       };
 
@@ -38,9 +39,9 @@ $scope.postOrdenado;
     }
 
     $scope.rejeitarAmizade = function (id) {
-          console.log(id);
           $http.post('http://localhost:9090/usuario/rejeitar/' + id).then(function (){
               toastr.success('Solicitação de amizade rejeitada');
+              getSolicitacoes();
         });
       };
 
@@ -56,6 +57,7 @@ $scope.postOrdenado;
         post.idUsuario = {id:$scope.usuarioAtual.id};
         feedService.novoPost(post).then( function (){
             toastr.success('Todo dia é um bom dia para falar sobre música!');
+            getPosts();
         });
       } else {
         toastr.warning('Poxa, assim não podemos publicar!');
@@ -63,8 +65,18 @@ $scope.postOrdenado;
     };
 
     $scope.curtir = function (post) {
-      console.log(post.id);
-      getUsuarioAtual()
-      console.log($scope.usuarioAtual);
+      var objeto = {};
+      if($scope.verificarSePostJaFoiCurtido(post)){
+        "Deveria descurtir, mas por enquanto, só aviso que não se pode curtir de novo!"
+      } else {
+      feedService.curtir(post.id, objeto).then( function (){
+          toastr.success('Você curtiu a publicação de ' + post.idUsuario.nome);
+          getPosts()
+      })};
     }
+
+    $scope.verificarSePostJaFoiCurtido = function(post) {
+        return post.curtir.some(x => x.usuarioCurtir.id == $scope.usuarioAtual.id);
+    }
+
 });
