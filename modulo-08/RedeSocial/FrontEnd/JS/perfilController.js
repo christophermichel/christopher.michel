@@ -10,13 +10,21 @@ getPostsUsuarioLogado()
     });
   }
 
-$scope.alterarUsuario = function(usuario){
-  if ($scope.formAlterarUsuario.$valid) {
-    usuario.id =   $scope.usuarioLogado.id;
-    usuarioService.novoUsuario(usuario).then(function (){
-      toastr.success('Dados alterados com sucesso!');
-  })};
-};
+  $scope.alterarUsuario = function(usuarioLogado, usuario){
+    if ($scope.formAlterarUsuario.$valid) {
+      usuarioLogado.id =   $scope.usuarioLogado.id;
+      if (usuario.senha == usuario.senha2) {
+        usuarioLogado.senha = usuario.senha;
+        var ano = usuarioLogado.dataNascimento.slice(2,4);
+        var mes = usuarioLogado.dataNascimento.slice(5,7);
+        var dia = usuarioLogado.dataNascimento.slice(8,10);
+        usuarioLogado.dataNascimento = dia+"/"+mes+"/"+ano;
+        usuarioService.novoUsuario(usuarioLogado).then(function (){
+        toastr.success('Dados alterados com sucesso!');
+        })
+      } else {toastr.error('As senhas digitadas devem ser iguais!')}
+    };
+  };
 
 
 //não é boa prática

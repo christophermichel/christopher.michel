@@ -2,8 +2,11 @@ package br.com.crescer.social.controller;
 
 import br.com.crescer.social.entity.Post;
 import br.com.crescer.social.service.PostService;
+import java.awt.print.Pageable;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,6 +42,11 @@ public class PostController {
     @DeleteMapping("/post/{id}")
     public void remove(@PathVariable Long id) {
         postService.remove(postService.getById(id));
+    }
+    
+    @GetMapping(value = "/post/amigos")
+    public List<Post> getPostsAmigos(@AuthenticationPrincipal User user) {
+        return postService.getPostsAmigos(user);
     }
     
 }

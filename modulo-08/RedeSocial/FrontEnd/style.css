@@ -9,6 +9,10 @@ body{
   opacity: 0.90;
 }
 
+div .editar {
+  margin-left: 8%;
+}
+
 li {
   list-style: none;
 }

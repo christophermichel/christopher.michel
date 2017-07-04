@@ -6,13 +6,14 @@ import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Set;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
  *
  * @author chris
  */
-public interface PostRepository extends CrudRepository<Post, Long>{
+public interface PostRepository extends PagingAndSortingRepository<Post, Long>{
     
-    List<Post> findByIdUsuario(Set<Usuario> usuarios, Pageable pageable);
+    List<Post> findByIdUsuarioOrderById(Set<Usuario> usuarios);
     
 }

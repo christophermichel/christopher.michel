@@ -28,7 +28,7 @@ public class UsuarioController {
     }
         
     @PostMapping("/usuario")
-    public void post(@RequestBody Usuario usuario) {
+    public void post(@RequestBody Usuario usuario) throws Exception {
         usuarioService.post(usuario);
     }
     

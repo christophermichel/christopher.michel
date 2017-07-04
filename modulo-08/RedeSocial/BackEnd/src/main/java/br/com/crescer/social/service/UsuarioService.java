@@ -17,11 +17,6 @@ public class UsuarioService {
     }
     
     public Usuario post(Usuario usuario) throws Exception{
-        
-        if (usuarioRepositorio.findByEmail(usuario.getEmail()) != null) {
-            throw new Exception("Este email já está ativo em outra conta!");
-        }
-        
         usuario.setSenha(new BCryptPasswordEncoder().encode(usuario.getSenha()));
         return usuarioRepositorio.save(usuario);
     }

@@ -18,16 +18,22 @@
     <div class="row text-center">
       <h1>Editar Perfil</h1>
     </div>
-    <div class="row">
+    <div class="row editar">
       <div class="postagem">
         <form novalidate name="formAlterarUsuario">
           <h2>Nome</h2>
           <input type="text" ng-model="usuarioLogado.nome">
           <h2>Email</h2>
           <input type="text" ng-model="usuarioLogado.email">
-          <h2>Senha</h2>
-          <input type="password" ng-model="usuarioLogado.senha">
-          <button type="submit" class="btn btn-primary btn-md" ng-click="alterarUsuario(usuarioLogado)">Alterar</button>
+          <h2>Nova senha</h2>
+          <input type="password" required ng-model="usuario.senha">
+          <h2>Repita a nova senha</h2>
+          <input type="password" required ng-model="usuario.senha2">
+          <h2>Instrumento musical</h2>
+          <input type="text" ng-model="usuarioLogado.instrumentoMusical">
+          <h2>Foto</h2>
+          <input type="text" ng-model="usuarioLogado.urlFoto">
+          <button type="submit" class="btn btn-primary btn-md" ng-click="alterarUsuario(usuarioLogado, usuario)">Alterar</button>
         </form>
     </div>
     </div>
