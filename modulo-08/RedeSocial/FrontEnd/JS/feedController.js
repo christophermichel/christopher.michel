@@ -5,7 +5,9 @@ getUsuarioAtual()
 getSolicitacoes();
 $scope.postOrdenado;
     function getPosts() {
+      console.log('antes do angularjs');
       feedService.getPosts().then(function (response) {
+        console.log('response angularjs');
         console.log(response);
         $scope.posts = response.data;
 //        function ordemDecrescente(a, b) {
@@ -15,6 +17,7 @@ $scope.postOrdenado;
 //        console.log($scope.posts);
       });
     }
+
 
     function getSolicitacoes() {
       feedService.getSolicitacoes().then(function (response) {

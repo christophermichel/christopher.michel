@@ -2,7 +2,7 @@ angular.module('app').factory('feedService', function ($http) {
     var urlBase = 'http://localhost:9090/post';
 
     function getPosts() {
-    return $http.get(urlBase);
+    return $http.get('http://localhost:9090/map');
     };
 
     function getSolicitacoes() {
